@@ -17,6 +17,7 @@ The following software is dotfiled in this repo:
 * newsbeuter
 * ncmpcpp
 * tmux
+* tmux-powerline / rainbarf
 * tint2
 * vim
 * xbindkeys
