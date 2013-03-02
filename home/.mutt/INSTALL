@@ -1,6 +1,3 @@
-#### TODO ####
-# - fix sidebar folder list [muttrc][muttonrc]
-
 ### 1 # Create folders
 ################################################
 ~/.mutt/		    to store mutt files
@@ -11,23 +8,23 @@
 
 ### 2 # Install useful software
 ################################################
-Packages to be installed on the system to run muttonrc and muttrc:
+Packages to be installed on the system to run `muttonrc` and `muttrc`:
 
-%_SW_%		%_NOTES_%		        %_LINES ON  	| OFF_%     %_NOTES_%
-links		needs .mailcap  	    			|
-mpack			    	        line 159-160 	| 147-148       needs .mailcap
-goobook		with ~/.netrc   		line 31-31	| 31-32         with ~/.netrc
-aspell				    	        line 36		| 36
-vim		    needs vim_mutt_commands         	|               needs vim_mutt_commands
-gpg			    		            line 52		| 51
-urlview		needs .mailcap	    	line 101	| 100           needs .mailcap
-antiword	needs .mailcap	           			|               needs .mailcap
-shred				    	        line 154	| 143
-offlineimap	needs .offlineimaprc	    		|               
-a2ps + evince        				line 46		| 45
-sed				                    			|
-awk			                		line 119	| 117
-notmuch	& libmail-box-perl	        			|
+%_SW_%		    %_LINES ON  	| OFF_%     %_NOTES_%
+links		                    |
+mpack	        line 159-160 	| 147-148   needs .mailcap
+goobook		    line 31-31	    | 31-32     with ~/.netrc
+aspell	   	    line 36		    | 36
+vim		                        |           needs vim_mutt_commands
+gpg			    line 52		    | 51
+urlview		    line 101	    | 100       needs .mailcap
+antiword                    	|           needs .mailcap
+shred	   	    line 154	    | 143
+offlineimap	                    |           needs .offlineimaprc
+a2ps + evince	line 46		    | 45
+sed				       			|
+awk			    line 119	    | 117
+notmuch	& libmail-box-perl		|
 
 ### 3 # Explaining files
 ################################################
@@ -56,4 +53,5 @@ keyserver <keyserver address>
 keyserver-options auto-key-retrieve
 
 ### 6 # fix .netrc permissions
+################################################
 chmod 600 ~/.netrc
