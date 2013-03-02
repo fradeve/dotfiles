@@ -1,0 +1,101 @@
+#------------------------------------
+# Setup for user1@server1:
+#------------------------------------
+mailboxes	+gmail/INBOX
+mailboxes	+gmail/[Gmail].'Sent Mail'
+mailboxes	+gmail/[Gmail].Chats
+mailboxes	+gmail/[Gmail].Drafts 
+mailboxes	+gmail/[Gmail].Starred 
+mailboxes	+gmail/[Gmail].Bin 
+mailboxes	`echo $HOME/.mail/gmail/* | sed -e 's/ /\n/g' \
+		| sed -e '/INBOX/d' \
+		| sed -e '/^Mail/d' \
+		| sed -e '/Gmail/d' \
+		| sed -e '/eldalie/d' \
+		| sed -e '/openmoko/d' \
+		| sed -e '/uni-link-scienze-bari/d' \
+		| sed -e :a -e N -e 's/\n/ /' -e ta`
+
+set folder = $HOME/.mail/gmail
+set mbox="$HOME/.mail/gmail/INBOX"
+set trash=+[Gmail].Bin
+set postponed=+[Gmail].Drafts
+set smtp_url=smtps://user1@smtp.gmail.com
+set smtp_pass=$my_pass1
+
+unmy_hdr *
+my_hdr From: user1 <user1@gmail.com>
+my_hdr Reply-To: user1 <user1@inventati.org>
+my_hdr X-Disclaimer: Love - Peace - Freedom - Free Software
+my_hdr X-Mailer: Mutt http://www.mutt.org
+my_hdr X-GPG-Keynumber: XXXXXXXX
+my_hdr X-GPG-Fingerprint: XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX 
+my_hdr X-Advocacy: Who uses non-free software empoisons you too. Say him to stop.
+my_hdr X-GPG-Keyserver: http://pgp.zdv.uni-mainz.de:11371/pks/lookup?op=get&search=XXXXXXXXXXXX
+my_hdr X-URL: http://wwww.user1.org
+
+set editor="vim -S ~/Dropbox/backup_dell/sistema/rc/mutt/vim_mutt_commands"     # editor predefinito
+set signature=$HOME/Dropbox/backup_dell/firma.txt
+	
+## --> ark
+macro index ,au '<change-folder>=ark-users<enter>'
+macro index ,ad '<change-folder>=ark-dev<enter>'
+## --> gtalk logs
+macro index ,c '<change-folder>=[Gmail].Chats<enter>'
+## --> gfloss-arch
+macro index ,ga '<change-folder>=gfloss-arch<enter>'
+macro index -ga '<save-message>=gfloss-arch<enter>'
+## --> gfloss
+macro index ,gf '<change-folder>=gfloss<enter>'
+## --> inbox
+macro index -i '<save-message>=INBOX<enter>'
+macro index ,i '<change-folder>=INBOX<enter>'
+## --> lugs
+macro index ,l '<change-folder>=lugs<enter>'
+macro index -l '<save-message>?<return>4<return><return>5<return><return>'
+## --> mutt-users
+macro index ,m '<change-folder>=mutt-users<enter>'
+## --> notifiche
+macro index ,n '<change-folder>=notifiche<enter>'
+macro index -n '<save-message>=notifiche<enter>'
+## --> osm-it
+macro index ,o '<change-folder>=osm-it<enter>'
+macro index -o '<save-message>=osm-it<enter>'
+## --> sent mail
+macro index ,s "<change-folder>=[Gmail].Sent<tab><enter>"
+## --> osm-talk
+macro index -t '<save-message>=osm-talk<enter>'
+macro index ,t '<change-folder>=osm-talk<enter>'
+## --> ubuntu
+macro index ,u '<change-folder>=ubuntu<enter>'
+macro index -u '<save-message>=ubuntu<enter>'
+## --> wikimedia
+macro index ,w '<change-folder>=wikimedia<enter>'
+macro index -w '<save-message>=wikimedia<enter>'
+
+#### FOLDER-HOOKS (look & feel)	---------------------------------
+folder-hook .				'exec collapse-all'
+folder-hook [Gmail].lugs		'set index_format = "%35t %Z %{%d/%m/%y} %-25.25n %s"'
+folder-hook [Gmail].gfloss-arch		'set index_format = "%41t %Z %{%d/%m/%y} %-25.25n %s"'			# folder with many different MLs
+folder-hook [Gmail]..Gmail..Sent.Mail	'set sort=date sort=reverse-date'					# put most recent mail on top
+folder-hook [Gmail]..Gmail..Sent.Mail	'set index_format = "%40t %Z %{%d/%m/%y} %?X?[%X]&   ? %s"'
+folder-hook [Gmail].INBOX		'set index_format = "%3e %Z %{%d/%m/%y %R} %-25.25n %?X?[%X]&   ? %s"'
+
+set index_format = "%2M %Z %{%d/%m/%y} %-25.25n %?X?[%X]&   ? %s"
+set status_format = "%f [THIS MAILBOX -- Msgs:%?M?%M/?%m%?n? | New:%n?%?o? | Old:%o?%?d? | Del:%d?%?F? | Flag:%F?%?t? | Tag:%t?%?p? | Post:%p?%?b? | Dim:%l?] [ALL BOXES -- with news:%b]----%>-(%P)---"
+set pager_format = "[STATUS %Z] [THREAD:%e/%E] [INDEX:%C/%m] %-20.20n %s"
+
+#### GPG SETTINGS	-----------------------------------------
+# imposta firma automatica per tutte le cartelle
+set pgp_autosign=yes
+# quale chiave privata utilizzare per la firma
+set pgp_sign_as=0xXXXXXXXXX
+# firmare automaticamente la risposta ad una mail firmata (non efficace su messaggi cifrati *E* firmati)
+set pgp_replysign=yes				
+# cifra in automatico la risposta ad una mail cifrata
+set pgp_replyencrypt=yes						
+# firma automaticamente la risposta ad una mail cifrata; opera insieme a $pgp_replyencrypt: fa firmare i messaggi che automaticamente facciamo cifrare
+set pgp_replysignencrypted=yes
+# Firma usando il formato PGP/MIME, in funzione del destinatario
+send-hook .				'set pgp_autosign=yes'	# enables pgp_autosign after the unset for the following mails:
+send-hook 'lugbari@lists\.linux\.it'	'unset pgp_autosign'

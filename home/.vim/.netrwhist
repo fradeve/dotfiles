@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/fradeve/.newsbeuter'
+let g:netrw_dirhist_2='/home/fradeve/.bin'
+let g:netrw_dirhist_3='/home/fradeve/.config/tint2'
+let g:netrw_dirhist_4='/home/fradeve/.tmuxinator'
+let g:netrw_dirhist_5='/home/fradeve/.bin/tmux-powerline-custom'
+let g:netrw_dirhist_6='/home/fradeve/.bin/tmux-powerline-custom/themes'

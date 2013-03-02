@@ -1,0 +1,177 @@
+" vim: filetype=help modifiable noreadonly
+*tip.txt*			a file to help me remember some useful shortcuts
+
+Help on fradeve's custom Vim settings and plugins		*tip*
+
+1. General tips				|tip-general|
+2. UtilSnips shorts			|tip-snip|
+3. Command-t                |tip-commandt|
+4. TaskList                 |tip-task|
+5. TagBar                   |tip-tagbar|
+6. LaTeX shorts				|tip-latex|
+7. Project                  |tip-project|
+8. NERDCommenter            |tip-comment|
+9. EasyMotion               |tip-easymotion|
+
+How to read shortcuts:
+
+`C`                 Ctrl
+`C-j`               Ctrl+j
+`S-j`               Shift+j
+
+==============================================================================
+
+1. General tips					                		*tip-general*
+
+leader				default leader is backslash `\`
+
+quick help			open this file with `leader + h`
+
+spellcheck			]s		next misspelled word
+					[s		previous misspelled word
+					z=		view spelling suggestions for a mispelled word
+					zg		add a word to the dictionary
+					zug		undo the addition of a word to the dictionary
+
+splits              on      close all splits except current one (:only)
+                    `\C`      same as above
+
+text formatting		'!fmt -500'	formats textwidth using fmt Unix tool
+
+==============================================================================
+
+2. UtilSnips shorts										*tip-snip*
+
+use                 <tab>   in insert mode after the word
+jump next field     `C-j`   move cursor to the next fillable field
+
+The completion files and custom ones are in
+
+	$HOME/.vim/bundle/UltiSnips/UltiSnips
+
+==============================================================================
+
+3. Command-t                                            *tip-commandt*
+
+open                `\t`
+cancel search       `C-x`
+
+==============================================================================
+
+4. TaskList                                             *tip-task*
+
+open / close        `\l`
+
+==============================================================================
+
+5. TagBar                                               *tip-tagbar*
+
+open / close        `T` in visual mode
+
+==============================================================================
+
+6. LaTeX shorts											*tip-latex*
+
+enviroments			F5			on an empty line, inserts new environment,
+								selecting it from a list prompted on screen
+					F5			on a word, it creates the environment naming it
+								from the word
+					Shift+F5	on an environment, prompts an on-screen list to
+								change the name of the environment
+
+Alternatively, can type the following sequences in insert-mode:
+
+					EFL			flushleft
+					EFR			flushright
+					EEA			eqnarray
+					EEQ			equation
+					EQE			quote
+					EQN			quotation
+					ECE			center
+
+commands			F7			on an empty line, prompts an on-screen list to
+								select common commands
+					F7			on a word, uses that word to create a command
+								(eg. word --> \word{})
+					Shift+F7	on an existing command, changes the command name,
+								prompting an on-screen selection of common commands
+
+sections			In insert-mode, type these sequences to create sections:
+
+					SPA 		part
+					SCH 		chapter
+					SSE 		section
+					SSS 		subsection
+					SS2 		subsubsection
+					SPG 		paragraph
+					SSP 		subparagraph
+
+==============================================================================
+
+7. Project                                              *tip-project*
+
+project window      `\P`          open project window
+expand window       <space>     press when in window
+
+new project         `\C`          includes subdirectories
+                    `\c`          only current dir
+
+open file           `\T`          in new tab
+
+foldings            `zM`          close alla foldings
+
+howto       when starting a new project:
+            1. open the project window with cursor in it
+            2. press `\C` to recursively add files in subdirectories
+            3. define the project's absolute folder path
+            4. define the filter; to change the filter defined here you have
+               to cancel and recreate the project, adding again alla the files
+            5. define the working dir, usually `.` is fine
+
+custom      this plugin has been customized to open the vertical split on the
+            right.
+            - `let b:proj_locate_command` in source code has been modified
+              from
+
+                'silent! wincmd H'
+
+              to
+
+                'silent! wincmd L'
+            - custom .vimrc has some tweaks in the relative keybinding
+
+==============================================================================
+
+8. NERDCommenter                                        *tip-comment*
+
+comment             `\cc`
+
+toggle all          `\c<space>`
+
+toggle individual   `\ci`
+
+comment sexily      `\cs`         /* first line
+                                 * second line
+                                 */
+
+to EOL              `\c$`         comments to cursor until EOL
+
+append              `\cA`         append comments to the EOL and edits between them
+
+prepend             `\cI`         insert comment to the begining of line and
+                                edits between them
+==============================================================================
+
+9. EasyMotion                                           *tip-easymotion*
+
+show reference      `\\w`         and after just press the corresponding letter
+
+                    `\\W`         move to the WORD forward
+
+                    `\\b`         move to the word backward
+
+                    `\\B`         move to the WORD backward
+
+                    `\\e`         end of the word forward
+
+                    `\\E`         end of the WORD forward

@@ -1,0 +1,59 @@
+#### TODO ####
+# - fix sidebar folder list [muttrc][muttonrc]
+
+### 1 # Create folders
+################################################
+~/.mutt/		    to store mutt files
+~/.mail/		    to store mailboxes
+~/.mail/account1/	as defined in .offlineimaprc
+~/.mail/account2/	as above
+~/.offlineimap/		to store offlineimap running files
+
+### 2 # Install useful software
+################################################
+Packages to be installed on the system to run muttonrc and muttrc:
+
+%_SW_%		%_NOTES_%		        %_LINES ON  	| OFF_%     %_NOTES_%
+links		needs .mailcap  	    			|
+mpack			    	        line 159-160 	| 147-148       needs .mailcap
+goobook		with ~/.netrc   		line 31-31	| 31-32         with ~/.netrc
+aspell				    	        line 36		| 36
+vim		    needs vim_mutt_commands         	|               needs vim_mutt_commands
+gpg			    		            line 52		| 51
+urlview		needs .mailcap	    	line 101	| 100           needs .mailcap
+antiword	needs .mailcap	           			|               needs .mailcap
+shred				    	        line 154	| 143
+offlineimap	needs .offlineimaprc	    		|               
+a2ps + evince        				line 46		| 45
+sed				                    			|
+awk			                		line 119	| 117
+notmuch	& libmail-box-perl	        			|
+
+### 3 # Explaining files
+################################################
+
+* ~/.notmuch-config					helper script to notmuch
+* ~/.mutt/muttpass					contains pws to access IMAP accounts
+* ~/.offlineimaprc					contains pws and rules to sync IMAP accounts to $HOME/mail
+* ~/.mailcap						to open html and attachments
+* ~/.mutt/muttonrc					IMAP accounts mutt config file
+* ~/.mutt/muttrc					offlineIMAP accounts mutt config file
+* ~/.mutt/vim_mutt_commands				VIM commands before editing a mail in mutt
+* ~/.mutt/accounts/conf_off_fradeve11atgmaildotcom	offline configuration 1st account
+* ~/.mutt/accounts/conf_off_inventati			offline configuration 2nd account
+* ~/.mutt/accounts/conf_on_fradeve11atgmaildotcom	online configuration 1st account
+* ~/.mutt/accounts/conf_on_inventati			online configuration 2nd account
+
+### 4 # Edit crontab
+################################################
+ */5 * * * * /usr/bin/offlineimap -o -u Noninteractive.Basic
+
+### 5 # Adapt gpg.conf
+################################################
+In ~/.gnupg/gpg.conf you'll need the following options to be active:
+
+keyserver <keyserver address>
+keyserver-options auto-key-retrieve
+
+### 6 # fix .netrc permissions
+chmod 600 ~/.netrc
