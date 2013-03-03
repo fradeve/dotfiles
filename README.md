@@ -16,6 +16,7 @@ The following software is dotfiled in this repo:
 * mutt
 * newsbeuter
 * ncmpcpp
+* offlineimap
 * tmux
 * tmux-powerline / rainbarf
 * tint2

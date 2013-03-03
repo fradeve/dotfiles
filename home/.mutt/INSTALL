@@ -30,7 +30,7 @@ notmuch	& libmail-box-perl		|
 ################################################
 
 * ~/.notmuch-config					helper script to notmuch
-* ~/.mutt/muttpass					contains pws to access IMAP accounts
+* ~/.keys/mutt/muttpass				contains pws to access IMAP accounts
 * ~/.offlineimaprc					contains pws and rules to sync IMAP accounts to $HOME/mail
 * ~/.mailcap						to open html and attachments
 * ~/.mutt/muttonrc					IMAP accounts mutt config file
@@ -52,6 +52,15 @@ In ~/.gnupg/gpg.conf you'll need the following options to be active:
 keyserver <keyserver address>
 keyserver-options auto-key-retrieve
 
-### 6 # fix .netrc permissions
+### 6 # Passwords 
 ################################################
-chmod 600 ~/.netrc
+
+apply correct permissions to `.netrc`
+
+    chmod 600 ~/.netrc
+
+password for softwares working with Mutt are stored as follows
+
+mutt            from .keys/mutt/passw                                                                                                                                               
+offlineimap     from .keys/offlineimap/gmail, etc
+goobook         from .netrc

@@ -116,8 +116,8 @@ hdr_order Subject: Date: From: Reply-To: To: Cc: Bcc: X-Operating-System: X-Mail
 #-----------------------------------------------------
 # Process the password file first
 #-----------------------------------------------------
-set my_pass1=`awk '/fradeve_gmail:/ {print $2}' ~/.mutt/muttpass`
-set my_pass2=`awk '/fradeve_inventati:/ {print $2}' ~/.mutt/muttpass`
+set my_pass1=`awk '/fradeve_gmail:/ {print $2}' ~/.keys/mutt/muttpass`
+set my_pass2=`awk '/fradeve_inventati:/ {print $2}' ~/.keys/mutt/muttpass`
 
 #-----------------------------------------------------
 # Folders, mailboxes and folder hooks
