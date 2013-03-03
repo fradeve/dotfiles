@@ -1,0 +1,43 @@
+### 1 # Create folders
+################################################
+
+Since tmux-powerline isn't in Arch repos, you will need to clone it somewhere in a folder
+
+    mkdir ~/.bin
+    cd ~/.bin
+    git clone git://github.com/erikw/tmux-powerline.git
+
+We'll have
+
+~/.bin/tmux-powerline                   to store the original software
+~/.bin/tmux-powerline-custom/segments   to store custom segments
+~/.bin/tmux-powerline-custom/themes     to store custom themes
+
+### 2 # Edit settings
+################################################
+
+Edit `~/.tmux-powerlinerc` and define the custom settings folder
+
+	export TMUX_POWERLINE_DIR_USER_THEMES="/home/fradeve/.bin/tmux-powerline-custom/themes"
+	export TMUX_POWERLINE_DIR_USER_SEGMENTS="/home/fradeve/.bin/tmux-powerline-custom/segments"
+
+    cp ~/.bin/tmux-powerline/themes/default.sh ~/.bin/tmux-powerline-custom/themes/fradeve.sh
+
+and edit `fradeve.sh` with your custom settings.
+
+### 3 # Install useful software
+################################################
+
+%_SW_%		    %_NOTES_%
+tmux
+libmpdclient
+rainbarf
+
+### 4 # Explaining files
+################################################
+
+~/.rainbarf.conf                                rainbarf configuration file
+~/.tmux-powerlinerc                             tmux-powerline config file with personal data and settings for
+                                                each segment
+~/.bin/tmux-powerline-custom/themes/fradeve.sh  defines which segments should be enabled and some
+                                                appearence settings
