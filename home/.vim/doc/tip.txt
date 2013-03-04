@@ -12,6 +12,7 @@ Help on fradeve's custom Vim settings and plugins		*tip*
 7. Project                  |tip-project|
 8. NERDCommenter            |tip-comment|
 9. EasyMotion               |tip-easymotion|
+10. VAM Plugins             |tip-plugins|
 
 How to read shortcuts:
 
@@ -67,6 +68,20 @@ open / close        `\l`
 5. TagBar                                               *tip-tagbar*
 
 open / close        `T` in visual mode
+
+howto               install needed packages
+
+                        yaourt -S doctorjs ctags
+
+                    edit `~/.bashrc`
+
+                        export NODE_PATH=/usr/lib/jsctags:$NODE_PATH
+
+                    relevant settings in `.vimrc`
+
+                        let g:tagbar_type_javascript = {
+                            \ 'ctagsbin' : '/usr/bin/jsctags'
+                            \ }
 
 ==============================================================================
 
@@ -129,8 +144,9 @@ howto       when starting a new project:
             5. define the working dir, usually `.` is fine
 
 custom      this plugin has been customized to open the vertical split on the
-            right.
-            - `let b:proj_locate_command` in source code has been modified
+            right:
+
+            * `let b:proj_locate_command` in source code has been modified
               from
 
                 'silent! wincmd H'
@@ -138,7 +154,8 @@ custom      this plugin has been customized to open the vertical split on the
               to
 
                 'silent! wincmd L'
-            - custom .vimrc has some tweaks in the relative keybinding
+            
+            * custom .vimrc has some tweaks in the relative keybinding
 
 ==============================================================================
 
@@ -175,3 +192,11 @@ show reference      `\\w`         and after just press the corresponding letter
                     `\\e`         end of the word forward
 
                     `\\E`         end of the WORD forward
+
+==============================================================================
+
+10. Vim-Addon-Manager plugins                                      *tip-plugins*
+
+update VAM plugins	`:UpdateActivatedAddons`
+
+install             `:InstallAddons`
