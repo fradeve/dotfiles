@@ -54,6 +54,11 @@ The completion files and custom ones are in
 
 3. Command-t                                            *tip-commandt*
 
+if plugin complains about not compiled C executable:
+
+    cd .vim/bundle/Command-t
+    rake make
+
 open                `\t`
 cancel search       `C-x`
 

@@ -1,0 +1,5 @@
+This MPD configuration depends on the following packages:
+
+* ffmpeg
+* mpc
+* mpdscribble
