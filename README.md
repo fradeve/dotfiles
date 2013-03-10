@@ -13,6 +13,7 @@ The following software is dotfiled in this repo:
 
 * konsole
 * latexmk
+* mpd
 * mutt
 * newsbeuter
 * ncmpcpp
