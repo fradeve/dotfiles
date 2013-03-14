@@ -22,7 +22,7 @@
 " options for vim-addon-manager
 
     set runtimepath+=~/.vim/bundle/vim-addon-manager
-    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "Powerline", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion"])
+    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "Powerline", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim"])
 
 " This makes vim invoke Latex-Suite when you open a tex file.
 
