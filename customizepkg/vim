@@ -1,0 +1,19 @@
+# This is an example of config file for customizepkg
+#  Copy this file in /etc/customizepkg.d/mplayer to use it
+#
+# syntax works like this:
+#ACTION CONTEXT PATTERN VALUE 
+#
+#Action can be: remove, add or replace
+#Context can be: depends, conflicts, makedepends etc.. or global for matching regexp in the all PKGBUILD
+#Pattern can be any rexgexp 
+#Value (optionnal) can be any string 
+#
+
+replace#global#--disable-pythoninterp#--enable-pythoninterp
+replace#global#--disable-rubyinterp#--enable-rubyinterp
+
+add#source#vim-7.3-breakindent-tmh.patch::http://raw.github.com/tmhedberg/vim-tmh-hg/master/vim-7.3-breakindent-tmh.patch
+add#md5sums#f64d88f11a287d0ded23b89df4e1697f
+
+replace#global#cp -a vim-build gvim-build#patch -d vim-build -p1 <$srcdir/vim-7.3-breakindent-tmh.patch; cp -a vim-build gvim-build
