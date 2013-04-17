@@ -19,6 +19,7 @@ call vam#ActivateAddons(["LaTeX-Suite_aka_Vim-LaTeX"], {"force_loading_plugins_n
     " commands
 
         let g:Tex_Com_includegraphics = "\\includegraphics[width=<+n+>\\<+text|line|page+>width]{<+file+>}"
+        let g:Tex_Com_subfloat = "\\subfloat[<+caption+>]{\\label{fig:<++>}\\includegraphics[width=<+width+>\\<+text|line|page+>width]{<+file+>}}\\hfill"
 
     " environments
 
@@ -29,9 +30,9 @@ call vam#ActivateAddons(["LaTeX-Suite_aka_Vim-LaTeX"], {"force_loading_plugins_n
         let g:Tex_Env_table = "\\begin{table}\<CR>\\centering\<CR>\\begin{tabular}{*{<+n.cols+>}{m{<+col.width+>\\<+text|line|page|width+>}}}\<CR>\\toprule\<CR><++> & <++>\\\\\<CR>\\cmidrule{<+from+>-<+to+>}\<CR><++> & <++>\\\\\<CR>\\otoprule\<CR><++> & <++>\\\\\<CR>\\bottomrule\<CR>\\end{tabular}\<CR>\\caption[<+list+>]{<+caption+>}\<CR>\\label{fig:<++>}\<CR>\\end{table}"
 
         " subfigure
-        let g:Tex_Env_subfloat = "\\begin{figure}\<CR>\\centering\<CR>\\subfloat[<+caption+>]{\\label{fig:<++>}\\includegraphics[width=\\<+text|line|page|width+>]{<+file+>}}\\hfill\<CR>\\subfloat[<+caption+>]{\\label{fig:<++>}\\includegraphics[width=\\<+text|line|page|width+>]{<+file+>}}\\hfill\<CR>\\end{figure}"
+        let g:Tex_Env_subfig = "\\begin{figure}\<CR>\\centering\<CR>\\subfloat[<+caption+>]{\\label{fig:<++>}\\includegraphics[width=<+width+>\\<+text|line|page+>width]{<+file+>}}\\hfill\<CR>\\subfloat[<+caption+>]{\\label{fig:<++>}\\includegraphics[width=<+width+>\\<+text|line|page+>width]{<+file+>}}\\hfill\<CR>\\end{figure}"
 
     " prompts
 
         " environments
-        let g:Tex_PromptedEnvironments = 'eqnarray*,eqnarray,equation,equation*,\[,$$,align,align*,figure,table,subfloat'
+        let g:Tex_PromptedEnvironments = 'eqnarray*,eqnarray,equation,equation*,\[,$$,align,align*,figure,table,subfig'
