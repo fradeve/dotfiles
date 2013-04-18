@@ -11,7 +11,7 @@ new_window "irssi"
 #split_h 50
 
 # Run commands.
-run_cmd "irssi"     # runs in active pane
+run_cmd "screen irssi"     # runs in active pane
 #run_cmd "date" 1  # runs in pane 1
 
 # Paste text

@@ -22,7 +22,7 @@
 " options for vim-addon-manager
 
     set runtimepath+=~/.vim/bundle/vim-addon-manager
-    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "Powerline", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim"])
+    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "Powerline", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim", "The_NERD_tree", "vim-nerdtree-tabs"])
 
 " This makes vim invoke Latex-Suite when you open a tex file.
 
@@ -183,3 +183,12 @@
 
     hi link EasyMotionTarget ErrorMsg
     hi link EasyMotionShade  Comment
+
+" [NERD Tree]
+
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    let g:NERDTreeWinPos = "right"
+
+" [NERD Tree Tabs]
+
+    map <Leader>P :NERDTreeTabsToggle<CR>

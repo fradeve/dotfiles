@@ -8,13 +8,12 @@
 " useful plugins
 " ==============
 
-call vam#ActivateAddons(["ctags%610", "Tagbar", "tlib", "TaskList", "Better_Javascript_Indentation", "L9", "AutoComplPop", "UltiSnips", "project.tar.gz", "simple-pairs"], {"force_loading_plugins_now": 1})
+call vam#ActivateAddons(["ctags%610", "Tagbar", "tlib", "TaskList", "Better_Javascript_Indentation", "L9", "AutoComplPop", "UltiSnips", "simple-pairs"], {"force_loading_plugins_now": 1})
 
-" [Project]
+" [NERD Tree]
 
-    let g:proj_flags="imstvcg"
-    let g:proj_window_width="35"
-    nmap <silent> <Leader>P :Project<CR>:wincmd L<CR>zM<CR>
+    autocmd vimenter * NERDTree
+    autocmd vimenter * if !argc() | NERDTree | endif
 
 " [UtilSnips]
 

@@ -1,19 +1,19 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-window_root "/home/fradeve/git/sipontomedievale"
+window_root "/home/fradeve/DATA/Dropbox/documenti/scuole/university/fare/arte_moderna/riassunti/opere"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
 #new_window "foo"
 
-select_window oia-l
+select_window arte
 
 # Split window into panes.
-split_h 40
+split_h 30
 
 # Run commands.
-run_cmd "vagup && vagrant ssh"                                      #   second pane
-run_cmd "cd /home/fradeve/git/sipontomedievale/sip-site && vim"     1   # first pane
+run_cmd "cd /home/fradeve/DATA/Dropbox/documenti/scuole/university/fare/arte_moderna/riassunti/opere && makelatex opere.tex"    #
+run_cmd "cd /home/fradeve/DATA/Dropbox/documenti/scuole/university/fare/arte_moderna/riassunti/opere && vim"                    1
 
 # Paste text
 #send_keys "top"    # paste into active pane

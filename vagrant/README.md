@@ -22,3 +22,8 @@ tmuxifier
 
 	git clone https://github.com/jimeh/tmuxifier.git ~/.bin/tmuxifier
 	ln -s ~/.dotfiles/vagrant/.tmuxifier .
+
+multitail
+---------
+
+    ln -s ~/.dotfiles/vagrant/.multitailrc ~/.

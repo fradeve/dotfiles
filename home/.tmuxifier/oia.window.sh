@@ -10,7 +10,7 @@ window_root "~/git/sipontomedievale"
 #split_h 40
 
 # Run commands.
-run_cmd "vim"     # runs in active pane
+run_cmd "cd /home/fradeve/git/sipontomedievale/sip-site && vim"   # runs in active pane
 #run_cmd "vagrant ssh" 1  # runs in pane 1
 
 # Paste text
