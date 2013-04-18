@@ -20,6 +20,7 @@ The following software is dotfiled in this repo:
 * offlineimap
 * tmux
 * tmux-powerline / rainbarf
+* tmuxifier
 * tint2
 * vim
 * xbindkeys
