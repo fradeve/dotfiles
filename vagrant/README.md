@@ -12,10 +12,10 @@ tmux
 
 	ln -s ~/dotfiles/home/.tmux.conf ~/.
 
-tmuxinator
-----------
+tmuxifier
+---------
 
-	gem install tmuxinator
+    git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
 
 git
 ---

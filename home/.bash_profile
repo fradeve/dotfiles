@@ -2,6 +2,9 @@
 # ~/.bash_profile
 #
 
+## tmuxifier
+[[ -s "$HOME/.tmuxifier/init.sh" ]] && source "$HOME/.tmuxifier/init.sh"
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
@@ -25,6 +28,8 @@ if [ "$TERM" != "dumb" ]; then
     alias dati='gpg -d $HOME/DATA/Dropbox/documenti/dati.csv.gpg | grep '
     alias oblique='sh /opt/oblique'
     alias music='sh /home/fradeve/.bin/music'
+
+    alias mux='tmuxifier load-session base'
 
 ## wm
     alias vagup='vagrant up'
