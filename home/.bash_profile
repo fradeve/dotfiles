@@ -2,9 +2,6 @@
 # ~/.bash_profile
 #
 
-## tmuxifier
-[[ -s "$HOME/.tmuxifier/init.sh" ]] && source "$HOME/.tmuxifier/init.sh"
-
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
@@ -29,7 +26,10 @@ if [ "$TERM" != "dumb" ]; then
     alias oblique='sh /opt/oblique'
     alias music='sh /home/fradeve/.bin/music'
 
+## alias tmux
     alias mux='tmuxifier load-session base'
+    alias muxoia='tmux rename-window oia && tmuxifier load-window oia'
+    alias muxoial='tmux rename-window oia-l && tmuxifier load-window oia-l'
 
 ## wm
     alias vagup='vagrant up'
@@ -51,6 +51,11 @@ export PATH=/home/fradeve/.bin:${PATH}
 
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.0.0/bin:${PATH}
+
+## tmuxifier
+export TMUXIFIER="$HOME/.bin/tmuxifier"                         # main executable / git repo
+export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier"                 # layouts rc dir
+[[ -s "$TMUXIFIER/init.sh" ]] && source "$TMUXIFIER/init.sh"    # init file
 
 ### CODE FOR $PS1 ###
 #####################
