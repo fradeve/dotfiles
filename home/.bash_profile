@@ -24,21 +24,18 @@ if [ "$TERM" != "dumb" ]; then
     alias irssi='screen irssi'
     alias dati='gpg -d $HOME/DATA/Dropbox/documenti/dati.csv.gpg | grep '
     alias oblique='sh /opt/oblique'
-    alias music='sh /home/fradeve/.bin/music'
 
 ## alias tmux
+    alias music='tmux rename-window music && sh /home/fradeve/.bin/music'
     alias mux='tmuxifier load-session base'
-    alias muxoia='tmux rename-window oia && tmuxifier load-window oia'
-    alias muxoial='tmux rename-window oia-l && tmuxifier load-window oia-l'
-
-## wm
-    alias vagup='vagrant up'
-    alias vaghalt='vagrant halt'
 
 ## gtd
     alias t='cat /home/fradeve/DATA/Dropbox/apps/todo/remember && todo.sh -d /home/fradeve/.todo.cfg'
     export TODOTXT_DEFAULT_ACTION=ls
 fi
+
+## crontab editor
+export VISUAL=vim
 
 ## TexLive executables
 export PATH=/usr/local/texlive/2012/bin/x86_64-linux:${PATH}
@@ -56,6 +53,9 @@ export PATH=/home/fradeve/.gem/ruby/2.0.0/bin:${PATH}
 export TMUXIFIER="$HOME/.bin/tmuxifier"                         # main executable / git repo
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier"                 # layouts rc dir
 [[ -s "$TMUXIFIER/init.sh" ]] && source "$TMUXIFIER/init.sh"    # init file
+
+## fabric
+export PYTHONDONTWRITEBYTECODE=True  # in python2 avoid creation of .pyc
 
 ### CODE FOR $PS1 ###
 #####################
