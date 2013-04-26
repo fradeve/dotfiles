@@ -6,14 +6,13 @@ window_root "/home/fradeve/git/sipontomedievale"
 # layout file name.
 #new_window "foo"
 
-select_window oia-l
+select_window oial
 
 # Split window into panes.
+run_cmd "cd /home/fradeve/git/sipontomedievale/sip-site && vim"
 split_h 40
-
-# Run commands.
-run_cmd "vagup && vagrant ssh"                                      #   second pane
-run_cmd "cd /home/fradeve/git/sipontomedievale/sip-site && vim"     1   # first pane
+run_cmd "vagrant up && vagrant ssh"
+split_v 20
 
 # Paste text
 #send_keys "top"    # paste into active pane

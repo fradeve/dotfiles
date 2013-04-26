@@ -67,6 +67,10 @@ call vam#ActivateAddons(["ctags%610", "Tagbar", "tlib", "TaskList", "Better_Java
 " general options
 " ===============
 
+" highlight from 81th column and from 'dangerous' 120th col
+    
+    let &colorcolumn="80,".join(range(120,999),",")
+
 " move among files using CTRL+left or CTRL+right
 
     map <silent><C-Left> <C-T>
