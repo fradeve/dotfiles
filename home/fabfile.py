@@ -68,6 +68,41 @@
 # 3. after, it tries to import the previously generated `server_settings.yaml`
 #    which contains settings to connect to external servers.
 #
+# More functions
+# --------------
+#
+# per-server commands       in `server_config.yaml` a `postcmd` field is defined: inside
+#                           this, every nested `cmd` field can bring a command. When calling
+#       `_postcmd` function, all commands in `postcmd` will be executed subsequently, 
+#       allowing to define a custom sequence of commands and keeping a custom function as
+#       server-agnostic as possible. Sudo is automagically wrapped in Fabric's `sudo()`
+#
+#       ## `server_config.yaml`
+#       server1:
+#           host    :   "myip"
+#           user    :   "duck"
+#           password:   "duck"
+#           postcmd :
+#               cmd :   "sudo chmod a+x public_html/project1/proxy.cgi"
+#
+#       ## `fabfile.py`
+#       def rsync():
+#           rsync_project(
+#                   remote_dir=env.deploydir,
+#                   exclude=("server_config.yaml", ".gitignore", "*.pyc")
+#           )
+#           _postcmd()
+#
+#       ## giving `fab s:server1 rsync` we get:
+#       1 - syncing local project folder with `duck@myip:deploydir` defined in
+#           `server_config.yaml`
+#       2 - after rsync, che `sudo chown ...` command is executed
+# 
+#
+# deployed dir auto-chown   If both `deployuser` and `deploygroup` are set `in server_config`,
+#                           the `_chowndeploy` command auto-chown the deployed dir on the
+#                           server with user and group defined.
+#
 # Examples
 # --------
 #
@@ -123,6 +158,7 @@ from fabric.utils import puts
 from fabric import colors
 import fabric.network
 import fabric.state
+from fabric.contrib.project import rsync_project
 
 
 YAML_AVAILABLE = True
@@ -197,18 +233,28 @@ files = { 'vagrantfile' :
                 'location'  :   '',
                 'content'   :   ('*_test*\n' +
                                 '.vagrant*\n' +
-                                '*_local.py\n' +
+                                'server_config.yaml\n' +
                                 '*.pyc')
             },
           'serverconf'   :
             {
                 'name'      :   'server_config.yaml',
                 'location'  :   '',
-                'content'   :   ('"$servername":\n' +
-                                '\thost\t:\t"$serverhost"\n' + 
-                                '\tuser\t:\t"$serveruser"\n' +
-                                '\tport\t:\t"$serverport"\n' +
-                                '\tpassword:\t"$serverpassword"\n')
+                'content'   :   ('#TIPS\n' +
+                                '# - all values must be between quotation marks\n' +
+                                '# - all dirs must end with trailing slash\n' +
+                                '# - the postcmd value must be empty\n' +
+                                '"$servername":\n' +
+                                '    host        :  "$serverhost"\n' + 
+                                '    user        :  "$serveruser"\n' +
+                                '    port        :  "$serverport"\n' +
+                                '    password    :  "$serverpassword"\n' +
+                                '    deploydir   :  "$deploydir"\n' +
+                                '    deployuser  :  "$deployuser"\n' +
+                                '    deploygroup :  "$deploygroup"\n' +
+                                '    postcmd     :\n' +
+                                '        cmd     :  ""\n' +
+                                '        cmd2    :  ""')
             }
         }
 
@@ -438,6 +484,33 @@ def _setup(task):
         # fabric.network.disconnect_all()
     return task_with_setup
 
+def _chowndeploy():
+    """If both `deployuser` and `deploygroup` are set in server_config, chown the
+    deployed folder with these settings"""
+    deployprojdir = env.deploydir + os.getcwd().rsplit('/',1)[1]
+    if env.deployuser and env.deploygroup:
+        try:    # TODO better error handling
+            run('chown -R %s:%s %s' %(env.deployuser,env.deploygroup,deployprojdir))
+        except:
+            print 'Got an error!'
+    else:
+        print colors.red('Tried to chown, but settings are not defined.')
+
+def _postcmd():
+    """Searches for `postcmd` field in server_config and executes the commands,
+    stripping out sudo from raw command and wrapping with Fabric's sudo() if needed"""
+    if env.postcmd:
+        for cmd in env.postcmd:
+            if env.postcmd[cmd]:
+                if env.postcmd[cmd].split()[0] == 'sudo':
+                    sudo(env.postcmd[cmd].split(' ',1)[1])
+                else:
+                    run(env.postcmd[cmd])
+            else:
+                print colors.red('No postcmd found.')
+    else:
+        print colors.red('No postcmd found.')
+
 #############################
 #          TASKS            #
 #############################
@@ -445,6 +518,15 @@ def _setup(task):
 @_setup
 def uname():
     run('uname -a')
+
+@_setup
+def rsync():
+    rsync_project(
+            remote_dir=env.deploydir,
+            exclude=("server_config.yaml", ".gitignore", "*.pyc")
+            )
+    _chowndeploy()
+    _postcmd()
 
 def load(projname):
     """Loads per-prpject tmux windows configuration."""
