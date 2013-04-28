@@ -103,6 +103,11 @@
 #                           the `_chowndeploy` command auto-chown the deployed dir on the
 #                           server with user and group defined.
 #
+# add gitinfo               Adding the `_gitinfo` function to you deploy command will create
+#                           on the server's deployed dir a file (`gitinfo`) with the specs from
+#       the latest commit. When (r)syncing the project with the server this is useful to track
+#       what git revision has been synced.
+#
 # Examples
 # --------
 #
@@ -204,6 +209,8 @@ TMUXIFIER = '/home/' + getpass.getuser() + '/.tmuxifier/'
 VIMRCS = '/home/' + getpass.getuser() + '/.vim/rc/'
 # default project dir
 PRJDIR = '/home/' + getpass.getuser() + '/git/'
+# default exclude list when using rsync
+RSYNCEXCLUDE = ["server_config.yaml", ".gitignore", ".gitmodules", "*.pyc", ".git", ".vagrant"]
 
 # rc files templates
 
@@ -252,6 +259,7 @@ files = { 'vagrantfile' :
                                 '    deploydir   :  "$deploydir"\n' +
                                 '    deployuser  :  "$deployuser"\n' +
                                 '    deploygroup :  "$deploygroup"\n' +
+                                '    ignore      :  "$ignore"\n' +
                                 '    postcmd     :\n' +
                                 '        cmd     :  ""\n' +
                                 '        cmd2    :  ""')
@@ -409,7 +417,7 @@ def s(*args, **kwargs):
     servers = _load_config(**kwargs)
     try:
         servers.update(vagenv)
-        print 'Added vagrant config'
+        print colors.green('Added vagrant config')
     except NameError:
         pass
     # If no arguments were recieved, print a message with a list of available configs.
@@ -484,13 +492,17 @@ def _setup(task):
         # fabric.network.disconnect_all()
     return task_with_setup
 
+def _rootprj():
+    """Returns current project root dir."""
+    return os.getcwd().rsplit('/',1)[1]
+
 def _chowndeploy():
     """If both `deployuser` and `deploygroup` are set in server_config, chown the
-    deployed folder with these settings"""
-    deployprojdir = env.deploydir + os.getcwd().rsplit('/',1)[1]
+    deployed folder with these settings, using sudo."""
+    deployprojdir = env.deploydir + _rootprj()
     if env.deployuser and env.deploygroup:
-        try:    # TODO better error handling
-            run('chown -R %s:%s %s' %(env.deployuser,env.deploygroup,deployprojdir))
+        try:
+            sudo('chown -R %s:%s %s' %(env.deployuser,env.deploygroup,deployprojdir))
         except:
             print 'Got an error!'
     else:
@@ -498,7 +510,7 @@ def _chowndeploy():
 
 def _postcmd():
     """Searches for `postcmd` field in server_config and executes the commands,
-    stripping out sudo from raw command and wrapping with Fabric's sudo() if needed"""
+    stripping out sudo from raw command and wrapping with Fabric's sudo() if needed."""
     if env.postcmd:
         for cmd in env.postcmd:
             if env.postcmd[cmd]:
@@ -511,6 +523,15 @@ def _postcmd():
     else:
         print colors.red('No postcmd found.')
 
+def _addgitinfo():
+    """Adds to deployed project root directory a file containing info on the latest commit"""
+    gitlog = local('git log --format=fuller -n1', capture=True)
+    f = open('/tmp/gitinfo', 'w')
+    f.write(gitlog)
+    f.close()
+    put('/tmp/gitinfo', '%s%s/gitinfo' %(env.deploydir, _rootprj()))
+    print colors.green('Added %s%s/gitinfo') %(env.deploydir, _rootprj())
+
 #############################
 #          TASKS            #
 #############################
@@ -521,11 +542,19 @@ def uname():
 
 @_setup
 def rsync():
+    if env.ignore:
+        try:
+            excluded = RSYNCEXCLUDE + env.ignore.split()
+            print (colors.green("I'm excluding from sync: %s.") %excluded)
+        except:
+            print colors.red('Tried to update list of exclude, but failed')
     rsync_project(
-            remote_dir=env.deploydir,
-            exclude=("server_config.yaml", ".gitignore", "*.pyc")
+            remote_dir = env.deploydir,
+            exclude = excluded,
+            extra_opts = '--delete --delete-excluded'
             )
     _chowndeploy()
+    _addgitinfo()
     _postcmd()
 
 def load(projname):

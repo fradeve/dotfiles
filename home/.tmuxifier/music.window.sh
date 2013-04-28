@@ -4,14 +4,14 @@
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "dev"
+#new_window "music"
 
 # Split window into panes.
 #split_v 20
 #split_h 50
 
 # Run commands.
-run_cmd ""     # runs in active pane
+run_cmd "sh /home/fradeve/.bin/music"     # runs in active pane
 #run_cmd "date" 1  # runs in pane 1
 
 # Paste text
