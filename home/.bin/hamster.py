@@ -11,35 +11,35 @@ import re, os, string
 
 class AddActivity (Action):
     def __init__(self):
-		Action.__init__(self, _("Add Hamster activity"))
+        Action.__init__(self, _("Add Hamster activity"))
 
-	def has_result(self):
-		return True
+    def has_result(self):
+        return True
 
-	def activate(self, leaf):
-		argv = ['hamster start ', '"', ', ', '"']
-		fragments = re.split('(\W)', leaf.object)
-		i = 0
-		for item in fragments[1:]:
-			i = i + 1
-			if str(item) == '@':
-				argv.insert(2, (str(item) + fragments[i+1]))
-			elif str(item) == '#':
-				argv.insert(4, (str(item) + fragments[i+1] + ','))
-			elif str(item) == '!':
-				actdesc = fragments[i+1]
-			else:
-				pass
-		argv.insert(2, fragments[0])
+    def activate(self, leaf):
+        argv = ['hamster start ', '"', ', ', '"']
+        fragments = re.split('(\W)', leaf.object)
+        i = 0
+        for item in fragments[1:]:
+            i = i + 1
+            if str(item) == '@':
+                argv.insert(2, (str(item) + fragments[i+1]))
+            elif str(item) == '#':
+                argv.insert(4, (str(item) + fragments[i+1] + ','))
+            elif str(item) == '!':
+                actdesc = fragments[i+1]
+            else:
+                pass
+        argv.insert(2, fragments[0])
 
-		print string.join(argv, '')
-		os.system(string.join(argv, ''))
+        print string.join(argv, '')
+        os.system(string.join(argv, ''))
 
-	def item_types(self):
-		yield TextLeaf
+    def item_types(self):
+        yield TextLeaf
 
-	def get_description(self):
-		return __description__
+    def get_description(self):
+        return __description__
 
-	def get_icon_name(self):
-		return "hamster-time-tracker"
+    def get_icon_name(self):
+        return "hamster-time-tracker"
