@@ -79,6 +79,13 @@ set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --batch --quiet --no-ve
 set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
 set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
 
+# auto sign when replying to signed message
+set pgp_replysign=yes
+# auto encrypt when replying to encrypted message
+set pgp_replyencrypt=yes
+# auto sign when replying to encrypted message (cohoperates with pgp_replysign)
+set pgp_replysignencrypted=yes
+
 #-----------------------------------------------------
 # Mutt-patched sidebar
 #-----------------------------------------------------

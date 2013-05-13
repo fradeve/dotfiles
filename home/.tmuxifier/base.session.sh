@@ -13,7 +13,7 @@ if initialize_session "base"; then
   load_window "mutt"
   load_window "irssi"
   load_window "rss"
-  load_window "music"
+  load_window "ncmpcpp"
 
   # Select the default active window on session creation.
   select_window 1

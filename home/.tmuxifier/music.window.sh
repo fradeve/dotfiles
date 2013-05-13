@@ -6,6 +6,8 @@
 # layout file name.
 #new_window "music"
 
+select_window music
+
 # Split window into panes.
 #split_v 20
 #split_h 50
