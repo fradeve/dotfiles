@@ -27,7 +27,8 @@ class AddActivity (Action):
             elif str(item) == '#':
                 argv.insert(4, (str(item) + fragments[i+1] + ','))
             elif str(item) == '!':
-                actdesc = fragments[i+1]
+                actdesc = (fragments[i+1] + ' ')
+                argv.insert(4, actdesc)
             else:
                 pass
         argv.insert(2, fragments[0])
