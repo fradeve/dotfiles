@@ -98,6 +98,18 @@
     m:0x40 + c:26
     Mod4 + e
 
+"yakuake"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+"kupfer"
+    m:0x40 + c:133
+    Mod4 + Super_L
+
+"kupfer"
+    m:0x4 + c:94
+    Control + less
+
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
 #

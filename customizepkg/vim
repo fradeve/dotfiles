@@ -13,7 +13,7 @@
 replace#global#--disable-pythoninterp#--enable-pythoninterp
 replace#global#--disable-rubyinterp#--enable-rubyinterp
 
-add#source#vim-7.3-breakindent-tmh.patch::http://raw.github.com/tmhedberg/vim-tmh-hg/master/vim-7.3-breakindent-tmh.patch
-add#md5sums#f64d88f11a287d0ded23b89df4e1697f
+add#source#vim-7.3-breakindent-tmh.patch::https://raw.github.com/tmhedberg/vim-tmh-hg/master/breakindent.patch
+add#md5sums#4c6afdc2cdef87f28983c2dfe28863f8
 
 replace#global#cp -a vim-build gvim-build#patch -d vim-build -p1 <$srcdir/vim-7.3-breakindent-tmh.patch; cp -a vim-build gvim-build

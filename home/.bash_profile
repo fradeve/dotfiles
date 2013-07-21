@@ -15,7 +15,7 @@ if [ "$TERM" != "dumb" ]; then
     alias pong='ping www.google.it' 
 
 ## latex / vim
-    alias sutlmgr='sudo /usr/local/texlive/2012/bin/x86_64-linux/tlmgr'
+    alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
     alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
 ## alias mutt / IM
@@ -26,7 +26,6 @@ if [ "$TERM" != "dumb" ]; then
     alias oblique='sh /opt/oblique'
 
 ## alias tmux
-    alias music='tmux rename-window music && sh /home/fradeve/.bin/music'
     alias mux='tmuxifier load-session base'
 
 ## gtd
@@ -38,7 +37,7 @@ fi
 export VISUAL=vim
 
 ## TexLive executables
-export PATH=/usr/local/texlive/2012/bin/x86_64-linux:${PATH}
+export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
 
 ## doctorjs Arch
 export NODE_PATH=/usr/lib/jsctags:$NODE_PATH
@@ -56,6 +55,12 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier"                 # layouts rc dir
 
 ## fabric
 export PYTHONDONTWRITEBYTECODE=True  # in python2 avoid creation of .pyc
+
+## python virtualenvwrapper
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export WORKON_HOME=~/.virtualenvs
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+source /usr/bin/virtualenvwrapper.sh
 
 ### CODE FOR $PS1 ###
 #####################

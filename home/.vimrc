@@ -10,6 +10,9 @@
     set nobackup
     set noswapfile
 
+" allow editing files using sudo without reopening Vim
+    cmap w!! %!sudo tee > /dev/null %
+
 " fix tmux arrowkeys behaviour
 
     if &term =~ '^screen'

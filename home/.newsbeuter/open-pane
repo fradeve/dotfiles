@@ -1,9 +1,6 @@
-# this script is taken from
-# http://wtf.cyprio.net/using-newsbeuter-with-tmux-and-w3m-to-read-news
-#
 #!/bin/sh
 
-BROWSER='/usr/bin/elinks'
+W3M='/usr/bin/elinks'
 
 # If the window has only one pane, create one by splitting.
 pane_count=`tmux list-panes -F '#{line}' | wc -l`
@@ -13,13 +10,13 @@ fi
 
 # Start my reader if it ain't running already, and send it the URL to
 # open.
-w3m_process_count=`ps auxw | grep "$BROWSER" | grep -cv grep`
+w3m_process_count=`ps auxw | grep "$W3M" | grep -cv grep`
 if [ $w3m_process_count = '1' ];then
-    tmux send-keys -t 1 "TU" "C-u" "$1
-"
-    tmux select-pane -t 1
+    tmux send-keys -t base:3.2 "TU" "C-u" "$1"
+    tmux select-pane -t 2
+    tmux send -t base:3.2 Enter
 else
-    tmux send-keys -t 1 "$BROWSER \"$1\"
-"
-    tmux select-pane -t 1
+    tmux send-keys -t base:3.2 "$W3M \"$1\""
+    tmux select-pane -t 2
+    tmux send -t base:3.2 Enter
 fi

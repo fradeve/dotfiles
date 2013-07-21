@@ -71,11 +71,9 @@ set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --l
 # fetch keys
 set pgp_getkeys_command="/usr/bin/gpg --keyserver search.keyserver.net --recv-key %r"
 # create a pgp/mime encrypted attachment
-# set pgp_encrypt_only_command="pgpewrap gpg-2comp -v --batch --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
-set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_only_command="/usr/bin/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
 # create a pgp/mime encrypted and signed attachment
-# set pgp_encrypt_sign_command="pgpewrap gpg-2comp %?p?--passphrase-fd 0? -v --batch --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
-set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/bin/pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
 set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
 
 # auto sign when replying to signed message
@@ -88,10 +86,10 @@ set pgp_replysignencrypted=yes
 #-----------------------------------------------------
 # Mutt-patched sidebar
 #-----------------------------------------------------
-set sidebar_width=35			# larghezza della sidebar
-set sidebar_visible=no			# sidebar visible at startup
+#set sidebar_width=35			# larghezza della sidebar
+#set sidebar_visible=no			# sidebar visible at startup
 #set sidebar_sort=yes			# unchecked because sorting is manual ("mailboxes" command)
-color sidebar_new yellow default	# colore cartelle con nuovi messaggi
+#color sidebar_new yellow default	# colore cartelle con nuovi messaggi
 
 #-----------------------------------------------------
 # Look and feel
@@ -152,8 +150,9 @@ source $HOME/.mutt/accounts/conf_off_inventati
 bind compose p postpone-message			# when composing, pressing `p` postpones current msg
 bind index p recall-message			# in index, `p` recalls postponed messages
 
-# decrypt and show encrypted message
-macro pager G "v<return><save-message>/tmp/test<return> !gpg -d /tmp/test && shred /tmp/test<return>q"
+# GPG
+macro pager G "v<return><save-message>/tmp/test<return> !gpg -d /tmp/test && shred /tmp/test<return>q"  # decrypt and show encrypted message
+bind compose P pgp-menu
 
 # macro to save all picture attachments
 set pipe_decode = no

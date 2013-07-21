@@ -15,9 +15,10 @@ call vam#ActivateAddons(["ctags%610", "Tagbar", "tlib", "TaskList", "Better_Java
     autocmd vimenter * NERDTree
     autocmd vimenter * if !argc() | NERDTree | endif
 
-" [UtilSnips]
+" [UltiSnips]
 
     set runtimepath+=~/.vim/bundle/UltiSnips
+    let g:UltiSnipsExpandTrigger="<s-tab>"
 
 " [Tagbar] https://github.com/majutsushi/tagbar
 
@@ -154,9 +155,9 @@ call vam#ActivateAddons(["ctags%610", "Tagbar", "tlib", "TaskList", "Better_Java
 "filetype mappings [STEVELOSH]
 
     nnoremap _dt :set ft=htmldjango<CR>
-    nnoremap _pd :set ft=python.django<CR>
+    nnoremap _dj :set ft=python.django<CR>
 
-    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+    au BufNewFile,BufRead *.html       setlocal filetype=htmldjango
 
     au BufNewFile,BufRead admin.py     setlocal filetype=python.django
     au BufNewFile,BufRead urls.py      setlocal filetype=python.django
