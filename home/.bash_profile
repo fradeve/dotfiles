@@ -22,7 +22,6 @@ if [ "$TERM" != "dumb" ]; then
     alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
     alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
     alias irssi='screen irssi'
-    alias dati='gpg -d $HOME/DATA/Dropbox/documenti/dati.csv.gpg | grep '
     alias oblique='sh /opt/oblique'
 
 ## alias tmux
@@ -61,6 +60,11 @@ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export WORKON_HOME=~/.virtualenvs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 source /usr/bin/virtualenvwrapper.sh
+
+## pass
+source /etc/bash_completion.d/password-store
+export PASSWORD_STORE_DIR=/home/fradeve/DATA/Dropbox/apps/pass
+export EDITOR=vim
 
 ### CODE FOR $PS1 ###
 #####################

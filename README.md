@@ -1,14 +1,6 @@
 fradeve's dotfiles
 ==================
 
-homesick
---------
-
-This repo has been generated using [homesick](http://github.com/technicalpickles/homesick), and could be used as a _castle_.
-
-content
--------
-
 The following software is dotfiled in this repo:
 
 * konsole
