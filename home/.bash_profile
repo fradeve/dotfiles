@@ -38,9 +38,6 @@ export VISUAL=vim
 ## TexLive executables
 export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
 
-## doctorjs Arch
-export NODE_PATH=/usr/lib/jsctags:$NODE_PATH
-
 ## fradeve's local bins
 export PATH=/home/fradeve/.bin:${PATH}
 
@@ -65,6 +62,9 @@ source /usr/bin/virtualenvwrapper.sh
 source /etc/bash_completion.d/password-store
 export PASSWORD_STORE_DIR=/home/fradeve/DATA/Dropbox/apps/pass
 export EDITOR=vim
+
+## powerline
+. /usr/lib/python3.3/site-packages/powerline/bindings/bash/powerline.sh
 
 ### CODE FOR $PS1 ###
 #####################

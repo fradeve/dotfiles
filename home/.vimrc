@@ -25,7 +25,7 @@
 " options for vim-addon-manager
 
     set runtimepath+=~/.vim/bundle/vim-addon-manager
-    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "Powerline", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim", "The_NERD_tree", "vim-nerdtree-tabs"])
+    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim", "The_NERD_tree", "vim-nerdtree-tabs"])
 
 " This makes vim invoke Latex-Suite when you open a tex file.
 
@@ -36,7 +36,7 @@
     filetype indent on
     syntax on
 
-" remappint keybindings
+" remapped keybindings
 
     map <silent><A-Right> :tabnext<CR>      " move among tabs using ALT+left or ALT+right
     map <silent><A-Left> :tabprevious<CR>
@@ -127,6 +127,10 @@
 
     set scrolloff=2
 
+"override read-only permissions when writing to a system file using w!!
+
+    cmap w!! %!sudo tee > /dev/null %
+
 "generate new help every time the .vim/doc/tip.txt file gets modified
 
     autocmd BufWrite tip.txt             :helptags ~/.vim/doc/
@@ -153,6 +157,10 @@
     " set this option if the TaskList plugin is installed
     let g:miniBufExplModSelTarget = 1
 
+" [Powerline Python]
+
+"    set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
+
 " [Syntastic]
 
     let g:syntastic_check_on_open=1
@@ -170,13 +178,6 @@
     let g:solarized_termcolors=16
     let g:solarized_termtrans = 1
     colorscheme solarized
-
-" [Powerline]
-
-    set laststatus=2
-    let g:Powerline_symbols='fancy'
-    let g:Powerline_theme='default'
-    let g:Powerline_colorscheme='skwp'
 
 " [Command-t]
 
@@ -197,6 +198,7 @@
     map <Leader>P :NERDTreeTabsToggle<CR>
 
 " FocusMode
+
     function! ToggleFocusMode()
         if (&foldcolumn != 12)
             set laststatus=0
