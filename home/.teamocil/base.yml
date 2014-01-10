@@ -1,0 +1,31 @@
+session:
+    name: 'base'
+    windows:
+      - name: "mutt"
+        clear: true
+        options:
+          synchronize-panes: true
+        root: "~"
+        panes:
+          - cmd: "mutt"
+      - name: "irssi"
+        clear: true
+        options:
+          synchronize-panes: true
+        root: "~"
+        panes:
+          - cmd: "screen irssi"
+      - name: "rss"
+        clear: true
+        options:
+          synchronize-panes: true
+        root: "~"
+        panes:
+          - cmd: "newsbeuter"
+      - name: "music"
+        clear: true
+        options:
+          synchronize-panes: true
+        root: "~"
+        panes:
+          - cmd: "music"

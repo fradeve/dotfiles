@@ -17,12 +17,6 @@ tmux
 
 	ln -s ~/.dotfiles/home/.tmux.conf ~/.
 
-tmuxifier
----------
-
-	git clone https://github.com/jimeh/tmuxifier.git ~/.bin/tmuxifier
-	ln -s ~/.dotfiles/vagrant/.tmuxifier .
-
 multitail
 ---------
 

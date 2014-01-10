@@ -10,8 +10,8 @@ The following software is dotfiled in this repo:
 * newsbeuter
 * ncmpcpp
 * offlineimap
-* tmux
-* tmux-powerline / rainbarf
+* tmux (with teamocil)
+* powerline
 * tmuxifier
 * tint2
 * vim

@@ -159,7 +159,8 @@
 
 " [Powerline Python]
 
-"    set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
+    let $PYTHONPATH="/usr/lib/python3.3/site-packages"
+    set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
 
 " [Syntastic]
 
