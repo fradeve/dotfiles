@@ -3,18 +3,21 @@ fradeve's dotfiles
 
 The following software is dotfiled in this repo:
 
-* konsole
+* bash|rc|_profile
+* (oh-my-)zsh
+* konsole (with [dircolors-solarized](https://github.com/seebi/dircolors-solarized)
 * latexmk
 * mpd
 * mutt
 * newsbeuter
 * ncmpcpp
+* [timetrap](https://github.com/samg/timetrap)
 * offlineimap
-* tmux (with teamocil)
-* powerline
-* tmuxifier
+* tmux (with [teamocil](https://github.com/remiprev/teamocil))
+* [powerline](https://github.com/Lokaltog/powerline)
 * tint2
 * vim
+* git
 * xbindkeys
 * customizepkg, in a separate dir from `home`
 * vagrant dotfiles

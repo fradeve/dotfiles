@@ -2,6 +2,20 @@
 # ~/.bash_profile
 #
 
+### General settings ###
+########################
+
+# autocompletion
+if [ -f /etc/bash_completion ]; then
+      . /etc/bash_completion
+fi
+
+# customized PS1
+PS1='[\u@\h \W]\$ '
+
+### Aliases ###
+###############
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
@@ -28,12 +42,24 @@ if [ "$TERM" != "dumb" ]; then
     alias oblique='sh /opt/oblique'
 
 ## alias tmux
-    alias mux='teamocil base'
+    alias mux='teamocil --here base'
+
+## alias time tracking
+    alias ttt='timetrap'                                        # start activity now
+    alias ttta='timetrap i -a '                                 # start past activity at time...
+    alias tttc='timetrap o -a '                                 # stop past activity at time...
+    alias ttto='clear && timetrap d all --ids -s 'today' -f by_day'     # list all today activities
+    alias ttye='clear && timetrap d all --ids -s 'yesterday' -f by_day' # list all yesterday activities
+    alias ttwe='clear && timetrap week --ids all'                       # list all activities this week
+    alias tttd='timetrap d --start "00.00am" --end "11.59pm" -f day'    # percentage working hours today
 
 ## gtd
     alias t='cat /home/fradeve/DATA/Dropbox/apps/todo/remember && todo.sh -d /home/fradeve/.todo.cfg'
     export TODOTXT_DEFAULT_ACTION=ls
 fi
+
+### ENV and apps settings ###
+#############################
 
 ## crontab editor
 export VISUAL=vim
@@ -67,4 +93,33 @@ export EDITOR=vim
 ## teamocil
 complete -W "$(teamocil --list)" teamocil
 
-PS1='[\u@\h \W]\$ '
+## timetrap
+. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/bash/timetrap-autocomplete.bash
+
+## dircolors
+eval $(dircolors -b $HOME/.ansi-dark)
+
+## proxy script
+function proxy(){
+    echo -n "username:"
+    read -e username
+    echo -n "password:"
+    read -es password
+    export http_proxy="http://$username:$password@wproxy.ict.uniba.it:80/"
+    export https_proxy=$http_proxy
+    export ftp_proxy=$http_proxy
+    export rsync_proxy=$http_proxy
+    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+    echo -e "\nProxy environment variable set."
+}
+function proxyoff(){
+    unset HTTP_PROXY
+    unset http_proxy
+    unset HTTPS_PROXY
+    unset https_proxy
+    unset FTP_PROXY
+    unset ftp_proxy
+    unset RSYNC_PROXY
+    unset rsync_proxy
+    echo -e "\nProxy environment variable removed."
+} 

@@ -71,9 +71,9 @@ show_graph_scale no
 show_graph_range no
 
 TEXT
-${color gray}${GOTO 20}$nodename - $sysname $kernel $machine ${GOTO 270} in ${GOTO 330}out ${GOTO 400} / ${GOTO 460}${fs_used_perc /}% ${GOTO 500}load ${GOTO 502v}${loadgraph 15,510} ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 1p}
-${GOTO 20}Up $color $uptime | ${color grey}MHz $color $freq ${GOTO 270} ${downspeedf wlan0} ${GOTO 330}${upspeedf wlan0} ${GOTO 400}${color grey} /home ${GOTO 460}${fs_used_perc /home/}% ${GOTO 500}RAM ${GOTO 502v}${memgraph 15,510} ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 2p}
-${GOTO 20}${color grey} ${GOTO 400} /DATA ${GOTO 460}${fs_used_perc /run/media/fradeve/DATA}% ${GOTO 500}down ${GOTO 502v}${downspeedgraph wlan0 15,510} ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 3p}
+${color gray}${GOTO 20}$nodename - $sysname $kernel $machine ${GOTO 270} in ${GOTO 330}out ${GOTO 400} / ${GOTO 460}${fs_used_perc /}% ${GOTO 500}load ${GOTO 535}${loadgraph 15,505} ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 1p}
+${GOTO 20}Up $color $uptime | ${color grey}MHz $color $freq ${GOTO 270} ${downspeedf wlan0} ${GOTO 330}${upspeedf wlan0} ${GOTO 400}${color grey} /home ${GOTO 460}${fs_used_perc /home/}% ${GOTO 500}RAM ${GOTO 535}${memgraph 15,505} ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 2p}
+${GOTO 20}${color grey} ${GOTO 400} /DATA ${GOTO 460}${fs_used_perc /run/media/fradeve/DATA}% ${GOTO 500}down ${GOTO 535}${downspeedgraph wlan0 15,505} ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 3p}
 ${GOTO 20}${color grey} ${GOTO 270} qual ${wireless_link_qual_perc wlan0}% ${GOTO 400} /DATA2 ${GOTO 460}${fs_used_perc /run/media/fradeve/DATA2}% ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-58 | sed -n 4p}
 ${GOTO 400} /tmp ${GOTO 460}${fs_used_perc /tmp}% ${GOTO 1050}${execpi 10 todo.sh -p ls | cut -c1-48 | sed -n 5p}
                                                                                                                                              

@@ -1,11 +1,16 @@
 [user]
-		email = fradeve@inventati.org
-		name = fradeve
+	email = fradeve@inventati.org
+	name = fradeve
 [core]
-		editor = vim
-[merge]
-		tool = vimdiff
+	editor = vim
 [alias]
-	    tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    status = status --short
 [color]
-        ui = auto
+    ui = auto
+[merge]
+	tool = p4merge
+[mergetool]
+    keepBackup = false
+[mergetool "p4merge"]
+    trustExitCode = false
