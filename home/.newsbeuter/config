@@ -1,40 +1,41 @@
 #chiedi conferma prima di uscire dal programma
-confirm-exit yes
+confirm-exit        yes
 
 #ogni m minuti
-reload-time 15
+reload-time         15
 
 ## interface
-text-width 72
-show-read-feeds no
-show-read-articles no
-confirm-exit no
-feedlist-format "%11u %t"
-articlelist-format "%4i %f %D   %?T?|%-17T|  ?%t"
+text-width          72
+show-read-feeds     no
+show-read-articles  no
+confirm-exit        no
+feedlist-format     "%11u %t"
+articlelist-format  "%4i %f %D   %?T?|%-17T|  ?%t"
 
 ## items management
-max-items 1000
+max-items           1000
 
 ## external programs
-browser "/home/fradeve/.newsbeuter/open-pane"
+browser             "/home/fradeve/.newsbeuter/open-pane"
 
 ## keybindings
 macro o open-in-browser ; toggle-article-read "read"
 macro m set browser "chromium %u"; open-in-browser ; set browser "/home/fradeve/.newsbeuter/open-pane" ; toggle-article-read "read"
 
 ## tt-rss
-ttrss-mode "multi"
-ttrss-login ""
-ttrss-password ""
-ttrss-url ""
-ttrss-flag-publish "p"
-ttrss-flag-star "s"
+ttrss-mode          "multi"
+ttrss-login         "admin"
+ttrss-passwordfile  "/home/fradeve/.keys/newsbeuter/ttrss-passwordfile"
+ttrss-url           "http://ttrss.fradeve.org"
+ttrss-flag-publish  "p"
+ttrss-flag-star     "s"
 
-urls-source "ttrss"
+urls-source         "ttrss"
 
 ## solarized dark theme
-color listnormal color244 default
-color listfocus color159 color235
-color info color153 color235
-color background color244 default
-color article color244 default
+color background        color244    default
+color listnormal        color244    default
+color listfocus         color159    color235
+color listfocus_unread  color159    color235
+color info              color153    color235
+color article           white       default
