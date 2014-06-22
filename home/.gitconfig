@@ -14,3 +14,5 @@
     keepBackup = false
 [mergetool "p4merge"]
     trustExitCode = false
+[push]
+	default = simple
