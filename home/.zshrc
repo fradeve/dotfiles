@@ -38,15 +38,26 @@ COMPLETION_WAITING_DOTS="true"
 ### plugins options ####
 ########################
 
-ZSH_TMUX_AUTOSTART="true"
-ZSH_TMUX_AUTOCONNECT="false"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git tmux archlinux extract common-aliases vi-mode history history-substring-search)
+plugins=(
+         git
+         archlinux
+         extract
+         common-aliases
+         vi-mode
+         history-substring-search
+         colored-man
+         colorize
+         cp
+        )
 
 source $ZSH/oh-my-zsh.sh
+
+## history-substring-search keybindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 ### misc settings ########
 ##########################
@@ -68,7 +79,7 @@ export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # stop rm confirmation request
-setopt rmstarsilent
+setopt RmStarSilent
 
 ### alias ####
 ##############
@@ -137,7 +148,7 @@ export PASSWORD_STORE_DIR=/home/fradeve/DATA/Dropbox/apps/pass
 export EDITOR=vim
 
 ## powerline
-#. /usr/lib/python3.3/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
 
 ## teamocil
 compctl -g '~/.teamocil/*(:t:r)' teamocil
