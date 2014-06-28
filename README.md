@@ -3,7 +3,8 @@ fradeve's dotfiles
 
 The following software is dotfiled in this repo:
 
-* bash|rc|_profile
+* Xinitrc
+* i3 wm
 * (oh-my-)zsh
 * konsole (with [dircolors-solarized](https://github.com/seebi/dircolors-solarized)
 * latexmk
@@ -15,10 +16,8 @@ The following software is dotfiled in this repo:
 * offlineimap
 * tmux (with [teamocil](https://github.com/remiprev/teamocil))
 * [powerline](https://github.com/Lokaltog/powerline)
-* tint2
 * vim
 * git
-* xbindkeys
 * customizepkg, in a separate dir from `home`
 * vagrant dotfiles
 * fabric.py
