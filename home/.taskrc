@@ -17,9 +17,19 @@ taskd.credentials=FreeCinc\/freecinc_330bf6ae\/5e960023-e26f-45ab-af54-2b70d8a5e
 
 confirmation=no
 
+# binded to the 't' command (work)
 report.X.columns=id,project,due,priority,urgency,depends,description
-report.next.columns=id,project,due,priority,urgency,depends,description
-report.next.labels=ID,Proj,Due,Pri,Urg,Dep,Desc
+
+# binded to the 'ta' command (everything else)
+report.next.columns=id,project,due,priority,urgency,order,depends,description
+report.next.labels=ID,Proj,Due,Pri,Urg,Ord,Dep,Desc
+report.next.sort=order-,urgency-
+
+#### user-defined attributes ####
+#################################
+
+uda.order.type=numeric
+uda.order.label=Ord
 
 #### colors ####
 ################
