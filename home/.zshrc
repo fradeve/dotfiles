@@ -108,7 +108,7 @@ alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## alias time tracking and gtd
 alias t='task X project:work status:pending'              # lists project:work tasks
-alias ta='task next project.not:work status:pending'      # list non-work tasks
+alias ta='task next project.not:work tag.not:longterm status:pending'      # list non-work tasks
 alias ts='task sync'                                      # sync with Task Server
 alias td='task due:today'                                 # tasks to be done today
 alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
@@ -153,9 +153,6 @@ export EDITOR=vim
 
 ## powerline
 . /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
-
-## teamocil
-compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 ## timetrap
 fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpath)
