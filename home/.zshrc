@@ -51,6 +51,7 @@ plugins=(
          colored-man
          colorize
          cp
+         taskwarrior
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +93,7 @@ alias btsync-start='sudo systemctl start btsync@fradeve.service'
 alias btsync-stop='sudo systemctl stop btsync@fradeve.service'
 
 ## latex / vim
-alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
+alias sutlmgr='sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr'
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
 ## alias mutt / IM
@@ -105,9 +106,12 @@ alias oblique='sh /opt/oblique'
 ## alias tmux
 alias mux='tmuxp load .tmuxp/base.yaml'
 
-## alias gtd and time tracking
-alias ta='task list project.not:work'
-alias ts='task sync'
+## alias time tracking and gtd
+alias t='task X project:work status:pending'              # lists project:work tasks
+alias ta='task next project.not:work status:pending'      # list non-work tasks
+alias ts='task sync'                                      # sync with Task Server
+alias td='task due:today'                                 # tasks to be done today
+alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
 
 ### ENV and apps settings ###
 #############################
@@ -116,7 +120,7 @@ alias ts='task sync'
 export VISUAL=vim
 
 ## TexLive executables
-export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
+export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
 
 ## fradeve's local bins
 export PATH=/home/fradeve/.bin:${PATH}
@@ -124,6 +128,9 @@ export PATH=/home/fradeve/.bin:${PATH}
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+
+## node
+PATH=$PATH:~/.node_modules/bin
 
 ## fabric
 export PYTHONDONTWRITEBYTECODE=True  # in python2 avoid creation of .pyc
@@ -134,9 +141,14 @@ export WORKON_HOME=~/.virtualenvs
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 source /usr/bin/virtualenvwrapper.sh
 
+## python pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/DATA/Dropbox/apps/pass
+export PASSWORD_STORE_DIR=/home/fradeve/Dropbox/apps/pass
 export EDITOR=vim
 
 ## powerline
@@ -150,3 +162,29 @@ fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpa
 
 ## dircolors
 eval $(dircolors -b $HOME/.ansi-dark)
+
+## PyCharm font not showing error
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+# Keypad
+# 0 . Enter
+bindkey -s "^[Op" "0"
+bindkey -s "^[Ol" "."
+bindkey -s "^[OM" "^M"
+# 1 2 3
+bindkey -s "^[Oq" "1"
+bindkey -s "^[Or" "2"
+bindkey -s "^[Os" "3"
+# 4 5 6
+bindkey -s "^[Ot" "4"
+bindkey -s "^[Ou" "5"
+bindkey -s "^[Ov" "6"
+# 7 8 9
+bindkey -s "^[Ow" "7"
+bindkey -s "^[Ox" "8"
+bindkey -s "^[Oy" "9"
+# + -  * /
+bindkey -s "^[Ok" "+"
+bindkey -s "^[Om" "-"
+bindkey -s "^[Oj" "*"
+bindkey -s "^[Oo" "/"

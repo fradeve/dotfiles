@@ -12,7 +12,6 @@ The following software is dotfiled in this repo:
 * mutt
 * newsbeuter
 * ncmpcpp
-* [timetrap](https://github.com/samg/timetrap)
 * offlineimap
 * tmux (with [tmuxp](teamoci://github.com/tony/tmuxp))
 * [powerline](https://github.com/Lokaltog/powerline)
@@ -22,5 +21,6 @@ The following software is dotfiled in this repo:
 * vagrant dotfiles
 * fabric.py
 * [Beets](https://github.com/sampsyo/beets)
+* TaskWarrior
 
 When program's settings depend from another software, or when installation is quite complicated, an `INSTALL` file is provided. When a program needs some passwords in the rc file, an `example` folder has been added with some samples of rc files.
