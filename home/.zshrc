@@ -103,19 +103,11 @@ alias trans='transmission-remote-cli -f ~/.trclirc'
 alias oblique='sh /opt/oblique'
 
 ## alias tmux
-alias mux='teamocil --here base'
+alias mux='tmuxp load .tmuxp/base.yaml'
 
-## alias time tracking
-alias ttt='timetrap'                                        # start activity now
-alias ttta='timetrap i -a '                                 # start past activity at time...
-alias tttc='timetrap o -a '                                 # stop past activity at time...
-alias ttto='clear && timetrap d all --ids -s 'today' -f by_day'     # list all today activities
-alias ttye='clear && timetrap d all --ids -s 'yesterday' -f by_day' # list all yesterday activities
-alias ttwe='clear && timetrap week --ids all'                       # list all activities this week
-alias tttd='timetrap d --start "00.00am" --end "11.59pm" -f day'    # percentage working hours today
-
-## gtd
-alias t='cat /home/fradeve/DATA/Dropbox/apps/todo/remember && todo.sh -d /home/fradeve/.todo.cfg list'
+## alias gtd and time tracking
+alias ta='task list project.not:work'
+alias ts='task sync'
 
 ### ENV and apps settings ###
 #############################

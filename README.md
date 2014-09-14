@@ -14,7 +14,7 @@ The following software is dotfiled in this repo:
 * ncmpcpp
 * [timetrap](https://github.com/samg/timetrap)
 * offlineimap
-* tmux (with [teamocil](https://github.com/remiprev/teamocil))
+* tmux (with [tmuxp](teamoci://github.com/tony/tmuxp))
 * [powerline](https://github.com/Lokaltog/powerline)
 * vim
 * git
