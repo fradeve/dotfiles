@@ -1,7 +1,8 @@
 fradeve's dotfiles
 ==================
 
-The following software is dotfiled in this repo:
+This repo has been structured to be used with GNU Stow.
+The following software is _dotfiled_ in this repo:
 
 * Xinitrc
 * i3 wm

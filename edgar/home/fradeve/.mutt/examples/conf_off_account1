@@ -34,8 +34,8 @@ my_hdr X-Advocacy: Who uses non-free software empoisons you too. Say him to stop
 my_hdr X-GPG-Keyserver: http://pgp.zdv.uni-mainz.de:11371/pks/lookup?op=get&search=XXXXXXXXXXXX
 my_hdr X-URL: http://wwww.user1.org
 
-set editor="vim -S ~/Dropbox/backup_dell/sistema/rc/mutt/vim_mutt_commands"     # editor predefinito
-set signature=$HOME/Dropbox/backup_dell/firma.txt
+set editor="vim -S ~/.mutt/vim_mutt_commands"     # editor predefinito
+set signature=$HOME/.mutt/sign.txt
 	
 ## --> ark
 macro index ,au '<change-folder>=ark-users<enter>'
