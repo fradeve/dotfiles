@@ -1,0 +1,22 @@
+Encrypted partition
+===================
+
+mount
+-----
+
+sudo cryptsetup luksOpen /dev/sda3 moondata
+sudo mount /dev/mapper/moondata /unenc
+
+unmount
+-------
+
+sudo umount /unenc
+sudo cryptsetup luksClose moondata
+
+Deluge
+======
+
+After mounting encrypted partition:
+
+	sudo systemctl start deluged
+	sudo systemctl start deluge-web

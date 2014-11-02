@@ -10,9 +10,8 @@
 # Notmuch will store its database within a sub-directory of the path
 # configured here named ".notmuch".
 #
-
 [database]
-path=/home/fradeve/.mail
+path=/unenc/fradeve/mail
 
 # User configuration
 #
@@ -29,11 +28,10 @@ path=/home/fradeve/.mail
 # recipient list of replies, and will set the From address based on the
 # address to which the original email was addressed.
 #
-
 [user]
 name=Francesco de Virgilio
 primary_email=fradeve@inventati.org
-other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve@ubuntu-it.org;
+other_email=francesco.devirgilio@inventati.org;fradeve11@inventati.org;fradeve@ubuntu-it.org;fradeve11@inventati.org;francesco.de.virgilio@inventati.org;fradeve11@virgilio.it;francesco.devirgilio@polestarglobal.com;
 
 # Configuration for "notmuch new"
 #
@@ -45,10 +43,10 @@ other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve@ubunt
 #	ignore	A list (separated by ';') of file and directory names
 #		that will not be searched for messages by "notmuch new".
 #
-#		NOTE: *Every* file/directory that goes by one of those names will
-#		be ignored, independent of its depth/location in the mail store.
+#		NOTE: *Every* file/directory that goes by one of those
+#		names will be ignored, independent of its depth/location
+#		in the mail store.
 #
-
 [new]
 tags=unread;inbox;
 ignore=
@@ -62,7 +60,6 @@ ignore=
 #		search results by default.  Using an excluded tag in a
 #		query will override that exclusion.
 #
-
 [search]
 exclude_tags=deleted;spam;
 
@@ -87,6 +84,5 @@ exclude_tags=deleted;spam;
 #	and update tags, while the "notmuch tag" and "notmuch restore"
 #	commands will notice tag changes and update flags in filenames
 #
-
 [maildir]
 synchronize_flags=true
