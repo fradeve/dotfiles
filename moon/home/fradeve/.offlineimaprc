@@ -1,0 +1,99 @@
+[general]
+metadata = /unenc/fradeve/offlineimap
+accounts = gmail,inventati,riseup,sms-gmail
+maxsyncaccount = 4
+socktimeout = 60
+ui = ttyui
+
+### fradeve11@gmail.com 
+#######################
+
+[Account gmail]
+localrepository = local-gmail
+remoterepository = remote-gmail
+status_backend = sqlite
+
+[Repository local-gmail]
+type = Maildir
+localfolders = /unenc/fradeve/mail/gmail
+
+[Repository remote-gmail]
+type = Gmail
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotehost = imap.gmail.com
+remoteuser = fradeve11@gmail.com
+remotepassfile = /unenc/fradeve/keys/offlineimap/gmail
+realdelete = no
+maxconnections = 4
+folderfilter = lambda folder: folder not in ['[Gmail]/Bin']
+
+### francesco.devirgilio@inventati.org
+######################################
+
+[Account inventati]
+localrepository = local-inventati
+remoterepository = remote-inventati
+status_backend = sqlite
+
+[Repository local-inventati]
+type = Maildir
+localfolders = /unenc/fradeve/mail/inventati
+
+[Repository remote-inventati]
+type = IMAP
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+#remoteport = 995
+remotehost = mail.autistici.org
+remoteuser = francesco.devirgilio@inventati.org
+remotepassfile = /unenc/fradeve/keys/offlineimap/inventati
+realdelete = no
+maxconnections = 2
+
+### fradeve@riseup.net
+######################
+
+[Account riseup]
+localrepository = local-riseup
+remoterepository = remote-riseup
+status_backend = sqlite
+
+[Repository local-riseup]
+type = Maildir
+localfolders = /unenc/fradeve/mail/riseup
+
+[Repository remote-riseup]
+type = IMAP
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+#remoteport = 995
+remotehost = mail.riseup.net
+remoteuser = fradeve@riseup.net
+remotepassfile = /unenc/fradeve/keys/offlineimap/riseup
+realdelete = no
+maxconnections = 2
+
+### sms@fradeve11@gmail.com
+###########################
+
+[Account sms-gmail]
+localrepository = local-sms-gmail
+remoterepository = remote-sms-gmail
+
+[Repository local-sms-gmail]
+type = IMAP
+ssl = yes
+remotehost = mail.autistici.org
+remoteuser = francesco.devirgilio@inventati.org
+remotepassfile = /unenc/fradeve/keys/offlineimap/inventati
+
+[Repository remote-sms-gmail]
+type = Gmail
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotehost = imap.gmail.com
+remoteuser = fradeve11@gmail.com
+remotepassfile = /unenc/fradeve/keys/offlineimap/gmail
+realdelete = no
+folderfilter = lambda folder: folder.startswith('sms')
