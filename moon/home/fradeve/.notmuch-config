@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/home/fradeve/.mail
+path=/unenc/fradeve/.mail
 
 # User configuration
 #
@@ -33,7 +33,7 @@ path=/home/fradeve/.mail
 [user]
 name=Francesco de Virgilio
 primary_email=fradeve@inventati.org
-other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve@ubuntu-it.org;
+other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve@ubuntu-it.org;fradeve11@inventati.org;francesco.devirgilio@polestarglobal.com;
 
 # Configuration for "notmuch new"
 #
