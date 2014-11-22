@@ -7,9 +7,9 @@ data.location=~/.task
 ##############
 
 taskd.server=freecinc.com:53589
-taskd.key=/home/fradeve/.task/freecinc_330bf6ae.key.pem
-taskd.certificate=/home/fradeve/.task/freecinc_330bf6ae.cert.pem
-taskd.ca=/home/fradeve/.task/freecinc_330bf6ae.ca.pem
+taskd.key=\/home\/fradeve\/.task\/freecinc_330bf6ae.key.pem
+taskd.certificate=\/home\/fradeve\/.task\/freecinc_330bf6ae.cert.pem
+taskd.ca=\/home\/fradeve\/.task\/freecinc_330bf6ae.ca.pem
 taskd.credentials=FreeCinc\/freecinc_330bf6ae\/5e960023-e26f-45ab-af54-2b70d8a5e9be
 
 #### behaviour ####
@@ -17,19 +17,17 @@ taskd.credentials=FreeCinc\/freecinc_330bf6ae\/5e960023-e26f-45ab-af54-2b70d8a5e
 
 confirmation=no
 
+urgency.annotations.coefficient=0.0
+
 # binded to the 't' command (work)
 report.X.columns=id,project,due,priority,urgency,depends,description
 
 # binded to the 'ta' command (everything else)
-report.next.columns=id,project,due,priority,urgency,order,depends,description
-report.next.labels=ID,Proj,Due,Pri,Urg,Ord,Dep,Desc
-report.next.sort=order-,urgency-
+report.next.columns=id,project,due,priority,urgency,depends,description
+report.next.labels=ID,Proj,Due,Pri,Urg,Dep,Desc
 
-#### user-defined attributes ####
-#################################
-
-uda.order.type=numeric
-uda.order.label=Ord
+# urgency booster tags
+urgency.user.tag.1.coefficient=14.0
 
 #### colors ####
 ################
