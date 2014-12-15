@@ -24,10 +24,10 @@
 	},
 	"segments": {
 		"right": [
-            {"name": "now_playing",
+            {
+                "function": "powerline.segments.common.players.mpd",
                 "module": "powerline.segments.common",
                 "args": {
-                    "player": "mpd",
                     "host":   "127.0.0.1",
                     "port":   "6600",
                     "format": "{state_symbol} {artist} • {album} • {title}"
@@ -36,7 +36,7 @@
                 "priority": 30
             },
 			{
-				"name": "weather",
+                "function": "powerline.segments.common.wthr.weather",
 				"priority": 40,
 				"args": {
                     "unit" : "C",
@@ -44,14 +44,15 @@
 				}
 			},
 			{
-				"name": "email_imap_alert",
+                "function": "powerline.segments.common.mail.email_imap_alert",
 				"priority": 50
 			},
 			{
-				"name": "uptime",
+                "function": "powerline.segments.common.sys.uptime",
 				"priority": 50
 			},
 			{
+                "function": "powerline.segments.common.net.hostname",
 				"name": "hostname"
 			}
 		]
