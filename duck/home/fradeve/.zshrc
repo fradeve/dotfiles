@@ -100,16 +100,16 @@ alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
 alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
-alias oblique='sh /opt/oblique'
 
 ## alias tmux
-alias mux='teamocil --here base'
+alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## alias time tracking and gtd
-alias t='task X project:work status:pending'              # lists project:work tasks
-alias ta='task next project.not:work tag.not:longterm status:pending'      # list non-work tasks
 alias ts='task sync'                                      # sync with Task Server
-alias td='task due:today project.not:work'                # tasks to be done today
+
+alias ta='task general'                                   # show general tasks
+alias tt='task general due:today'                         # general tasks to be done today
+
 alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
 
 ### ENV and apps settings ###

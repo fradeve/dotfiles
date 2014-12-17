@@ -107,10 +107,11 @@ alias oblique='sh /opt/oblique'
 alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## alias time tracking and gtd
-alias t='task X project:work status:pending'              # lists project:work tasks
-alias ta='task next project.not:work tag.not:longterm status:pending'      # list non-work tasks
 alias ts='task sync'                                      # sync with Task Server
-alias td='task due:today'                                 # tasks to be done today
+
+alias ta='task general'                                   # show general tasks
+alias tt='task general due:today'                         # general tasks to be done today
+
 alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
 
 ### ENV and apps settings ###
@@ -142,6 +143,8 @@ source /usr/bin/virtualenvwrapper.sh
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
