@@ -41,8 +41,6 @@ bindsym $mod+y exec chromium                    # starts Dolphin
 bindsym $mod+c exec mpc toggle                  # MPD play/pause
 bindsym $mod+i exec mpc next                    # MPD next
 bindsym $mod+u exec mpc prev                    # MPD prev
-bindsym $mod+< exec mpc volume -5               # MPD volume down
-bindsym $mod+z exec mpc volume +0               # MPD volume up
 bindsym $mod+Control+q exec pamixer --toogle-mute       # MPD mute/unmute
 bindsym $mod+p exec pamixer --increase 5        # system audio up
 bindsym $mod+q exec pamixer --decrease 5        # system audio down
@@ -108,9 +106,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1:web
-bindsym $mod+2 workspace 2:tool
-bindsym $mod+3 workspace 3:dev
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -123,9 +121,9 @@ bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:web
-bindsym $mod+Shift+2 move container to workspace 2:tool
-bindsym $mod+Shift+3 move container to workspace 3:dev
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -171,7 +169,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        #i3bar_command /usr/bin/i3bgbar
+
+        #status_command python /usr/lib/python3.4/site-packages/powerline/bindings/i3/powerline-i3.py
+        #font pango:DejaVu Sans Mono 8
 }
 
-exec --no-startup-id i3-msg 'workspace 1:web; exec /usr/bin/chromium' 
-exec --no-startup-id i3-msg 'workspace 2:tool; exec konsole'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/chromium; workspace 2; exec konsole; workspace 2'
