@@ -1,0 +1,11 @@
+session_name: latex
+windows:
+    - window_name: latex
+      layout: 61ea,194x50,0,0{134x50,0,0,24,59x50,135,0,25}
+      options:
+          automatic-rename: on
+      shell_command_before:
+          - cd /home/fradeve/git/slides
+      panes:
+          - shell_command: vim main.tex
+          - shell_command: makelatex
