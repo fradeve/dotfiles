@@ -85,6 +85,13 @@ setopt RmStarSilent
 ### alias ####
 ##############
 
+## beet
+MONTH_NOW=`date +'%m'`
+MONTH_START=`date --date='-6 month' +'%m'`
+YEAR_NOW=`date +'%Y'`
+alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
+alias music='ncmpcpp'
+
 alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA" | grep -v ".backup" | grep -v ".irssi"'
 
 ## networking / ssh
@@ -121,7 +128,7 @@ alias tbd='task burndown.daily project:work'              # list burntdown tasks
 export VISUAL=vim
 
 ## TexLive executables
-export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
+export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
 
 ## fradeve's local bins
 export PATH=/home/fradeve/.bin:${PATH}
@@ -156,6 +163,9 @@ export EDITOR=vim
 
 ## timetrap
 fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpath)
+
+## ncl
+export NCARG_ROOT='/usr/lib/ncarg'
 
 ## dircolors
 eval $(dircolors -b $HOME/.ansi-dark)
