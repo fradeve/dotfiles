@@ -194,3 +194,7 @@ bindkey -s "^[Ok" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
+
+## overwrites oh-my-zsh's completion ssh completion plugin with configs from .ssh/config
+[ -r ~/.ssh/config ] && _ssh_config=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p')) || _ssh_config=()
+zstyle ':completion:*:hosts' hosts $_ssh_config

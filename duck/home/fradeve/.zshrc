@@ -74,12 +74,6 @@ export PATH=$HOME/.bin:/usr/local/bin:$PATH
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # stop rm confirmation request
 setopt RmStarSilent
 
@@ -88,8 +82,8 @@ setopt RmStarSilent
 
 ## networking / ssh
 alias pong='ping www.google.it' 
-alias btsync-start='sudo systemctl start btsync@fradeve.service'
-alias btsync-stop='sudo systemctl stop btsync@fradeve.service'
+alias btsync-start='systemctl --user start btsync'
+alias btsync-stop='systemctl --user stop btsync'
 
 ## latex / vim
 alias sutlmgr='sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr'
@@ -100,9 +94,6 @@ alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
 alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
-
-## alias tmux
-alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## alias time tracking and gtd
 alias ts='task sync'                                      # sync with Task Server
@@ -158,6 +149,10 @@ fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpa
 
 ## dircolors
 eval $(dircolors -b $HOME/.ansi-dark)
+
+## ncl
+export NCARG_ROOT=/usr/lib/ncarg
+export PATH=$NCARG_ROOT/bin:$PATH
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
