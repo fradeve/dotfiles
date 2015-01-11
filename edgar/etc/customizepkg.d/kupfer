@@ -1,3 +1,0 @@
-add#source#hamster.py::http://raw.github.com/fradeve/dotfiles/master/home/.bin/hamster.py
-add#sha1sums#32f135fd2b71524b3fafa4f43f1f36dbcb100026
-replace#global#cd "$srcdir/$pkgname-$pkgver"#cd "$srcdir/$pkgname-$pkgver"; cp "${srcdir}/hamster.py" "${srcdir}/$pkgname-$pkgver/kupfer/plugin/."
