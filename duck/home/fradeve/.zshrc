@@ -67,12 +67,8 @@ bindkey '^[[B' history-substring-search-down
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
 
 # stop rm confirmation request
 setopt RmStarSilent
@@ -96,12 +92,13 @@ alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
 
 ## alias time tracking and gtd
-alias ts='task sync'                                      # sync with Task Server
+alias ts='task sync'                                    # sync with Task Server
 
-alias ta='task general'                                   # show general tasks
-alias tt='task general due:today'                         # general tasks to be done today
+alias t='task general'                                  # show general tasks
+alias tt='task general due:today'                       # general tasks to be done today
+alias tc='task completed due:today'                     # general tasks done today
 
-alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
+alias tbd='task burndown.daily project:work'            # list burntdown tasks from work
 
 ### ENV and apps settings ###
 #############################
@@ -114,6 +111,9 @@ export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
 
 ## fradeve's local bins
 export PATH=/home/fradeve/.bin:${PATH}
+
+## tmuxp autocompletion
+source tmuxp.zsh
 
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
