@@ -1,0 +1,19 @@
+session_name: correspondence
+start_directory: /home/fradeve/proj/correspondence/correspondenceapi
+windows:
+    - window_name: run|cel
+      shell_command_before:
+          - sudo systemctl start postgresql
+          - sudo systemctl start rabbitmq
+          - workon correspondenceapi
+      panes:
+          - ./manage.py runserver --settings=development_settings.francesco_devirgilio
+          - celery -A correspondenceapi worker -l info
+    - window_name: shell
+      shell_command_before:
+          - workon correspondenceapi
+      panes:
+          - ./manage.py shell --settings=development_settings.francesco_devirgilio
+    - window_name: logs
+      panes:
+          - tail -f /opt/var/log/correspondenceapi/django.log
