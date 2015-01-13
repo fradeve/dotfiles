@@ -78,8 +78,6 @@ setopt RmStarSilent
 
 ## networking / ssh
 alias pong='ping www.google.it' 
-alias btsync-start='systemctl --user start btsync'
-alias btsync-stop='systemctl --user stop btsync'
 
 ## latex / vim
 alias sutlmgr='sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr'

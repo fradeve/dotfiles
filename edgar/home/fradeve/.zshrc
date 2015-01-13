@@ -66,18 +66,8 @@ bindkey '^[[B' history-substring-search-down
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
 
 # stop rm confirmation request
 setopt RmStarSilent
@@ -96,8 +86,6 @@ alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA
 
 ## networking / ssh
 alias pong='ping www.google.it' 
-alias btsync-start='systemctl --user start btsync'
-alias btsync-stop='systemctl --user stop btsync'
 
 ## latex / vim
 alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
@@ -114,10 +102,11 @@ alias oblique='sh /opt/oblique'
 alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## alias time tracking and gtd
-alias ts='task sync'                                      # sync with Task Server
+alias ts='task sync'                                    # sync with Task Server
 
-alias ta='task general'                                   # show general tasks
-alias tt='task general due:today'                         # general tasks to be done today
+alias t='task general'                                  # show general tasks
+alias tt='task general due:today'                       # general tasks to be done today
+alias tc='task completed due:today'                     # general tasks done today
 
 alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
 
@@ -132,6 +121,9 @@ export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
 
 ## fradeve's local bins
 export PATH=/home/fradeve/.bin:${PATH}
+
+## tmuxp autocompletion
+source tmuxp.zsh
 
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
