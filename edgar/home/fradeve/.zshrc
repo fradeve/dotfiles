@@ -104,11 +104,15 @@ alias mux='tmuxp load .tmuxp/base.yaml'
 ## alias time tracking and gtd
 alias ts='task sync'                                    # sync with Task Server
 
+### general
 alias t='task general'                                  # show general tasks
 alias tt='task general due:today'                       # general tasks to be done today
-alias tc='task completed due:today'                     # general tasks done today
+alias tc='task completed end:today'                     # general tasks done today
 
-alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
+### work
+alias tw='task work'                                    # show 'work' project task
+alias twc='task completed end:today project:work'       # work tasks done today
+alias twb='task burndown.daily project:work'            # work tasks burntdown by day
 
 ### ENV and apps settings ###
 #############################
