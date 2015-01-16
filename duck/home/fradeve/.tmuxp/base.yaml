@@ -1,0 +1,15 @@
+session_name: base
+start_directory: /home/fradeve
+windows:
+    - window_name: ps-mail
+      panes:
+          - mutton
+    - window_name: inventati
+      panes:
+          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
+    - window_name: music
+      panes:
+          - ncmpcpp -h moon.redirectme.net -p 6600
+    - window_name: vlc
+      panes:
+          - vlc -vvv --intf dummy http://moon.redirectme.net:8080
