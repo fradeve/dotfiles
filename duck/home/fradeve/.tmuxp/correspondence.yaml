@@ -17,3 +17,8 @@ windows:
     - window_name: logs
       panes:
           - tail -f /opt/var/log/correspondenceapi/django.log
+    - window_name: root
+      shell_command_before:
+          - workon correspondenceapi
+      panes:
+          - echo 'ready'

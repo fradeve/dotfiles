@@ -1,29 +1,21 @@
 session_name: cas
 start_directory: /home/fradeve/proj/cas/cas
 windows:
-    - window_name: runserver
+    - window_name: run|cel
       shell_command_before:
-          - vagrant ssh -c 'sudo service postgresql-9.2 start;'
+          - sudo systemctl start postgresql
+          - sudo systemctl start redis
+          - sudo systemctl start rabbitmq
+          - sudo systemctl start mongodb
           - workon cas
       panes:
           - ./manage.py runserver --settings=development_settings.francesco_devirgilio
-    - window_name: cli(s)
+          - celery -A cas worker -l info
+    - window_name: shell
       shell_command_before:
-          - vagrant ssh
+          - workon cas
       panes:
-          - source /home/vagrant/.virtualenvs/cas/bin/activate; cd /opt/cas
-          - sudo su - postgres
-    - window_name: logs | local
+          - ./manage.py shell --settings=development_settings.francesco_devirgilio
+    - window_name: logs
       panes:
-          - tail -f /home/fradeve/proj/log/cas.log
           - tail -f /opt/var/log/cas/django.log
-    - window_name: logs | test-05
-      panes:
-          - ssh -t cas-test-05 "tail -f /opt/var/log/cas/cas.log"
-          - ssh -t cas-test-05 "tail -f /opt/var/log/cas/django.log"
-    - window_name: logs | test-05 | celery
-      panes:
-          - ssh -t cas-test-05 "tail -f /opt/var/log/cas/celerybeat.log"
-          - ssh -t cas-test-05 "tail -f /opt/var/log/cas/celery_w1.log"
-          - ssh -t cas-test-05 "tail -f /opt/var/log/cas/celery_w2.log"
-          - ssh -t cas-test-05 "tail -f /opt/var/log/cas/celery_w3.log"
