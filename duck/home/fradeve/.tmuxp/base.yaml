@@ -4,6 +4,9 @@ windows:
     - window_name: ps-mail
       panes:
           - mutton
+    - window_name: tasks
+      panes:
+          - task work
     - window_name: inventati
       panes:
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
