@@ -75,12 +75,14 @@ setopt RmStarSilent
 ### alias ####
 ##############
 
-## beet
+## music
 MONTH_NOW=`date +'%m'`
 MONTH_START=`date --date='-6 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
 alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
 alias music='ncmpcpp'
+alias music-on='ncmpcpp -h moon.redirectme.net -p 6600'
+alias music-stream='vlc --intf dummy http://moon.redirectme.net:8080'
 
 alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA" | grep -v ".backup" | grep -v ".irssi"'
 
@@ -105,7 +107,7 @@ alias mux='tmuxp load .tmuxp/base.yaml'
 alias ts='task sync'                                    # sync with Task Server
 
 ### general
-alias t='task general'                                  # show general tasks
+alias ta='task general'                                  # show general tasks
 alias tt='task general due:today'                       # general tasks to be done today
 alias tc='task completed end:today'                     # general tasks done today
 
@@ -156,9 +158,6 @@ export EDITOR=vim
 
 ## powerline
 . /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
-
-## timetrap
-fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpath)
 
 ## ncl
 export NCARG_ROOT='/usr/lib/ncarg'
