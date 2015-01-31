@@ -1,3 +1,5 @@
+# base settings
+
 library: /home/fradeve/DATA/music/music_dataunenc/beets.db
 directory: /home/fradeve/DATA/music/music_dataunenc
 
@@ -10,8 +12,24 @@ import:
     flat: no
     group_albums: no
 
+statefile: state.pickle
+threaded: yes
+timeout: 5.0
+
+# file paths settings
+
 clutter: ["Thumbs.DB", ".DS_Store"]
 ignore: [".*", "*~", "System Volume Information"]
+
+per_disc_numbering: no
+
+paths:
+    default: %left{$albumartist,1}/$albumartist/$album%aunique{}/$track $title
+    singleton: %left{$albumartist,1}/$albumartist/non-album/$album%aunique{}/$track $title
+    comp: compilations/$album%aunique{}/$track $title
+
+# filenames and strings
+
 replace:
     '[\\/]': _
     '^\.': _
@@ -23,15 +41,11 @@ path_sep_replace: _
 art_filename: cover
 max_filename_length: 0
 
-plugins: [lastgenre, mbsync, scrub, missing, chroma]
-pluginpath: []
-threaded: yes
+# user interface
+
 color: yes
-timeout: 5.0
-per_disc_numbering: no
 verbose: no
 terminal_encoding: utf8
-original_date: yes
 id3v23: no
 
 ui:
@@ -40,14 +54,19 @@ ui:
 
 list_format_item: $artist - $album - $title
 list_format_album: $albumartist - $album
+
+# times and date
+
+original_date: yes
 time_format: '%Y-%m-%d %H:%M:%S'
 
-paths:
-    default: %left{$albumartist,1}/$albumartist/$album%aunique{}/$track $title
-    singleton: %left{$albumartist,1}/$albumartist/non-album/$album%aunique{}/$track $title
-    comp: compilations/$album%aunique{}/$track $title
+## plugins settings ###
+#######################
 
-statefile: state.pickle
+pluginpath: []
+plugins: [lastgenre, mbsync, scrub, missing, chroma, bpd]
+
+# mbsync
 
 musicbrainz:
     host: musicbrainz.org
@@ -88,3 +107,19 @@ match:
     ignored: []
     track_length_grace: 10
     track_length_max: 30
+
+# bpd
+
+bpd:
+    host: 127.0.0.1
+    port: 6600
+
+mpd:
+    host: localhost
+    port: 6600
+
+# lastgenre
+
+lastgenre:
+    source: track
+    count: 3

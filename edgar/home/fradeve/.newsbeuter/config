@@ -26,7 +26,7 @@ macro m set browser "chromium %u"; open-in-browser ; set browser "/home/fradeve/
 ttrss-mode          "multi"
 ttrss-login         "admin"
 ttrss-passwordfile  "/home/fradeve/.keys/newsbeuter/ttrss-passwordfile"
-ttrss-url           "http://ttrss.fradeve.org"
+ttrss-url           "http://rss.rusti.cc"
 ttrss-flag-publish  "p"
 ttrss-flag-star     "s"
 
