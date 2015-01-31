@@ -25,11 +25,12 @@ urgency.user.tag.1.coefficient=14.0
 
 report.general.columns=id,due,priority,depends,description
 report.general.labels=ID,Due,Pri,Dep,Desc
-report.general.filter=project.not:work project.not:tech tag.not:longterm status:pending
+report.general.filter=project.not:tech tag.not:polestar tag.not:longterm status:pending
 report.general.sort=due+,priority-,depends-
 
 report.work.columns=id,project,due,priority,urgency,depends,tags,description
-report.work.filter=project:work status:pending
+report.work.filter=tag:polestar status:pending
+report.work.sort=priority-
 
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.filter=project:tech status:pending
@@ -40,3 +41,14 @@ report.tech.sort=due+,priority-,depends-
 
 color=on
 include /usr/share/doc/task/rc/solarized-dark-256.theme
+
+#### bugwarrior ####
+####################
+uda.jiraurl.type=string
+uda.jiraurl.label=Jira URL
+uda.jirasummary.type=string
+uda.jirasummary.label=Jira Summary
+uda.jiraid.type=string
+uda.jiraid.label=Jira Issue ID
+uda.jiradescription.type=string
+uda.jiradescription.label=Jira Description

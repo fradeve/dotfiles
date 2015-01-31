@@ -51,7 +51,6 @@ plugins=(
          colored-man
          colorize
          cp
-         taskwarrior
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,19 +102,21 @@ alias oblique='sh /opt/oblique'
 ## alias tmux
 alias mux='tmuxp load .tmuxp/base.yaml'
 
+## alias timebook
+unalias t
+
 ## alias time tracking and gtd
 alias ts='task sync'                                    # sync with Task Server
 
 ### general
-alias ta='task general'                                  # show general tasks
-alias tt='task general due:today project.not:work'      # general tasks to be done today
-alias tc='task completed end:today project.not:work'    # general tasks done today
-alias tb='task burndown.daily project.not:work'         # work tasks burntdown by day
+alias ta='task general'                                 # show 'general' report
+alias tt='task general due:today'                       # general tasks to be done today
+alias tc='task completed end:today'                     # general tasks done today
 
 ### work
-alias tw='task work'                                    # show 'work' project task
-alias twc='task completed end:today project:work'       # work tasks done today
-alias twb='task burndown.daily project:work'            # work tasks burntdown by day
+alias tw='task work'                                    # show 'work' report
+alias twc='task completed end:today tag:polestar'       # work tasks done today
+alias twb='task burndown.daily tag:polestar'            # work tasks burntdown by day
 
 ### ENV and apps settings ###
 #############################
@@ -131,10 +132,6 @@ export PATH=/home/fradeve/.bin:${PATH}
 
 ## tmuxp autocompletion
 source tmuxp.zsh
-
-## ruby
-export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
-export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 
 ## fabric
 export PYTHONDONTWRITEBYTECODE=True  # in python2 avoid creation of .pyc
