@@ -1,0 +1,22 @@
+session_name: base
+windows:
+    - window_name: mail
+      options:
+          automatic-rename: on
+      panes:
+      - shell_command: mutt
+    - window_name: im
+      options:
+          automatic-rename: on
+      panes:
+      - shell_command: screen irssi
+    - window_name: rss
+      options:
+          automatic-rename: on
+      panes:
+      - shell_command: newsbeuter
+    - window_name: music
+      options:
+          automatic-rename: on
+      panes:
+      - shell_command: music
