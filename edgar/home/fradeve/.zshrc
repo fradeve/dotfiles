@@ -114,7 +114,7 @@ alias tt='task general due:today'                       # general tasks to be do
 alias tc='task completed end:today'                     # general tasks done today
 
 ### work
-alias tw='task work'                                    # show 'work' report
+alias tw='task work && task workcomplete'               # work task todo and in dev-completed
 alias twc='task completed end:today tag:polestar'       # work tasks done today
 alias twb='task burndown.daily tag:polestar'            # work tasks burntdown by day
 

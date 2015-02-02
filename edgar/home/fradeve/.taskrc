@@ -29,13 +29,25 @@ report.general.labels=ID,Due,Pri,Dep,Desc
 report.general.filter=project.not:tech tag.not:polestar tag.not:longterm status:pending
 report.general.sort=due+,priority-,depends-
 
-report.work.columns=id,project,due,priority,urgency,depends,tags,description
-report.work.filter=tag:polestar status:pending
-report.work.sort=priority-
+report.work.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.work.filter=status:pending tag:polestar agile.not:devcomplete
+report.work.sort=urgency-,priority-
+
+report.workcomplete.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.workcomplete.filter=status:pending tag:polestar agile:devcomplete
+report.workcomplete.sort=priority-
 
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.filter=project:tech status:pending
 report.tech.sort=due+,priority-,depends-
+
+#### agile UDAs ####
+####################
+
+uda.agile.type=string
+uda.agile.label=agile
+uda.agile.values=devcomplete,hotfix
+urgency.uda.agile.coefficient=10
 
 #### colors ####
 ################

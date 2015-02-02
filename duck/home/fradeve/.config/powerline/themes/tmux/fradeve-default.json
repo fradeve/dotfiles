@@ -24,6 +24,17 @@
 	},
 	"segments": {
 		"right": [
+            {
+                "function": "powerline.segments.common.players.mpd",
+                "name": "player",
+                "args": {
+                    "host":   "moon.redirectme.net",
+                    "port":   "6600",
+                    "format": "{state_symbol} {artist} • {album} • {title}"
+                },
+                "exclude_modes": ["nc"],
+                "priority": 30
+            },
 			{
                 "function": "powerline.segments.common.wthr.weather",
 				"priority": 40,
