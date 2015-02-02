@@ -95,6 +95,7 @@ alias ts='task sync'                                    # sync with Task Server
 alias ta='task general'                                 # show 'general' report
 alias tt='task general due:today'                       # general tasks to be done today
 alias tc='task completed end:today'                     # general tasks done today
+alias tb='task burndown.daily tag.not:polestar'         # general tasks burntdown by day
 
 ### work
 alias tw='task work && task workcomplete'               # work task todo and in dev-completed
