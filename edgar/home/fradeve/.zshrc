@@ -80,8 +80,8 @@ MONTH_START=`date --date='-6 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
 alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
 alias music='ncmpcpp'
-alias music-on='ncmpcpp -h moon.redirectme.net -p 6600'
-alias music-stream='vlc --intf dummy http://moon.redirectme.net:8080'
+alias music-on='ncmpcpp -h moon.ydns.eu -p 6600'
+alias music-stream='vlc --intf dummy http://moon.ydns.eu:8080'
 
 alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA" | grep -v ".backup" | grep -v ".irssi"'
 
