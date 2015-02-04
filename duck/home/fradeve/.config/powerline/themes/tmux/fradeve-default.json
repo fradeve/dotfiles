@@ -28,7 +28,7 @@
                 "function": "powerline.segments.common.players.mpd",
                 "name": "player",
                 "args": {
-                    "host":   "moon.redirectme.net",
+                    "host":   "moon.ydns.eu",
                     "port":   "6600",
                     "format": "{state_symbol} {artist} • {album} • {title}"
                 },

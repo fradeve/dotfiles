@@ -6,13 +6,13 @@ windows:
           - mutton
     - window_name: tasks
       panes:
-          - task work
+          - ssh -t emmett 'tw'
     - window_name: inventati
       panes:
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
     - window_name: music
       panes:
-          - ncmpcpp -h moon.redirectme.net -p 6600
+          - ncmpcpp -h moon.ydns.eu -p 6600
     - window_name: vlc
       panes:
-          - vlc -vvv --intf dummy http://moon.redirectme.net:8080
+          - vlc -vvv --intf dummy http://moon.ydns.eu:8080

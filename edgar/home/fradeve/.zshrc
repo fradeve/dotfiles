@@ -105,19 +105,6 @@ alias mux='tmuxp load .tmuxp/base.yaml'
 ## alias timebook
 unalias t
 
-## alias time tracking and gtd
-alias ts='task sync'                                    # sync with Task Server
-
-### general
-alias ta='task general'                                 # show 'general' report
-alias tt='task general due:today'                       # general tasks to be done today
-alias tc='task completed end:today'                     # general tasks done today
-
-### work
-alias tw='task work && task workcomplete'               # work task todo and in dev-completed
-alias twc='task completed end:today tag:polestar'       # work tasks done today
-alias twb='task burndown.daily tag:polestar'            # work tasks burntdown by day
-
 ### ENV and apps settings ###
 #############################
 
