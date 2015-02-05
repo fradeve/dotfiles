@@ -6,11 +6,11 @@ data.location=~/.task
 #### sync ####
 ##############
 
-taskd.server=freecinc.com:53589
-taskd.key=\/home\/fradeve\/.task\/freecinc_330bf6ae.key.pem
-taskd.certificate=\/home\/fradeve\/.task\/freecinc_330bf6ae.cert.pem
-taskd.ca=\/home\/fradeve\/.task\/freecinc_330bf6ae.ca.pem
-taskd.credentials=FreeCinc\/freecinc_330bf6ae\/5e960023-e26f-45ab-af54-2b70d8a5e9be
+taskd.certificate=/home/fradeve/.keys/task/fradeve_rusti.cert.pem
+taskd.key=/home/fradeve/.keys/task/fradeve_rusti.key.pem
+taskd.ca=/home/fradeve/.keys/task/ca.cert.pem
+taskd.server=rusti.cc:53589
+taskd.credentials=fradeve/fradeve/f69c45c8-cac4-4af1-a2b9-97c56cbb243a
 
 #### behaviour ####
 ###################
@@ -18,25 +18,51 @@ taskd.credentials=FreeCinc\/freecinc_330bf6ae\/5e960023-e26f-45ab-af54-2b70d8a5e
 confirmation=no
 
 urgency.annotations.coefficient=0.0
-urgency.user.tag.1.coefficient=14.0
 
 #### reports ####
 #################
 
 report.general.columns=id,due,priority,depends,description
 report.general.labels=ID,Due,Pri,Dep,Desc
-report.general.filter=project.not:work project.not:tech tag.not:longterm status:pending
+report.general.filter=project.not:tech tag.not:polestar tag.not:longterm status:pending
 report.general.sort=due+,priority-,depends-
 
-report.work.columns=id,project,due,priority,urgency,depends,tags,description
-report.work.filter=project:work status:pending
+report.work.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.work.filter=status:pending tag:polestar agile.not:devcomplete
+report.work.sort=urgency-,priority-
+
+report.workcomplete.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.workcomplete.filter=status:pending tag:polestar agile:devcomplete
+report.workcomplete.sort=priority-
+
+report.workcompletetoday.columns=project,due,priority,urgency,project,depends,description,uuid
+report.workcompletetoday.filter=status:completed tag:polestar due:today
 
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.filter=project:tech status:pending
 report.tech.sort=due+,priority-,depends-
 
+#### agile UDAs ####
+####################
+
+uda.agile.type=string
+uda.agile.label=agile
+uda.agile.values=devcomplete,hotfix
+urgency.uda.agile.coefficient=10
+
 #### colors ####
 ################
 
 color=on
-include /usr/share/doc/task/rc/solarized-dark-256.theme
+include /usr/local/share/doc/task/rc/solarized-dark-256.theme
+
+#### bugwarrior ####
+####################
+uda.jiraurl.type=string
+uda.jiraurl.label=Jira URL
+uda.jirasummary.type=string
+uda.jirasummary.label=Jira Summary
+uda.jiraid.type=string
+uda.jiraid.label=Jira Issue ID
+uda.jiradescription.type=string
+uda.jiradescription.label=Jira Description
