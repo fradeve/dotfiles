@@ -5,6 +5,13 @@ windows:
           automatic-rename: on
       panes:
       - shell_command: mutton
+    - window_name: task
+      options:
+          automatic-rename: on
+      shell_command_before:
+          - ssh fradeve@emmett
+      panes:
+          - shell_command: ta
     - window_name: im
       options:
           automatic-rename: on
