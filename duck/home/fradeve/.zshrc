@@ -82,11 +82,14 @@ alias pong='ping www.google.it'
 alias sutlmgr='sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr'
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
-## alias mutt / IM
+## mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
 alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
+
+## backup
+alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/duck"
 
 ### ENV and apps settings ###
 #############################

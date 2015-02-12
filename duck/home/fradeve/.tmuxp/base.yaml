@@ -10,7 +10,7 @@ windows:
       shell_command_before:
           - ssh fradeve@emmett
       panes:
-          - shell_command: ta
+          - shell_command: twn
     - window_name: inventati
       panes:
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'

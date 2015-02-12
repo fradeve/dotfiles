@@ -19,6 +19,8 @@ windows:
     - window_name: test
       shell_command_before:
           - workon cas
+      panes:
+          - echo "./manage.py test cas --settings=development_settings.francesco_devirgilio"
     - window_name: logs
       panes:
           - tail -f /opt/var/log/cas/django.log
