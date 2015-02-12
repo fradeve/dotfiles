@@ -93,12 +93,7 @@ alias btsync-stop='systemctl --user stop btsync'
 ## alias mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
-alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
-alias oblique='sh /opt/oblique'
-
-## alias tmux
-alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## alias time tracking and gtd
 alias t='task X project:work status:pending'              # lists project:work tasks
@@ -106,6 +101,10 @@ alias ta='task next project.not:work tag.not:longterm status:pending'      # lis
 alias ts='task sync'                                      # sync with Task Server
 alias td='task due:today'                                 # tasks to be done today
 alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
+
+## rdiff-backup
+alias moon-last='find /unenc/fradeve/btsync/dev/moon -printf "%T+\n" | sort -nr | head -n 1'
+alias emmett-last='find /unenc/fradeve/btsync/dev/emmett -printf "%T+\n" | sort -nr | head -n 1'
 
 ### ENV and apps settings ###
 #############################

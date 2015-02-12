@@ -16,6 +16,9 @@ windows:
           - workon cas
       panes:
           - ./manage.py shell --settings=development_settings.francesco_devirgilio
+    - window_name: test
+      shell_command_before:
+          - workon cas
     - window_name: logs
       panes:
           - tail -f /opt/var/log/cas/django.log

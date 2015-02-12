@@ -4,9 +4,13 @@ windows:
     - window_name: ps-mail
       panes:
           - mutton
-    - window_name: tasks
+    - window_name: task
+      options:
+          automatic-rename: on
+      shell_command_before:
+          - ssh fradeve@emmett
       panes:
-          - ssh -t emmett 'tw'
+          - shell_command: ta
     - window_name: inventati
       panes:
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
