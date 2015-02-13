@@ -12,7 +12,7 @@ windows:
           - workon cas
       panes:
           - tail -f /opt/var/log/cas/django.log
-          - ./manage.py runserver --settings=development_settings.francesco_devirgilio
+          - ./manage.py runserver_plus --settings=development_settings.francesco_devirgilio
           - celery -A cas worker -l info
     - window_name: shell | test
       layout: main-vertical
@@ -22,5 +22,5 @@ windows:
       shell_command_before:
           - workon cas
       panes:
-          - ./manage.py shell --settings=development_settings.francesco_devirgilio
+          - ./manage.py shell_plus --ipython --settings=development_settings.francesco_devirgilio
           - echo "./manage.py test cas --settings=development_settings.francesco_devirgilio"

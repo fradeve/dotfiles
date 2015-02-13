@@ -10,7 +10,7 @@ windows:
           - workon correspondenceapi
       panes:
           - tail -f /opt/var/log/correspondenceapi/django.log
-          - ./manage.py runserver --settings=development_settings.francesco_devirgilio
+          - ./manage.py runserver_plus --settings=development_settings.francesco_devirgilio
           - celery -A correspondenceapi worker -l info
     - window_name: shell | test
       shell_command_before:
@@ -19,5 +19,5 @@ windows:
           automatic-rename: on
           main-pane-width: 140
       panes:
-          - ./manage.py shell --settings=development_settings.francesco_devirgilio
+          - ./manage.py shell_plus --ipython --settings=development_settings.francesco_devirgilio
           - echo "./manage.py test correspondenceapi --settings=development_settings.francesco_devirgilio"

@@ -171,4 +171,4 @@ bar {
         status_command i3status
 }
 
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable; workspace 1; exec konsole; workspace 2'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable; exec konsole -e "tmuxp load /home/fradeve/.tmuxp/base.yaml"; workspace 1; exec konsole; workspace 2'
