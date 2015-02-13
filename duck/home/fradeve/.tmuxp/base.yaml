@@ -2,8 +2,14 @@ session_name: base
 start_directory: /home/fradeve
 windows:
     - window_name: ps-mail
+      focus: true
+      layout: main-vertical
+      options:
+          automatic-rename: on
+          main-pane-width: 160
       panes:
           - mutton
+          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
     - window_name: task
       options:
           automatic-rename: on
@@ -11,12 +17,11 @@ windows:
           - ssh fradeve@emmett
       panes:
           - shell_command: twn
-    - window_name: inventati
-      panes:
-          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
     - window_name: music
+      layout: main-vertical
+      options:
+          automatic-rename: on
+          main-pane-width: 180
       panes:
           - ncmpcpp -h moon.ydns.eu -p 6600
-    - window_name: vlc
-      panes:
           - vlc -vvv --intf dummy http://moon.ydns.eu:8080

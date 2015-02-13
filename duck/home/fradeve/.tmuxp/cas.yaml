@@ -1,7 +1,9 @@
 session_name: cas
 start_directory: /home/fradeve/proj/cas/cas
 windows:
-    - window_name: run|cel
+    - window_name: runserver | celery
+      focus: true
+      layout: main-vertical
       shell_command_before:
           - sudo systemctl start postgresql
           - sudo systemctl start redis
@@ -9,18 +11,16 @@ windows:
           - sudo systemctl start mongodb
           - workon cas
       panes:
+          - tail -f /opt/var/log/cas/django.log
           - ./manage.py runserver --settings=development_settings.francesco_devirgilio
           - celery -A cas worker -l info
-    - window_name: shell
+    - window_name: shell | test
+      layout: main-vertical
+      options:
+          automatic-rename: on
+          main-pane-width: 140
       shell_command_before:
           - workon cas
       panes:
           - ./manage.py shell --settings=development_settings.francesco_devirgilio
-    - window_name: test
-      shell_command_before:
-          - workon cas
-      panes:
           - echo "./manage.py test cas --settings=development_settings.francesco_devirgilio"
-    - window_name: logs
-      panes:
-          - tail -f /opt/var/log/cas/django.log
