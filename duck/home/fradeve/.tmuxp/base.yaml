@@ -3,20 +3,22 @@ start_directory: /home/fradeve
 windows:
     - window_name: ps-mail
       focus: true
-      layout: main-vertical
+      layout: main-horizontal
       options:
           automatic-rename: on
-          main-pane-width: 160
+          main-pane-height: 40
       panes:
           - mutton
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
     - window_name: task
+      focus: true
+      layout: main-vertical
       options:
           automatic-rename: on
-      shell_command_before:
-          - ssh fradeve@emmett
+          main-pane-width: 150
       panes:
-          - shell_command: twn
+          - weechat-curses
+          - ssh -t emmett 'clear && task +polestar agile.not:devcomplete next; zsh'
     - window_name: music
       layout: main-vertical
       options:

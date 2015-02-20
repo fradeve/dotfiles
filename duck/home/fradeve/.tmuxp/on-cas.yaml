@@ -1,0 +1,14 @@
+session_name: cas
+start_directory: /home/fradeve/proj/cas/cas
+windows:
+    - window_name: runserver | celery
+      focus: true
+      layout: main-vertical
+      shell_command_before:
+          - ssh cas-test
+          - sudo su - devops
+          - cd /opt/cas
+          - source venv/bin/activate
+      panes:
+          - ./manage.py shell
+          - tail -f /opt/var/log/cas/celery_w1.log
