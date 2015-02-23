@@ -16,7 +16,7 @@ windows:
       options:
           automatic-rename: on
       panes:
-      - shell_command: screen irssi
+      - shell_command: weechat-curses
     - window_name: rss
       options:
           automatic-rename: on

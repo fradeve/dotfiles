@@ -85,7 +85,6 @@ alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silen
 ## mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
-alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
 
 ## backup

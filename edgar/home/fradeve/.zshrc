@@ -83,10 +83,11 @@ alias music='ncmpcpp'
 alias music-on='ncmpcpp -h moon.ydns.eu -p 6600'
 alias music-stream='vlc --intf dummy http://moon.ydns.eu:8080'
 
-alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA" | grep -v ".backup" | grep -v ".irssi"'
+alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA" | grep -v ".backup"'
 
 ## networking / ssh
 alias pong='ping www.google.it' 
+alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/edgar'
 
 ## latex / vim
 alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
@@ -95,7 +96,6 @@ alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silen
 ## alias mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
-alias irssi='screen irssi'
 alias trans='transmission-remote-cli -f ~/.trclirc'
 alias oblique='sh /opt/oblique'
 
@@ -150,6 +150,9 @@ export EDITOR=vim
 
 ## powerline
 . /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
+
+## chromium cache in tmp
+export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp --disk-cache-size=50000000"
 
 ## ncl
 export NCARG_ROOT='/usr/lib/ncarg'
