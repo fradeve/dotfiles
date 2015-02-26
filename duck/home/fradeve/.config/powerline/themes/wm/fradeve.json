@@ -1,0 +1,74 @@
+{
+	"default_module": "powerline.segments.common",
+    "dividers": {
+        "left": {
+            "hard": " ••",
+            "soft": " •"
+        },
+        "right": {
+            "hard": " \\\\",
+            "soft": " \\\\"
+        }
+    },
+	"segment_data": {
+		"uptime": {
+			"args": {
+                "shorten_len": 1
+            }
+		},
+		"email_imap_alert": {
+			"before": "✉ ",
+			"args": {
+                "server" : "mail.autistici.org",
+				"username": "",
+				"password": ""
+			}
+		},
+        "date": {
+            "args": {
+                "format": "%Y-%m-%d %H:%M"
+            }
+        }
+	},
+	"segments": {
+		"right": [
+            {
+                "function": "powerline.segments.common.players.mpd",
+                "name": "player",
+                "args": {
+                    "host":   "moon.ydns.eu",
+                    "port":   "6600",
+                    "format": "{state_symbol} {artist} • {album} • {title}"
+                },
+                "exclude_modes": ["nc"],
+                "priority": 30
+            },
+			{
+                "function": "powerline.segments.common.mail.email_imap_alert"
+			},
+			{
+                "function": "powerline.segments.common.wthr.weather",
+				"priority": 40,
+				"args": {
+                    "unit" : "C",
+					"location_query": "Wimbledon, UK"
+				}
+			},
+			{
+                "function": "powerline.segments.common.sys.uptime"
+			},
+			{
+                "function": "powerline.segments.common.bat.battery"
+			},
+			{
+                "function": "powerline.segments.common.time.date"
+			}
+		],
+        "left": [
+			{
+                "function": "powerline.segments.common.net.hostname",
+				"name": "hostname"
+			}
+        ]
+	}
+}
