@@ -10,7 +10,7 @@ windows:
       panes:
           - mutton
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
-    - window_name: task
+    - window_name: chat
       focus: true
       layout: main-vertical
       options:
@@ -18,7 +18,6 @@ windows:
           main-pane-width: 150
       panes:
           - weechat-curses
-          - ssh -t emmett 'clear && task +polestar agile.not:devcomplete next; zsh'
     - window_name: music
       layout: main-vertical
       options:
