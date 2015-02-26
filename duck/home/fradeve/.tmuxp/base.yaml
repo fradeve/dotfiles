@@ -19,10 +19,10 @@ windows:
       panes:
           - weechat-curses
     - window_name: music
-      layout: main-vertical
+      layout: main-horizontal
       options:
           automatic-rename: on
-          main-pane-width: 180
+          main-pane-height: 55
       panes:
-          - ncmpcpp -h moon.ydns.eu -p 6600
-          - vlc -vvv --intf dummy http://moon.ydns.eu:8080
+          - sleep 5 && ncmpcpp -h moon.ydns.eu -p 6600
+          - ncmpcpp

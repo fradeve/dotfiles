@@ -34,7 +34,7 @@ bindsym $mod+Control+k  exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l  exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+t          exec dolphin                        # starts Dolphin
 bindsym $mod+y          exec google-chrome-stable           # starts Google Chrome
-bindsym $mod+Control+0  exec i3lock -c 000000               # lock screen
+bindsym $mod+Control+0  exec mpc pause && i3lock -c 000000  # lock screen
 
 # music
 bindsym $mod+c          exec mpc toggle                  # MPD play/pause

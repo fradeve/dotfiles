@@ -23,12 +23,10 @@ windows:
       panes:
       - shell_command: newsbeuter
     - window_name: music
+      layout: main-horizontal
       options:
           automatic-rename: on
+          main-pane-height: 55
       panes:
-          - shell_command: music-on
-    - window_name: music-stream
-      options:
-          automatic-rename: on
-      panes:
-          - shell_command: music-stream
+          - sleep 5 && ncmpcpp -h moon.ydns.eu -p 6600
+          - ncmpcpp
