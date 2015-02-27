@@ -62,5 +62,6 @@ color index      black               green     "~h 'Subject: .*back to normal*.'
 color index      black               blue      "~h 'Subject: .*ready for deployment*.'"         # Jenkins, ready to deploy
 color index      black               yellow    "~h 'Subject: .*deployed*.'"                     # Jenkins, deployed
 color index      black               cyan      "~h 'To: .*development@polestarglobal.com*.'"    # To development team
+color index      black               cyan      "~h 'To: .*all-staff@polestarglobal.com*.'"      # To all staff
 color index      black               white     "~h 'From: .*notifications@github.com*.'"        # GitHub
 color index      black               magenta   "~h 'From: .*no-reply@polestarglobal.com*.'"     # Automated messages from API
