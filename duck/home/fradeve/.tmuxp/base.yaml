@@ -19,10 +19,7 @@ windows:
       panes:
           - weechat-curses
     - window_name: music
-      layout: main-horizontal
       options:
           automatic-rename: on
-          main-pane-height: 55
       panes:
-          - sleep 5 && ncmpcpp -h moon.ydns.eu -p 6600
-          - ncmpcpp
+          - ncmpcpp -h moon.ydns.eu -p 6600
