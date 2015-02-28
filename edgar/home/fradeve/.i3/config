@@ -35,15 +35,17 @@ bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+t              exec dolphin                        # starts Dolphin
 bindsym $mod+y              exec chromium                       # starts Chromium
-bindsym $mod+Control+0      exec mpc pause && i3lock -c 000000  # lock screen, pausing music
+bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
+bindsym $mod+Control+1      exec xkill -a                       # restart X server
 
 # music
-bindsym $mod+c              exec mpc toggle                  # MPD play/pause
-bindsym $mod+i              exec mpc next                    # MPD next
-bindsym $mod+u              exec mpc prev                    # MPD prev
-bindsym $mod+Control+q      exec pamixer --toogle-mute       # MPD mute/unmute
-bindsym $mod+p              exec pamixer --increase 5        # system audio up
-bindsym $mod+q              exec pamixer --decrease 5        # system audio down
+bindsym $mod+c              exec ~/.bin/mpc-remote-toggle    # [remote]     MPD toggle
+bindsym $mod+x              exec mpc toggle                  # [localhost]  MPD toggle
+bindsym $mod+i              exec mpc next                    # [localhost]  MPD next
+bindsym $mod+u              exec mpc prev                    # [localhost]  MPD prev
+bindsym $mod+m              exec pamixer --toogle-mute       # [localhost]  MPD mute/unmute
+bindsym $mod+p              exec pamixer --increase 5        # [localhost]  system audio up
+bindsym $mod+q              exec pamixer --decrease 5        # [localhost]  system audio down
 
 # kill focused window
 bindsym $mod+Shift+q        kill
