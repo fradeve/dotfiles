@@ -131,7 +131,7 @@ eval "$(pyenv init -)"
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/btsync/pass
+export PASSWORD_STORE_DIR=/home/fradeve/proj/pass-android
 export EDITOR=vim
 
 ## powerline

@@ -78,7 +78,7 @@ setopt RmStarSilent
 MONTH_NOW=`date +'%m'`
 MONTH_START=`date --date='-6 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
-alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
+alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_NOW..$YEAR_NOW-$MONTH_START"'
 alias music='ncmpcpp'
 alias music-on='ncmpcpp -h moon.ydns.eu -p 6600'
 
@@ -144,7 +144,7 @@ fi
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/DATA/pass
+export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
 export EDITOR=vim
 
 ## powerline

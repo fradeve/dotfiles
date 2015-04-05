@@ -31,7 +31,7 @@ song_status_format                  =   "$2%a $1• $3%t $1• $4%b {(Disc %d) }
 # progressbar
 progressbar_look                    =   "◾◾◽"
 
-## [view 2] playlist
+## [view 1] playlist
 playlist_display_mode               =   "columns" (classic/columns)
 playlist_separate_albums            =   "yes"
 song_columns_list_format            =   "(6f)[blue]{l} (20)[red]{a} |(2)[yellow]{n}| (40)[green]{t|f} (25)[yellow]{b} (4)[yellow]{y}"
@@ -42,16 +42,17 @@ autocenter_mode                     =   "yes"
 centered_cursor                     =   "yes"
 playlist_disable_highlight_delay    =   "0"
 
-## [view 3] browser
+## [view 2] browser
 browser_playlist_prefix             =   "$2plist »$9 "
 browser_display_mode                =   "columns" (classic/columns)
 
-## [view 4] search engine
+## [view 3] search engine
 search_engine_display_mode          =   "columns" (classic/columns)
 
-## [view 5] library
+## [view 4] library
+media_library_primary_tag           =   "album_artist"
 
-## [view 9] visualizer
+## [view 8] visualizer
 visualizer_fifo_path                =   "/tmp/mpd.fifo"
 visualizer_output_name              =   "mpdviz_fifo"
 visualizer_sync_interval            =   "1"
