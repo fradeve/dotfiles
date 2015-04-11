@@ -1,6 +1,6 @@
 [general]
 metadata = ~/.offlineimap
-accounts = gmail,inventati,riseup,sms-gmail
+accounts = gmail,inventati,riseup
 maxsyncaccount = 4
 socktimeout = 60
 ui = ttyui
@@ -26,7 +26,7 @@ remoteuser = fradeve11@gmail.com
 remotepassfile = ~/.keys/offlineimap/gmail
 realdelete = no
 maxconnections = 4
-folderfilter = lambda folder: not re.search('(^Bin$)', folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Bin']
 
 ### francesco.devirgilio@inventati.org
 ######################################
@@ -73,27 +73,3 @@ remoteuser = fradeve@riseup.net
 remotepassfile = ~/.keys/offlineimap/riseup
 realdelete = no
 maxconnections = 2
-
-### sms@fradeve11@gmail.com
-###########################
-
-[Account sms-gmail]
-localrepository = local-sms-gmail
-remoterepository = remote-sms-gmail
-
-[Repository local-sms-gmail]
-type = IMAP
-ssl = yes
-remotehost = mail.autistici.org
-remoteuser = francesco.devirgilio@inventati.org
-remotepassfile = ~/.keys/offlineimap/inventati
-
-[Repository remote-sms-gmail]
-type = Gmail
-ssl = yes
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-remotehost = imap.gmail.com
-remoteuser = fradeve11@gmail.com
-remotepassfile = ~/.keys/offlineimap/gmail
-realdelete = no
-folderfilter = lambda folder: folder.startswith('sms')
