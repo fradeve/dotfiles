@@ -38,6 +38,7 @@ bindsym $mod+Control+1      exec xkill -a                       # restart X serv
 
 # music
 bindsym $mod+c              exec ~/.bin/mpc-remote-toggle    # [remote]     MPD toggle
+bindsym $mod+z              exec mpc play                    # [localhost]  MPD play
 bindsym $mod+x              exec mpc toggle                  # [localhost]  MPD toggle
 bindsym $mod+i              exec mpc next                    # [localhost]  MPD next
 bindsym $mod+u              exec mpc prev                    # [localhost]  MPD prev
