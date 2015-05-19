@@ -6,11 +6,11 @@ data.location=~/.task
 #### sync ####
 ##############
 
-taskd.certificate=/home/fradeve/.keys/task/fradeve_rusti.cert.pem
-taskd.key=/home/fradeve/.keys/task/fradeve_rusti.key.pem
-taskd.ca=/home/fradeve/.keys/task/ca.cert.pem
-taskd.server=rusti.cc:53589
-taskd.credentials=fradeve/fradeve/f69c45c8-cac4-4af1-a2b9-97c56cbb243a
+taskd.server=task.rusti.cc:53589
+taskd.certificate=/home/fradeve/taskd/pki/emmett_fradeve.cert.pem
+taskd.key=/home/fradeve/taskd/pki/emmett_fradeve.key.pem
+taskd.ca=/home/fradeve/taskd/pki/ca.cert.pem
+taskd.credentials=emmett/fradeve/75a59d58-5f04-445a-894b-4adb9b4f6ea0
 
 #### behaviour ####
 ###################
@@ -22,14 +22,22 @@ urgency.annotations.coefficient=0.0
 #### reports ####
 #################
 
-report.general.columns=id,due,priority,depends,description
-report.general.labels=ID,Due,Pri,Dep,Desc
+report.general.columns=id,due,due.countdown,start,priority,depends,description
+report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Desc
 report.general.filter=project.not:tech tag.not:polestar tag.not:longterm status:pending
-report.general.sort=due+,priority-,depends-
+report.general.sort=due+
+report.general.dateformat=D-M-Y
 
-report.work.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.generalcompletetoday.columns=id,due,due.countdown,priority,depends,description
+report.generalcompletetoday.labels=ID,Due,Remaining,Pri,Dep,Desc
+report.generalcompletetoday.filter=status:completed due:today
+report.generalcompletetoday.dateformat=D-M-Y
+
+report.work.columns=id,project,due,due.countdown,priority,urgency,depends,description
+report.work.labels=ID,Project,Due,Remaining,Pri,Urgency,Dep,Desc
 report.work.filter=status:pending tag:polestar agile.not:devcomplete
 report.work.sort=urgency-,priority-
+report.work.dateformat=D-M-Y
 
 report.workcomplete.columns=id,project,due,priority,urgency,project,depends,tags,description
 report.workcomplete.filter=status:pending tag:polestar agile:devcomplete
@@ -54,7 +62,7 @@ urgency.uda.agile.coefficient=10
 ################
 
 color=on
-include /usr/local/share/doc/task/rc/solarized-dark-256.theme
+include /usr/share/task/solarized-dark-256.theme
 
 #### bugwarrior ####
 ####################

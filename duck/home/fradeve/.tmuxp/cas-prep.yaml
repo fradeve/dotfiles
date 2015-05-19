@@ -5,7 +5,7 @@ windows:
       focus: true
       layout: main-vertical
       shell_command_before:
-          - ssh cas-preprod
+          - ssh cas-prep
           - sudo su - devops
           - cd /opt/cas
           - source venv/bin/activate
