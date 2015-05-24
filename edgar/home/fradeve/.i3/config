@@ -34,7 +34,7 @@ bindsym $mod+Control+j      exec systemctl --user stop dropbox  # stops Dropbox
 bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+t              exec dolphin                        # starts Dolphin
-bindsym $mod+y              exec chromium                       # starts Chromium
+bindsym $mod+y              exec firefox                        # starts Firefox
 bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 bindsym $mod+Control+1      exec xkill -a                       # restart X server
 
@@ -169,5 +169,9 @@ for_window [title="taskwin"] floating enable
 bindsym $mod+Shift+D    exec urxvt -title taskwin -e sh ~/.bin/display_tasks.sh
 
 # exec at startup
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/chromium; workspace 2; exec konsole; workspace 2'
-exec sleep 30 && python /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar -b -f "-misc-dejavu sans mono-medium-r-normal--11-*-*-*-m-*-iso10646-1"
+#exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/chromium; workspace 2; exec konsole; workspace 2'
+#exec sleep 30 && python /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar -b -f "-misc-dejavu sans mono-medium-r-normal--11-*-*-*-m-*-iso10646-1"
+
+bar {
+    status_command i3status
+}
