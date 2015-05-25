@@ -80,9 +80,7 @@ MONTH_START=`date --date='-6 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
 alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_NOW..$YEAR_NOW-$MONTH_START"'
 alias music='ncmpcpp'
-alias music-on='ncmpcpp -h moon.ydns.eu -p 6600'
-
-alias dff='pydf | grep -v "Private" | grep -v "efi" | grep -v "home/fradeve/DATA" | grep -v ".backup"'
+alias music-on='ncmpcpp -h moon-fradeve.duckdns.org -p 6600'
 
 ## networking / ssh
 alias pong='ping www.google.it' 
