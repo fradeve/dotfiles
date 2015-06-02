@@ -103,8 +103,8 @@ alias td='task due:today'                                 # tasks to be done tod
 alias tbd='task burndown.daily project:work'              # list burntdown tasks from work
 
 ## rdiff-backup
-alias moon-last='find /unenc/fradeve/btsync/dev/moon -printf "%T+\n" | sort -nr | head -n 1'
-alias emmett-last='find /unenc/fradeve/btsync/dev/emmett -printf "%T+\n" | sort -nr | head -n 1'
+alias last-moon='find /unenc/fradeve/btsync/dev/moon -printf "%T+\n" | sort -nr | head -n 1'
+alias last-emmett='find /unenc/fradeve/btsync/dev/emmett -printf "%T+\n" | sort -nr | head -n 1'
 
 ### ENV and apps settings ###
 #############################
