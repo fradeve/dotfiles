@@ -1,5 +1,5 @@
 session_name: simulator
-start_directory: /home/fradeve/proj/simulator
+start_directory: /home/fradeve/git/simulator
 windows:
     - window_name: sim [term]
       panes:

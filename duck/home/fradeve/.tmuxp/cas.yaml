@@ -1,5 +1,5 @@
 session_name: cas
-start_directory: /home/fradeve/proj/cas/cas
+start_directory: /home/fradeve/git/cas/cas
 windows:
     - window_name: runserver | celery
       focus: true

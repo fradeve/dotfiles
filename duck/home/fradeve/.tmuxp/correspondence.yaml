@@ -1,5 +1,5 @@
 session_name: correspondence
-start_directory: /home/fradeve/proj/correspondence/correspondenceapi
+start_directory: /home/fradeve/git/correspondence/correspondenceapi
 windows:
     - window_name: run|cel
       focus: true

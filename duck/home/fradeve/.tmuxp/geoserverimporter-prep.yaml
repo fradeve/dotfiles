@@ -1,5 +1,5 @@
 session_name: geoserverimporter-prep
-start_directory: /home/fradeve/proj/geoserverimporter/
+start_directory: /home/fradeve/git/geoserverimporter/
 windows:
     - window_name: runserver | celery
       focus: true
