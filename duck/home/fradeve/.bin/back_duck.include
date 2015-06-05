@@ -32,3 +32,4 @@
 /etc/hosts
 
 /etc/mpd.conf
+/etc/cups/cups-files.conf

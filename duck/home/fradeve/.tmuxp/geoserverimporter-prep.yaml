@@ -1,15 +1,19 @@
 session_name: geoserverimporter-prep
-start_directory: /home/fradeve/git/geoserverimporter/
+start_directory: /home/fradeve/git/geoserver-importer/
 windows:
     - window_name: runserver | celery
       focus: true
       layout: main-vertical
-      shell_command_before:
-          - ssh geoserverimporter-prep-1
-          - sudo su - devops
-          - cd /opt/geoserverimporter
-          - source venv/bin/activate
       panes:
-          - ./manage.py shell
-          - tail -f /opt/var/log/geoserverimporter/celery_w1.log
-          - tail -f /opt/var/log/geoserverimporter/django.log
+          - shell_command:
+              - ssh geoserverimporter-prep-1
+              - sudo su - devops
+              - cd /opt/geoserverimporter
+              - source venv/bin/activate
+              - ./manage.py shell
+          - shell_command:
+              - ssh geoserverimporter-prep-1
+              - tail -f /opt/var/log/geoserverimporter/celery_w1.log
+          - shell_command:
+              - ssh geoserverimporter-prep-1
+              - tail -f /opt/var/log/geoserverimporter/django.log

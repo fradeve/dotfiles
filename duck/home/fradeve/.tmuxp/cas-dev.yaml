@@ -5,10 +5,7 @@ windows:
       focus: true
       layout: main-vertical
       shell_command_before:
-          - sudo systemctl start postgresql
-          - sudo systemctl start redis
           - sudo systemctl start rabbitmq
-          - sudo systemctl start mongodb
           - workon cas
       panes:
           - tail -f /opt/var/log/cas/django.log
