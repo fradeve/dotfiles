@@ -1,4 +1,4 @@
-session_name: cas
+session_name: cas-prep
 start_directory: /home/fradeve/git/cas/cas
 windows:
     - window_name: runserver | celery
