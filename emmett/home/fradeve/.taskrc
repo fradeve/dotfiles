@@ -3,15 +3,6 @@
 
 data.location=~/.task
 
-#### sync ####
-##############
-
-taskd.server=task.rusti.cc:53589
-taskd.certificate=/home/fradeve/taskd/pki/emmett_fradeve.cert.pem
-taskd.key=/home/fradeve/taskd/pki/emmett_fradeve.key.pem
-taskd.ca=/home/fradeve/taskd/pki/ca.cert.pem
-taskd.credentials=emmett/fradeve/75a59d58-5f04-445a-894b-4adb9b4f6ea0
-
 #### behaviour ####
 ###################
 
@@ -28,10 +19,8 @@ report.general.filter=project.not:tech tag.not:polestar tag.not:longterm status:
 report.general.sort=due+
 report.general.dateformat=D-M-Y
 
-report.generalcompletetoday.columns=id,due,due.countdown,priority,depends,description
-report.generalcompletetoday.labels=ID,Due,Remaining,Pri,Dep,Desc
-report.generalcompletetoday.filter=status:completed due:today
-report.generalcompletetoday.dateformat=D-M-Y
+report.general-completetoday.columns=project,due,priority,urgency,depends,description
+report.general-completetoday.filter=status:completed tag.not:polestar end.after:today
 
 report.work.columns=id,project,due,due.countdown,priority,urgency,depends,description
 report.work.labels=ID,Project,Due,Remaining,Pri,Urgency,Dep,Desc
@@ -39,12 +28,12 @@ report.work.filter=status:pending tag:polestar agile.not:devcomplete
 report.work.sort=urgency-,priority-
 report.work.dateformat=D-M-Y
 
-report.workcomplete.columns=id,project,due,priority,urgency,project,depends,tags,description
-report.workcomplete.filter=status:pending tag:polestar agile:devcomplete
-report.workcomplete.sort=priority-
+report.work-complete.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.work-complete.filter=status:pending tag:polestar agile:devcomplete
+report.work-complete.sort=priority-
 
-report.workcompletetoday.columns=project,due,priority,urgency,project,depends,description,uuid
-report.workcompletetoday.filter=status:completed tag:polestar due:today
+report.work-completetoday.columns=project,due,priority,urgency,depends,description
+report.work-completetoday.filter=status:completed tag:polestar end.after:today
 
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.filter=project:tech status:pending

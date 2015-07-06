@@ -54,44 +54,16 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games"
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-## alias time tracking and gtd
-alias ts='task sync'                                    # sync with Task Server
-
 ### general
-alias ta='task general'                                 # show 'general' report
-alias tt='task general due:today'                       # general tasks to be done today
-alias tc='task completed end:today'                     # general tasks done today
+alias ta='task general'                  		# show 'general' report
+alias tt='task general +OVERDUE'                        # general tasks to be done today, plus overdue
+alias tc='task general-completetoday'                   # general tasks done today
 
 ### work
-alias tw='clear && task work && task workcomplete'      	# work task todo and in dev-completed
-alias twn='clear && task +polestar agile.not:devcomplete next'	# work task to be done next
-alias twc='task workcompletetoday'       			# work tasks done today
-alias twb='task burndown.daily tag:polestar'            	# work tasks burntdown by day
+alias tw='clear && task work && task work-complete'     # work task todo and in dev-completed
+alias twn='clear && task work'				# work task to be done next
+alias twc='task work-completetoday'       		# work tasks done today
+alias twb='task burndown.daily tag:polestar'            # work tasks burntdown by day
 
 # taskd
 export TASKDDATA=/home/fradeve/.taskddata
