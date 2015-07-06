@@ -26,4 +26,4 @@ windows:
       options:
           automatic-rename: on
       panes:
-          - ncmpcpp -h moon.ydns.eu -p 6600
+          - ncmpcpp -h moon-fradeve.duckdns.org -p 6600

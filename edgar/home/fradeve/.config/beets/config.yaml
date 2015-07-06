@@ -1,32 +1,32 @@
 # base settings
 
-library: /home/fradeve/DATA/music/music_dataunenc/beets.db
-directory: /home/fradeve/DATA/music/music_dataunenc
+library:                /home/fradeve/DATA/music/music_dataunenc/beets.db
+directory:              /home/fradeve/DATA/music/music_dataunenc
 
 import:
-    write: yes              # write metadata in files
-    move: yes
-    delete: no
-    log: /home/fradeve/DATA/music/music_dataunenc/beets.log
-    detail: yes
-    flat: no
-    group_albums: no
+    write:              yes              # write metadata in files
+    move:               yes
+    delete:             no
+    log:                /home/fradeve/DATA/music/music_dataunenc/beets.log
+    detail:             yes
+    flat:               no
+    group_albums:       no
 
-statefile: state.pickle
-threaded: yes
-timeout: 5.0
+statefile:              state.pickle
+threaded:               yes
+timeout:                5.0
 
 # file paths settings
 
-clutter: ["Thumbs.DB", ".DS_Store"]
-ignore: [".*", "*~", "System Volume Information"]
+clutter:                ["Thumbs.DB", ".DS_Store"]
+ignore:                 [".*", "*~", "System Volume Information"]
 
-per_disc_numbering: no
+per_disc_numbering:     no
 
 paths:
-    default: %left{$albumartist,1}/$albumartist/$album%aunique{}/$track $title
-    singleton: %left{$albumartist,1}/$albumartist/non-album/$album%aunique{}/$track $title
-    comp: compilations/$album%aunique{}/$track $title
+    default:            %left{$albumartist,1}/$albumartist/$album%aunique{}/$track $title
+    singleton:          %left{$albumartist,1}/$albumartist/non-album/$album%aunique{}/$track $title
+    comp:               compilations/$album%aunique{}/$track $title
 
 # filenames and strings
 
@@ -37,28 +37,28 @@ replace:
     '[<>:"\?\*\|]': _
     '\.$': _
     '\s+$': ''
-path_sep_replace: _
-art_filename: cover
-max_filename_length: 0
+path_sep_replace:       _
+art_filename:           cover
+max_filename_length:    0
 
 # user interface
 
-color: yes
-verbose: no
-terminal_encoding: utf8
-id3v23: no
+verbose:                no
+terminal_encoding:      utf8
+id3v23:                 no
 
 ui:
-    terminal_width: 80
+    color:              yes
+    terminal_width:     80
     length_diff_thresh: 10.0
 
-list_format_item: $artist - $album - $title
-list_format_album: $albumartist - $album
+format_item:            $artist - $album - $title - $year
+format_album:           $albumartist - $album - $year
 
 # times and date
 
-original_date: yes
-time_format: '%Y-%m-%d %H:%M:%S'
+original_date:          yes
+time_format:            '%Y-%m-%d %H:%M:%S'
 
 ## plugins settings ###
 #######################

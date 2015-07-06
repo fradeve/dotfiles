@@ -32,7 +32,7 @@ bindsym $mod+Control+j      exec systemctl --user stop dropbox  # stops Dropbox
 bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+t              exec dolphin                        # starts Dolphin
-bindsym $mod+y              exec firefox			# starts Google Chrome
+bindsym $mod+y              exec chromium                       # starts Chromium
 bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 bindsym $mod+Control+1      exec xkill -a                       # restart X server
 
