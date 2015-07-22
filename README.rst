@@ -1,40 +1,57 @@
+==================
 fradeve's dotfiles
 ==================
 
 This repo has been structured to be used with GNU Stow.
 The following software is *dotfiled* in this repo:
 
-=== Xorg and WM ===
+Xorg and WM
+===========
 * Xinitrc
 * i3 wm
+* Dunst
 
-=== Text editor ===
+Text editor
+===========
+
 * LaTeXMk
 * VIM
 
-=== Terminal ===
+Terminal
+========
+
 * (oh-my-)zsh
 * Konsole (with dircolors-solarized_)
 * Tmux (with Tmuxp_)
 * Powerline_
 
-=== Music ===
+Music
+=====
+
 * Mpd
 * Ncmpcpp
 * Beets_
 
-=== Mail, news, IM ===
+Mail, news, IM
+==============
+
 * Newsbeuter
 * WeeChat
 
-=== CVS ===
+CVS
+===
+
 * GIT
 
-=== ArchLinux ===
+ArchLinux
+=========
+
 * Customizepkg (for VIM)
 * fabric.py
 
-=== GTD ===
+GTD
+===
+
 * TaskWarrior
 * BugWarrior
 
@@ -44,3 +61,4 @@ When program's settings depend from another software, or when installation is qu
 .. _Tmuxp: https://github.com/tony/tmuxp
 .. _Powerline: https://github.com/Lokaltog/powerline
 .. _Beets: https://github.com/sampsyo/beets
+
