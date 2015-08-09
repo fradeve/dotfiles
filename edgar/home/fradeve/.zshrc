@@ -78,7 +78,7 @@ setopt RmStarSilent
 MONTH_NOW=`date +'%m'`
 MONTH_START=`date --date='-6 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
-alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_NOW..$YEAR_NOW-$MONTH_START"'
+alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
 alias music='ncmpcpp'
 alias music-on='ncmpcpp -h moon-fradeve.duckdns.org -p 6600'
 
