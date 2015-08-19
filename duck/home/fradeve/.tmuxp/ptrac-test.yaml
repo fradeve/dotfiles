@@ -1,0 +1,16 @@
+session_name: ptrac-test
+start_directory: /home/fradeve/git/purpletrac-api
+windows:
+    - window_name: runserver | celery
+      focus: true
+      layout: main-vertical
+      shell_command_before:
+          - ssh ptrac-test
+          - sudo su
+          - cd /opt/purpletrac
+          - source env/bin/activate
+          - sleep 10; from dashboard.models import Ship, Transaction
+      panes:
+          - ./manage.py shell
+          - tail -f /var/log/purpletrac/celery_w1.log
+          - tail -f /var/log/purpletrac/django-manage.log

@@ -2,16 +2,17 @@ session_name: base
 start_directory: /home/fradeve
 windows:
     - window_name: ps-mail
-      focus: true
-      layout: main-horizontal
+      focus: false
+      layout: tiled
       options:
           automatic-rename: on
-          main-pane-height: 40
       panes:
           - mutton
+          - ssh -t emmett 'vit work'
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
+          - ssh -t emmett 'vit general'
     - window_name: chat
-      focus: true
+      focus: false
       layout: main-vertical
       options:
           automatic-rename: on

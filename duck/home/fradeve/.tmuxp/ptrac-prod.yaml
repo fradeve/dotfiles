@@ -1,0 +1,19 @@
+session_name: ptrac-prod
+start_directory: /home/fradeve/git/purpletrac-api
+windows:
+    - window_name: runserver | celery
+      focus: true
+      layout: main-vertical
+      panes:
+          - shell_command:
+              - ssh ptrac-prod
+              - sudo su
+              - cd /opt/purpletrac
+              - source env/bin/activate
+              - ./manage.py shell
+          - shell_command:
+              - ssh ptrac-prod
+              - tail -f /var/log/purpletrac/celery_w1.log
+          - shell_command:
+              - ssh ptrac-prod
+              - tail -f /var/log/purpletrac/django-manage.log
