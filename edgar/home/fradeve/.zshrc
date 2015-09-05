@@ -99,9 +99,6 @@ alias oblique='sh /opt/oblique'
 ## alias tmux
 alias mux='tmuxp load .tmuxp/base.yaml'
 
-## alias timebook
-unalias t
-
 ### ENV and apps settings ###
 #############################
 
@@ -144,9 +141,6 @@ fi
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
 export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
 export EDITOR=vim
-
-## powerline
-. /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
 
 ## chromium cache in tmp
 export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp --disk-cache-size=50000000"

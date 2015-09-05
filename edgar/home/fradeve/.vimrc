@@ -25,7 +25,7 @@
 " options for vim-addon-manager
 
     set runtimepath+=~/.vim/bundle/vim-addon-manager
-    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "localrc", "dbext", "Syntastic", "surround", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim", "The_NERD_tree", "vim-gitgutter"])
+    call vam#ActivateAddons(["Command-T", "DirDo", "Solarized", "localrc", "dbext", "Syntastic", "surround", "The_NERD_Commenter", "EasyMotion", "git-gutter-vim", "The_NERD_tree"])
 
 " This makes vim invoke Latex-Suite when you open a tex file.
 
@@ -160,7 +160,8 @@
 " [Powerline Python]
 
     let $PYTHONPATH="/usr/lib/python3.4/site-packages"
-    set rtp+=/usr/lib/python3.4/site-packages/powerline/bindings/vim
+    let g:powerline_pycmd="py3"
+    set laststatus=2
 
 " [Syntastic]
 
