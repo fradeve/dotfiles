@@ -29,7 +29,7 @@ set sort_aux=reverse-date-received		# come sopra
 #set imap_check_subscribed=yes			# automatically poll subscribed mailboxes for new mail
 #set imap_keepalive=30				# keep imap connection alive by polling intermittently (time in seconds)
 
-set query_command="goobook query '%s'		# interroga goobook per la rubrica di gmail
+set query_command="abook --mutt-query '%s'"	# interroga goobook per la rubrica di gmail
 bind editor <Tab> complete-query		# come sopra
 
 set mime_forward = ask-no			# se YES Mutt forwarda il messaggio come allegato MIME: chi lo riceve lo vede come noi lo abbiamo ricevuto; per forwardare messaggi MIME (es testo più allegati) [default: no]
@@ -103,6 +103,7 @@ set locale = "it_IT.ISO-8859-1"
 set sig_dashes = yes 						# if YES Mutt inserts a line containing '-- ' before $signature
 set pager_context = 2						# n of rows of the previous page to show in the following page during messa reading [default: 0]
 macro pager l "|urlview\n" "gestisce url con urlview"		# enables a list of the links in the message, selection and running with the proper program
+macro index,pager a 						"<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
 
 # defines what kind of attachments to show in index count
 attachments   +A image/jpeg

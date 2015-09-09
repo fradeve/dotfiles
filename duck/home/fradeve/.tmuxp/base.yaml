@@ -2,21 +2,20 @@ session_name: base
 start_directory: /home/fradeve
 windows:
     - window_name: ps-mail
-      focus: false
-      layout: tiled
+      layout: main-vertical
       options:
           automatic-rename: on
+          main-pane-width: 150
       panes:
           - mutt
           - ssh -t emmett 'vit work'
-          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
           - ssh -t emmett 'vit general'
-    - window_name: chat
+          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
+    - window_name: music
       focus: false
       layout: main-vertical
       options:
           automatic-rename: on
           main-pane-width: 150
       panes:
-          - weechat-curses
           - ncmpcpp -h moon-fradeve.duckdns.org -p 6600
