@@ -3,7 +3,7 @@ set tw=70 et			"defines the max width of the text in the editor
 "delete the Re: in line 5 of each reply mail
 "and sets the cursor to the second empty line (assuming it's immediately after quoting)
 
-python << endpython
+python3 << endpython
 import vim
 import string
 

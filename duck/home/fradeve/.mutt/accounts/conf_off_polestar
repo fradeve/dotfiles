@@ -1,0 +1,76 @@
+#--------------------------------------------------
+# Setup for francesco.devirgilio@polestarglobal.com
+#--------------------------------------------------
+unmailboxes *
+mailboxes	+gmail/INBOX
+mailboxes	+gmail/[Gmail].'Sent Mail'
+mailboxes	+gmail/[Gmail].Chats
+mailboxes	+gmail/[Gmail].Drafts 
+mailboxes	+gmail/[Gmail].Starred 
+mailboxes	+gmail/[Gmail].Bin 
+mailboxes	`echo $HOME/.mail/gmail/* | sed -e 's/ /\n/g' \
+		| sed -e '/INBOX/d' \
+		| sed -e '/^Mail/d' \
+		| sed -e '/Gmail/d' \
+		| sed -e :a -e N -e 's/\n/ /' -e ta`
+
+set folder=$HOME/.mail/gmail
+set mbox="$HOME/.mail/gmail/INBOX"
+set postponed=+[Gmail].Drafts
+set smtp_url=smtps://francesco.devirgilio@polestarglobal.com@smtp.gmail.com
+set smtp_pass=$my_pass1
+
+unmy_hdr *
+my_hdr From: Francesco de Virgilio <francesco.devirgilio@polestarglobal.com>
+my_hdr Reply-To: Francesco de Virgilio <francesco.devirgilio@polestarglobal.com>
+my_hdr X-Disclaimer: Love - Peace - Freedom - Free Software
+my_hdr X-Mailer: Mutt http://www.mutt.org
+my_hdr X-Advocacy: Who uses non-free software empoisons you too. Say him to stop.
+my_hdr X-URL: http://wwww.rusti.cc
+
+set editor="vim -S ~/.mutt/vim_mutt_commands"     # editor predefinito
+set signature=$HOME/.mutt/ps_sign.txt
+	
+## --> gtalk logs
+macro index ,c '<change-folder>=[Gmail].Chats<enter>'
+## --> gfloss-arch
+## --> inbox
+macro index -i '<save-message>=INBOX<enter>'
+macro index ,i '<change-folder>=INBOX<enter>'
+
+#### FOLDER-HOOKS (look & feel)	---------------------------------
+folder-hook .				'exec collapse-all'
+folder-hook [Gmail].lugs		'set index_format = "%35t %Z %{%d/%m/%y} %-25.25n %s"'
+folder-hook [Gmail]..Gmail..Sent.Mail	'set sort=date sort=reverse-date'					# put most recent mail on top
+folder-hook [Gmail]..Gmail..Sent.Mail	'set index_format = "%40t %Z %{%d/%m/%y} %?X?[%X]&   ? %s"'
+folder-hook [Gmail].INBOX		'set index_format = "%3e %Z %{%d/%m/%y %R} %-25.25n %?X?[%X]&   ? %s"'
+folder-hook [Gmail].INBOX		'set sort=reverse-threads sort_browser=reverse-date sort_aux=last-date-received'
+
+set index_format = "%2M %Z %{%d/%m/%y} %-25.25n %?X?[%X]&   ? %s"
+set status_format = "%f [THIS MAILBOX -- Msgs:%?M?%M/?%m%?n? | New:%n?%?o? | Old:%o?%?d? | Del:%d?%?F? | Flag:%F?%?t? | Tag:%t?%?p? | Post:%p?%?b? | Dim:%l?] [ALL BOXES -- with news:%b]----%>-(%P)---"
+set pager_format = "[STATUS %Z] [THREAD:%e/%E] [INDEX:%C/%m] %-20.20n %s"
+
+#### GPG SETTINGS	-----------------------------------------
+# imposta firma automatica per tutte le cartelle
+set pgp_autosign=no
+# quale chiave privata utilizzare per la firma
+set pgp_sign_as=0xEA878B70
+# firmare automaticamente la risposta ad una mail firmata (non efficace su messaggi cifrati *E* firmati)
+set pgp_replysign=yes				
+# cifra in automatico la risposta ad una mail cifrata
+set pgp_replyencrypt=yes						
+# firma automaticamente la risposta ad una mail cifrata; opera insieme a $pgp_replyencrypt: fa firmare i messaggi che automaticamente facciamo cifrare
+set pgp_replysignencrypted=yes
+
+bind index - collapse-thread
+bind index _ collapse-all
+
+#### INDEX COLORS ----------------------------------------------
+color index      black               red       "~h 'Subject: .*Build failed*.'"                 # Jenkins, build failed
+color index      black               green     "~h 'Subject: .*back to normal*.'"               # Jenkins, build now normal
+color index      black               blue      "~h 'Subject: .*ready for deployment*.'"         # Jenkins, ready to deploy
+color index      black               yellow    "~h 'Subject: .*deployed*.'"                     # Jenkins, deployed
+color index      black               cyan      "~h 'To: .*development@polestarglobal.com*.'"    # To development team
+color index      black               cyan      "~h 'To: .*all-staff@polestarglobal.com*.'"      # To all staff
+color index      black               white     "~h 'From: .*notifications@github.com*.'"        # GitHub
+color index      black               blue      "~h 'Subject: .*Pole Star Platform notification*.'"     # Automated messages from API

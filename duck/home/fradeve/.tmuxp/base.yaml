@@ -7,7 +7,7 @@ windows:
       options:
           automatic-rename: on
       panes:
-          - mutton
+          - mutt
           - ssh -t emmett 'vit work'
           - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
           - ssh -t emmett 'vit general'
