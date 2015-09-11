@@ -169,4 +169,6 @@ bindsym $mod+Shift+D    exec urxvt -title taskwin -e sh ~/.bin/display_tasks.sh
 
 # exec at startup
 exec python /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar -b -f "-misc-dejavu sans mono-medium-r-normal--11-*-*-*-m-*-iso10646-1"
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/chromium; workspace 2; exec konsole; workspace 2'
+exec --no-startup-id i3-msg 'workspace 1; exec pycharm'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/chromium; exec konsole'
+exec --no-startup-id i3-msg 'workspace 3; exec konsole'
