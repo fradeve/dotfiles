@@ -1,0 +1,22 @@
+## Look and feel
+################
+
+set date_format = "%d.%m.%y, %H:%M"
+set locale = "it_IT.ISO-8859-1"
+
+set sig_dashes = yes 					# if YES Mutt inserts a line containing '-- ' before $signature
+set pager_context = 2					# n of rows of the previous page to show in the following page during messa reading [default: 0]
+macro pager l "|urlview\n" "gestisce url con urlview"	# enables a list of the links in the message, selection and running with the proper program
+
+# defines what kind of attachments to show in index count
+attachments   +A image/jpeg
+attachments   +I application/octet-stream
+attachments   +A application/zip
+attachments   -I text/plain			# useful to not show attached signatures from ML
+mime_lookup application/octet-stream		# sets Mutt to link file extension to mime.types for specified attachment
+
+ignore *							
+unignore Subject: Date: From: Reply-To: To: Cc: Bcc: X-Operating-System: X-Mailer: User-Agent:
+
+unhdr_order *						
+hdr_order Subject: Date: From: Reply-To: To: Cc: Bcc: X-Operating-System: X-Mailer: User-Agent:

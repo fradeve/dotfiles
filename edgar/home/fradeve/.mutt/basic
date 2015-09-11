@@ -1,0 +1,38 @@
+## General Mutt settings
+########################
+
+set header_cache=$HOME/.mutt/cache/headers
+set message_cachedir=$HOME/.mutt/cache/bodies
+set certificate_file=$HOME/.mutt/certificates
+set maildir_header_cache_verify=no
+set tmpdir=$HOME/.mutt
+set ssl_force_tls=yes
+
+set copy=no 					                # prevent Mutt from saving messages in local folder
+set move = no					                # confirm when appending messages to an existing mailbox?
+set delete=yes				        	        # delete without ask
+set include=yes					                # quote messages in the answer
+set beep=no					                    # no beep
+set markers=no					                # do not add "+" when starting newline
+set mail_check=5 	      		                # check for new mail every 5 seconds
+set confirmappend=no     		                # confirm when appending messages to an existing mailbox?
+auto_view text/html				                # show html attachments using rules in mailcap
+set pager_stop=yes				                # prevents pager from jumping to the next message at the bottom of the current one
+set auto_tag=yes				                # functions in the index menu which affect a message will be applied to all tagged messages [press t]
+
+set reply_to=ask-yes		                    # set recipient in case of multiple Reply-to:
+set recall=no					                # when there are drafts, avoid to ask to recall the latest draft when composing a message
+set abort_unmodified=no                         # if yes, composition will automatically abort after editing the message body if no changes are made to the file
+set sort=threads				                # sort threads by date of last answer on the top
+set sort_aux=reverse-date-received		        # .
+
+set mime_forward = ask-no			            # if YES forwards message as MIME attachment: the recipient sees it as we received it [default: no]
+
+set ispell = "/usr/bin/aspell --mode=email check --lang=it_IT"		# spellcheck [default: ispell]
+set followup_to=yes				                # settings for MLs
+set honor_followup_to=yes			            # .
+unset metoo					                    # avoid having my address in CC or TO
+
+set edit_headers=yes
+
+set print_command="a2ps -o - -1gEmail --borders=no --strip=3 | ps2pdf - $HOME/mail.pdf && okular $HOME/mail.pdf"

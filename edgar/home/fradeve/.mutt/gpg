@@ -1,0 +1,37 @@
+## GPG settings 
+###############
+
+# numero di secondi superati i quali la pw viene cancellata dalla cache
+set pgp_timeout=300				
+# comando ed opzioni per decodificare allegati nel formato deprecato application/pgp
+set pgp_decode_command="gpg %?p?--pinentry-mode loopback --passphrase-fd 0? --no-verbose --batch --output - %f"		
+# comando e opzioni per verificare firme in formato PGP/MIME
+set pgp_verify_command="gpg --no-verbose --batch --status-fd 2 --output - --verify %s %f"	
+# comando e opzioni per decifrare un messaggio criptato in formato PGP/MIME
+set pgp_decrypt_command="gpg --pinentry-mode loopback --passphrase-fd 0 --no-verbose --batch --output - %f"		
+# comando e opzioni per firmare un messaggio allegando la firma in formato PGP/MIME
+set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --pinentry-mode loopback --armor --detach-sign --textmode %?a?-u %a? %f"	
+# create a application/pgp signed (old-style) message
+set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --pinentry-mode loopback --armor --textmode --clearsign %?a?-u %a? %f"	
+# comando e opzioni per importare nel portafoglio di chiavi pubbliche la chiave in un messaggio firmato ricevuto
+set pgp_import_command="gpg --no-verbose --import -v %f"	
+# comando e opzioni per verificare le informazioni su una chiave attraverso il menu di selezione chiavi.
+set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"	
+# read in the public key ring
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r" 
+# read in the secret key ring
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r" 
+# fetch keys
+set pgp_getkeys_command="/usr/bin/gpg --keyserver search.keyserver.net --recv-key %r"
+# create a pgp/mime encrypted attachment
+set pgp_encrypt_only_command="/usr/bin/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+# create a pgp/mime encrypted and signed attachment
+set pgp_encrypt_sign_command="/usr/bin/pgpewrap gpg %?p?--pinentry-mode loopback --passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
+
+# auto sign when replying to signed message
+set pgp_replysign=yes
+# auto encrypt when replying to encrypted message
+set pgp_replyencrypt=yes
+# auto sign when replying to encrypted message (cohoperates with pgp_replysign)
+set pgp_replysignencrypted=yes
