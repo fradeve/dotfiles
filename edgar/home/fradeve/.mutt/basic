@@ -26,7 +26,7 @@ set abort_unmodified=no                         # if yes, composition will autom
 set sort=threads				                # sort threads by date of last answer on the top
 set sort_aux=reverse-date-received		        # .
 
-set mime_forward = ask-no			            # if YES forwards message as MIME attachment: the recipient sees it as we received it [default: no]
+set mime_forward=ask-no			                # if YES forwards message as MIME attachment: the recipient sees it as we received it [default: no]
 
 set ispell = "/usr/bin/aspell --mode=email check --lang=it_IT"		# spellcheck [default: ispell]
 set followup_to=yes				                # settings for MLs
