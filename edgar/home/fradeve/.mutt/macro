@@ -15,3 +15,8 @@ macro 	index	Z 	"|munpack -C ~/Downloads\n"
 macro pager 	Z 	"|munpack -C ~/Downloads\n"
 
 macro index	.r	"T.*\n;WN;WO^T.*\n"	# marks all messages as read
+
+bind index 	\t	next-unread
+bind pager 	\t	next-unread
+bind index	,\t	previous-unread
+bind pager	,\t	previous-unread
