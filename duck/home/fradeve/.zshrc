@@ -8,7 +8,7 @@ ZSH=/usr/share/oh-my-zsh/
 ZSH_THEME="agnoster"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=10
@@ -103,10 +103,7 @@ export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
 export PATH=/home/fradeve/.bin:${PATH}
 
 ## tmuxp autocompletion
-source tmuxp.zsh
-
-## timebook
-unalias t
+#source tmuxp.zsh
 
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
@@ -135,10 +132,7 @@ export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
 export EDITOR=vim
 
 ## powerline
-. /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
-
-## timetrap
-fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpath)
+. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 
 ## dircolors
 eval $(dircolors -b $HOME/.ansi-dark)
