@@ -8,7 +8,7 @@ ZSH=/usr/share/oh-my-zsh/
 ZSH_THEME="agnoster"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=10
@@ -85,10 +85,13 @@ alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silen
 ## mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
-alias trans='transmission-remote-cli -f ~/.trclirc'
 
 ## backup
 alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/duck"
+
+## git
+alias git="hub"
+alias gpf="git fetch -p"
 
 ### ENV and apps settings ###
 #############################
@@ -103,10 +106,7 @@ export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
 export PATH=/home/fradeve/.bin:${PATH}
 
 ## tmuxp autocompletion
-source tmuxp.zsh
-
-## timebook
-unalias t
+#source tmuxp.zsh
 
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
@@ -135,10 +135,7 @@ export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
 export EDITOR=vim
 
 ## powerline
-. /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
-
-## timetrap
-fpath=(. /home/fradeve/.gem/ruby/2.0.0/gems/timetrap-1.8.12/completions/zsh $fpath)
+. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 
 ## dircolors
 eval $(dircolors -b $HOME/.ansi-dark)
@@ -151,9 +148,14 @@ export PATH=$NCARG_ROOT/bin:$PATH
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 ## put ssh-agent variables in session
-eval $(ssh-agent)
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l | grep "The agent has no identities" && ssh-add
 
-# Keypad
+## Keypad
 # 0 . Enter
 bindkey -s "^[Op" "0"
 bindkey -s "^[Ol" "."

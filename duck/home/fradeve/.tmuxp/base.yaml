@@ -1,7 +1,7 @@
 session_name: base
 start_directory: /home/fradeve
 windows:
-    - window_name: ps-mail
+    - window_name: work
       layout: main-vertical
       options:
           automatic-rename: on
@@ -9,8 +9,15 @@ windows:
       panes:
           - mutt
           - ssh -t emmett 'vit work'
-          - ssh -t emmett 'vit general'
-          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
+    - window_name: personal
+      layout: main-vertical
+      options:
+          automatic-rename: on
+          main-pane-width: 150
+      panes:
+          - shell_command:
+              - ssh emmett
+              - tmux attach -t base
     - window_name: music
       focus: false
       layout: main-vertical
