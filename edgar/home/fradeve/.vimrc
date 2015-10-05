@@ -159,7 +159,7 @@
 
 " [Powerline Python]
 
-    let $PYTHONPATH="/usr/lib/python3.4/site-packages"
+    let $PYTHONPATH="/usr/lib/python3.5/site-packages"
     let g:powerline_pycmd="py3"
     set laststatus=2
 

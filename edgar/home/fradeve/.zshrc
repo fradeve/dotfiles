@@ -93,11 +93,14 @@ alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silen
 ## alias mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
-alias trans='transmission-remote-cli -f ~/.trclirc'
 alias oblique='sh /opt/oblique'
 
 ## alias tmux
 alias mux='tmuxp load .tmuxp/base.yaml'
+
+## git
+alias git="hub"
+alias gpf="git fetch -p"
 
 ### ENV and apps settings ###
 #############################
