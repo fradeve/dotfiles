@@ -85,10 +85,13 @@ alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silen
 ## mutt / IM
 alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
 alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
-alias trans='transmission-remote-cli -f ~/.trclirc'
 
 ## backup
 alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/duck"
+
+## git
+alias git="hub"
+alias gpf="git fetch -p"
 
 ### ENV and apps settings ###
 #############################
@@ -145,9 +148,14 @@ export PATH=$NCARG_ROOT/bin:$PATH
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 ## put ssh-agent variables in session
-eval $(ssh-agent)
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l | grep "The agent has no identities" && ssh-add
 
-# Keypad
+## Keypad
 # 0 . Enter
 bindkey -s "^[Op" "0"
 bindkey -s "^[Ol" "."
