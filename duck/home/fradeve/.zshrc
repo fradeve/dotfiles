@@ -92,6 +92,7 @@ alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.b
 ## git
 alias git="hub"
 alias gpf="git fetch -p"
+alias gdf="cdiff -s -w90"
 
 ### ENV and apps settings ###
 #############################
