@@ -2,8 +2,8 @@
 ################
 
 # postponing and recalling postponed messages
-bind    compose     p   postpone-message     # when composing, pressing `p` postpones current msg
-bind    index       p   recall-message       # in index, `p` recalls postponed messages
+bind    compose     p   postpone-message     			# when composing, pressing `p` postpones current msg
+bind    index       p   recall-message       			# in index, `p` recalls postponed messages
 
 # GPG
 macro   pager       G   "v<return><save-message>/tmp/test<return> !gpg -d /tmp/test && shred /tmp/test<return>q" # decrypt and show encrypted message
@@ -14,9 +14,11 @@ set pipe_decode=no
 macro   index       Z   "|munpack -C ~/Downloads\n"
 macro   pager       Z   "|munpack -C ~/Downloads\n"
 
-macro index	   .r	"T.*\n;WN;WO^T.*\n"	# marks all messages as read
+macro index	   .r	"T.*\n;WN;WO^T.*\n"			# marks all messages as read
 
-bind index 	   \t	next-unread
-bind pager 	   \t	next-unread
-bind index	  ,\t	previous-unread
-bind pager	  ,\t	previous-unread
+bind 	index 	   \t	next-unread
+bind 	index	  ,\t	previous-unread
+macro   index	  ,f  	"<search>~F\r" 				# jump to next flagged message
+bind 	pager 	   \t	next-unread
+bind 	pager	  ,\t	previous-unread
+macro   pager	  ,f  	"<search>~F\r" 				# jump to next flagged message

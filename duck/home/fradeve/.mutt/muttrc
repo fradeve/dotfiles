@@ -42,7 +42,6 @@ source $HOME/.mutt/macro
 macro index	<esc>1	"<change-folder>?<return>2<return><return>17<return><return>"	# ESC+1 takes to first INBOX
 macro index	<esc>2	"<change-folder>?<return>3<return><return>17<return><return>"	# ESC+2 takes to second INBOX
 macro index	<esc>3	"<change-folder>?<return>4<return><return>4<return><return>"	# ESC+3 takes to third INBOX
-macro index	.r	"T.*\n;WN;WO^T.*\n"				# marks all messages as read
 
 ## Colors
 #########

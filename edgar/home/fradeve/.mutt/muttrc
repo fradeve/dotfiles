@@ -46,6 +46,8 @@ source $HOME/.mutt/accounts/conf_off_inventati
 ## Global macros
 ################
 
+source $HOME/.mutt/basic
+
 # macro to quick change directory
 macro index	<esc>1	"<change-folder>?<return>2<return><return>17<return><return>"	# ESC+1 takes to first INBOX
 macro index	<esc>2	"<change-folder>?<return>3<return><return>17<return><return>"	# ESC+2 takes to second INBOX
