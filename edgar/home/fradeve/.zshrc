@@ -99,8 +99,11 @@ alias oblique='sh /opt/oblique'
 alias mux='tmuxp load .tmuxp/base.yaml'
 
 ## git
+eval "$(hub alias -s)"
+
 alias git="hub"
 alias gpf="git fetch -p"
+alias gdf="cdiff -s -w90"
 
 ### ENV and apps settings ###
 #############################
