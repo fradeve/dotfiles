@@ -67,7 +67,7 @@ export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR=vim
 
 # stop rm confirmation request
 setopt RmStarSilent
@@ -90,6 +90,8 @@ alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
 alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/duck"
 
 ## git
+eval "$(hub alias -s)"
+
 alias git="hub"
 alias gpf="git fetch -p"
 alias gdf="cdiff -s -w90"
@@ -133,17 +135,16 @@ eval "$(pyenv init -)"
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
 export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
-export EDITOR=vim
 
 ## powerline
 . /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 
-## dircolors
-eval $(dircolors -b $HOME/.ansi-dark)
-
 ## ncl
 export NCARG_ROOT=/usr/lib/ncarg
 export PATH=$NCARG_ROOT/bin:$PATH
+
+## dircolors
+eval $(dircolors -b $HOME/.ansi-dark)
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'

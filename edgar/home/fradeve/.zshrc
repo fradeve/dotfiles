@@ -51,6 +51,7 @@ plugins=(
          colored-man
          colorize
          cp
+         completion
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -66,7 +67,7 @@ export PATH=$HOME/.bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR=vim
 
 # stop rm confirmation request
 setopt RmStarSilent
@@ -84,7 +85,6 @@ alias music-on='ncmpcpp -h moon-fradeve.duckdns.org -p 6600'
 
 ## networking / ssh
 alias pong='ping www.google.it' 
-alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/edgar'
 
 ## latex / vim
 alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
@@ -97,6 +97,9 @@ alias oblique='sh /opt/oblique'
 
 ## alias tmux
 alias mux='tmuxp load .tmuxp/base.yaml'
+
+## backup
+alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/edgar'
 
 ## git
 eval "$(hub alias -s)"
@@ -146,16 +149,17 @@ fi
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
 export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
-export EDITOR=vim
 
 ## chromium cache in tmp
 export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp --disk-cache-size=50000000"
 
 ## ncl
 export NCARG_ROOT='/usr/lib/ncarg'
+export PATH=$NCARG_ROOT/bin:$PATH
 
 ## dircolors
 eval $(dircolors -b $HOME/.ansi-dark)
+
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
