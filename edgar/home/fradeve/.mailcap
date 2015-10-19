@@ -1,7 +1,76 @@
-#text/html;                      elinks %s; nametemplate=%s.html
-#text/html;                      elinks -dump %s; nametemplate=%s.html; copiousoutput
-text/html;		w3m -I %{charset} -T text/html; 	copiousoutput;
-application/msword; 	antiword %s; 				copiousoutput
-image/*; 		ristretto %s
-video/*; 		vlc %s
-application/pdf; 	okular %s
+#text/html;	                        elinks %s;	                    nametemplate=%s.html
+#text/html;	                        elinks -dump %s;	            nametemplate=%s.html;	 copiousoutput
+text/html;			                w3m -I %{charset} -T text/html;	copiousoutput;	
+application/msword;	 	            antiword %s;	 				copiousoutput
+image/*;	 		                ristretto %s
+video/*;	 		                vlc %s
+application/pdf;	 	            okular %s
+
+#text/*;	                         less 
+application/vnd.msword;	            libreoffice %s                  copiousoutput
+application/excel;	                libreoffice %s;	                copiousoutput
+application/msexcel;	            libreoffice %s;	                copiousoutput
+application/vnd.ms-excel;	        libreoffice %s;	                copiousoutput
+application/x-excel;	            libreoffice %s;	                copiousoutput
+application/x-msexcel;	            libreoffice %s;	                copiousoutput
+application/vnd.ms-powerpoint;	    libreoffice %s;	                copiousoutput
+application/x-mspowerpoint;	        libreoffice %s;	                copiousoutput
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;	 libreoffice '%s';	  description="Office Open XML Spreadsheet";	 nametemplate=%s.xlsx
+application/ppt;	                libreoffice %s;	                copiousoutput
+application/zip;	                dolphin %s;	                    copiousoutput
+application/x-rar;	                dolphin %s;	                    copiousoutput
+application/postscript;	            okular %s;	                    copiousoutput
+application/rtf;	                rtf2text %s;	                copiousoutput
+application/ms-tnef;	            mutt_bgrun tnef -w %s
+application/octet-stream;	        less;	                        needsterminal
+application/x-7z-compressed;	    /usr/bin/dolphin '%s';	        test=test -n "$DISPLAY"
+application/x-7z-compressed-tar;	/usr/bin/dolphin '%s';		    test=test -n "$DISPLAY"
+application/x-ace;	                /usr/bin/dolphin '%s';		    test=test -n "$DISPLAY" -a -x /usr/bin/unace
+application/x-alz;	                /usr/bin/dolphin '%s';		    test=test -n "$DISPLAY" -a -x /usr/bin/unalz
+application/x-ar;	                /usr/bin/dolphin '%s';		    test=test -n "$DISPLAY" -a -x /usr/bin/ar
+application/x-arj;	                /usr/bin/dolphin '%s';		    test=test -n "$DISPLAY"
+application/x-bzip;	                /usr/bin/dolphin '%s';		    test=test -n "$DISPLAY"
+application/x-bzip1;	            /usr/bin/dolphin '%s';		    test=test -n "$DISPLAY"
+application/x-bzip-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-bzip1-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-cabinet;	            /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-cbr;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/unrar -o -x /usr/bin/rar
+application/x-cbz;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-cd-image;	            /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-compress;	            /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-compressed-tar;	    /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-cpio;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /bin/cpio
+application/x-deb;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-ear;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-gtar;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-gzip;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-gzpostscript;	        /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-jar;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/zip -o -x /usr/bin/zip
+application/x-java-archive;	        /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/zip -o -x /usr/bin/zip
+application/x-lha;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/lha
+application/x-lhz;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/lhz
+application/x-lrzip;	            /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/lrzip
+application/x-lrzip-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/lrzip
+application/x-lzip;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-lzip-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-lzma;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-lzma-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-lzop;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /bin/lzop
+application/x-lzop-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /bin/lzop
+application/x-ms-dos-executable;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-rar;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-rar-compressed;	    /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-rpm;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/rpm
+application/x-rzip;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/rzip
+application/x-stuffit;	            /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-tar;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-tarz;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-war;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-xz;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-xz-compressed-tar;	/usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-zip;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-zip-compressed;	    /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+application/x-zoo;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY" -a -x /usr/bin/zoo
+application/zip;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+MULtipart/x-zip;	                /usr/bin/dolphin '%s';			test=test -n "$DISPLAY"
+*;	                                less %s;	

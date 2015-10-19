@@ -94,7 +94,7 @@ eval "$(hub alias -s)"
 
 alias git="hub"
 alias gpf="git fetch -p"
-alias gdf="cdiff -s -w90"
+gdf() { cdiff -s -w90 "$*"; }
 
 ### ENV and apps settings ###
 #############################
