@@ -35,9 +35,9 @@
 				"powerline.matchers.vim.plugin.gundo.gundo_preview": "plugin_gundo-preview"
 			}
 		},
-		"wm": {
-			"colorscheme": "default",
-			"theme": "fradeve"
+		"tmux": {
+			"theme": "fradeve",
+            "colorscheme": "default"
 		}
 	}
 }
