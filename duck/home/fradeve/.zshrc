@@ -41,7 +41,12 @@ eval "$(hub alias -s)"
 
 alias git="hub"
 alias gpf="git fetch -p"
-gdf() { cdiff -s -w90 "$*"; }
+gdf() { 
+    if [[ ! $1 ]]; then
+        local branch="master"
+    fi
+    cdiff -s -w90 $branch; 
+}
 
 ### env and apps settings ###
 #############################
