@@ -31,7 +31,6 @@ plugins=(
 
 . $HOME/.zshrc_alias
 
-alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
 alias oblique='sh /opt/oblique'
@@ -64,9 +63,6 @@ gdf() {
 #############################
 
 . $HOME/.zshrc_env_apps
-
-## TexLive executables
-export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
 
 ## tmuxp autocompletion
 source tmuxp.zsh
