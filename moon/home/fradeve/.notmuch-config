@@ -11,7 +11,7 @@
 # configured here named ".notmuch".
 #
 [database]
-path=/unenc/fradeve/.mail
+path=/unenc/fradeve/mail
 
 # User configuration
 #
@@ -31,7 +31,7 @@ path=/unenc/fradeve/.mail
 [user]
 name=Francesco de Virgilio
 primary_email=fradeve@inventati.org
-other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve@ubuntu-it.org;fradeve11@inventati.org;francesco.devirgilio@polestarglobal.com;
+other_email=francesco.devirgilio@inventati.org;fradeve11@inventati.org;fradeve@ubuntu-it.org;fradeve11@inventati.org;francesco.de.virgilio@inventati.org;fradeve11@virgilio.it;francesco.devirgilio@polestarglobal.com;
 
 # Configuration for "notmuch new"
 #
@@ -43,6 +43,9 @@ other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve@ubunt
 #	ignore	A list (separated by ';') of file and directory names
 #		that will not be searched for messages by "notmuch new".
 #
+#		NOTE: *Every* file/directory that goes by one of those
+#		names will be ignored, independent of its depth/location
+#		in the mail store.
 #
 [new]
 tags=unread;inbox;
