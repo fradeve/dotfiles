@@ -4,7 +4,7 @@
 source $HOME/.mutt/basic
 
 set query_command="abook --mutt-query '%s'"		# queries abook contacts
-bind editor <Tab> complete-query			# .
+bind editor <Tab> complete-query			    # .
 
 alternates francesco.devirgilio@polestarglobal.com	# email address
 
@@ -27,7 +27,7 @@ set my_pass1=`awk '/fradeve_gmail:/ {print $2}' ~/.keys/mutt/muttpass`
 ############################
 
 set mbox_type=Maildir
-set folder = $HOME/.mail				# set mailfolder
+set folder = $HOME/.mail				        # set mailfolder
 set spoolfile = $HOME/.mail/gmail/INBOX			# set start mailfolder
 
 folder-hook 'gmail' \

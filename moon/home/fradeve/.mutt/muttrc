@@ -1,139 +1,39 @@
-#-----------------------------------------------------
-# General Mutt settings
-#-----------------------------------------------------
-set header_cache=$HOME/.mutt/cache/headers
-set message_cachedir=$HOME/.mutt/cache/bodies
-set certificate_file=$HOME/.mutt/certificates
-set maildir_header_cache_verify=no
-set tmpdir=$HOME/.mutt
-set ssl_force_tls=yes
+## General Mutt settings
+########################
 
-set copy=no 					# evita che mutt salvi le mail inviate in un file locale (nella home)
-set move = no					# confirm when appending messages to an existing mailbox?
-set delete=yes					# cancella senza chiederlo
-set include=yes					# quota i messaggi alla risposta
-set beep=no					# niente rumore
-set markers=no					# non aggiungere un "+" quando vai a capo
-set mail_check=5 	      			# check for new mail every 5 seconds
-set confirmappend=no     			# confirm when appending messages to an existing mailbox?
-auto_view text/html				# visualizza allegati html con visualizzatore definito in .mailcap
-set pager_stop=yes				# prevents pager from jumping to the next message at the bottom of the current one
-set auto_tag=yes				# functions in the index menu which affect a message will be applied to all tagged messages [press t]
+source $HOME/.mutt/basic
 
-set reply_to=ask-yes				# imposta la scelta del destinatario in caso di molteplici Reply-to:
-set recall=no					# quando ci sono bozze, annulla la richiesta di richiamo della bozza ogni volta che si compone un nuovo messaggio
-set abort_unmodified=no				# if yes, composition will automatically abort after editing the message body if no changes are made to the file
-set sort=threads				# fa in modo di visualizzare i thread ordinati per data-ultima-risposta-in-cima
-set sort_aux=reverse-date-received		# come sopra
+set query_command="goobook query '%s'		    # interroga goobook per la rubrica di gmail
+bind editor <Tab> complete-query		        # come sopra
 
-#set imap_check_subscribed=yes			# automatically poll subscribed mailboxes for new mail
-#set imap_keepalive=30				# keep imap connection alive by polling intermittently (time in seconds)
+alternates fradeve11@gmail.com
+alternates fradeve@inventati.org
+alternates francesco.devirgilio@inventati.org
+alternates fradeve11@inventati.org
 
-set query_command="goobook query '%s'		# interroga goobook per la rubrica di gmail
-bind editor <Tab> complete-query		# come sopra
+## GPG settings 
+###############
 
-set mime_forward = ask-no			# se YES Mutt forwarda il messaggio come allegato MIME: chi lo riceve lo vede come noi lo abbiamo ricevuto; per forwardare messaggi MIME (es testo più allegati) [default: no]
+source $HOME/.mutt/gpg
 
-set ispell = "/usr/bin/aspell --mode=email check --lang=it_IT"		# path programma e parametri per il correttore ortografico [default: ispell]
-set followup_to=yes				# settaggi per le ML
-set honor_followup_to=yes			# come sopra
-unset metoo					# evita l'inclusione del proprio indirizzo in CC o TO
-alternates fradeve11@gmail.com			# come sopra
-alternates francesco.devirgilio@inventati.org	# come sopra
+## Look and feel
+################
 
-set edit_headers=yes
+source $HOME/.mutt/style
 
-set print_command="a2ps -o - -1gEmail --borders=no --strip=3 | ps2pdf - $HOME/mail.pdf && okular $HOME/mail.pdf"
+# Process password file
+#######################
 
-#-----------------------------------------------------
-# GPG settings 
-#-----------------------------------------------------
-# numero di secondi superati i quali la pw viene cancellata dalla cache
-set pgp_timeout=300				
-# comando ed opzioni per decodificare allegati nel formato deprecato application/pgp
-set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"		
-# comando e opzioni per verificare firme in formato PGP/MIME
-set pgp_verify_command="gpg --no-verbose --batch --status-fd 2 --output - --verify %s %f"	
-# comando e opzioni per decifrare un messaggio criptato in formato PGP/MIME
-set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"		
-# comando e opzioni per firmare un messaggio allegando la firma in formato PGP/MIME
-set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"	
-# create a application/pgp signed (old-style) message
-set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"	
-# comando e opzioni per importare nel portafoglio di chiavi pubbliche la chiave in un messaggio firmato ricevuto
-set pgp_import_command="gpg --no-verbose --import -v %f"	
-# comando e opzioni per verificare le informazioni su una chiave attraverso il menu di selezione chiavi.
-set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"	
-# read in the public key ring
-set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r" 
-# read in the secret key ring
-set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r" 
-# fetch keys
-set pgp_getkeys_command="/usr/bin/gpg --keyserver search.keyserver.net --recv-key %r"
-# create a pgp/mime encrypted attachment
-set pgp_encrypt_only_command="/usr/bin/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
-# create a pgp/mime encrypted and signed attachment
-set pgp_encrypt_sign_command="/usr/bin/pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
-set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
-
-# auto sign when replying to signed message
-set pgp_replysign=yes
-# auto encrypt when replying to encrypted message
-set pgp_replyencrypt=yes
-# auto sign when replying to encrypted message (cohoperates with pgp_replysign)
-set pgp_replysignencrypted=yes
-
-#-----------------------------------------------------
-# Mutt-patched sidebar
-#-----------------------------------------------------
-#set sidebar_width=35			# larghezza della sidebar
-#set sidebar_visible=no			# sidebar visible at startup
-#set sidebar_sort=yes			# unchecked because sorting is manual ("mailboxes" command)
-#color sidebar_new yellow default	# colore cartelle con nuovi messaggi
-
-#-----------------------------------------------------
-# Look and feel
-#-----------------------------------------------------
-# in every single conf_account file are defined account-specific:
-# - folder-hook
-# - index/status/pager_format
-
-set date_format = "%d.%m.%y, %H:%M"
-set locale = "it_IT.ISO-8859-1"
-
-set sig_dashes = yes 						# if YES Mutt inserts a line containing '-- ' before $signature
-set pager_context = 2						# n of rows of the previous page to show in the following page during messa reading [default: 0]
-macro pager l "|urlview\n" "gestisce url con urlview"		# enables a list of the links in the message, selection and running with the proper program
-
-# defines what kind of attachments to show in index count
-attachments   +A image/jpeg
-attachments   +I application/octet-stream
-attachments   +A application/zip
-attachments   -I text/plain			# useful to not show attached signatures from ML
-mime_lookup application/octet-stream		# sets Mutt to link file extension to mime.types for specified attachment
-
-ignore *							
-unignore Subject: Date: From: Reply-To: To: Cc: Bcc: X-Operating-System: X-Mailer User-Agent X-Spam-Status: X-Spam-Level: X-Spam-Flag: X-Spam-Checker-Version:
-
-unhdr_order *						
-hdr_order Subject: Date: From: Reply-To: To: Cc: Bcc: X-Operating-System: X-Mailer User-Agent X-Spam-Checker-Version: X-Spam-Status: X-Spam-Level: X-Spam-Flag:
-
-#-----------------------------------------------------
-# Process the password file first
-#-----------------------------------------------------
 set my_pass1=`awk '/fradeve_gmail:/ {print $2}' /unenc/fradeve/keys/mutt/muttpass`
 set my_pass2=`awk '/fradeve_inventati:/ {print $2}' /unenc/fradeve/keys/mutt/muttpass`
 
-#-----------------------------------------------------
-# Folders, mailboxes and folder hooks
-#-----------------------------------------------------
+## Folders, mailboxes, hooks
+############################
+
 set mbox_type=Maildir
-set folder = /unenc/fradeve/mail			# set mailfolder
+set folder = /unenc/fradeve/mail			    # set mailfolder
 set spoolfile = /unenc/fradeve/mail/inventati/INBOX	# set start mailfolder
 
-#-----------------------------------------------------
-# Folders, mailboxes and folder hooks
-#-----------------------------------------------------
 folder-hook 'gmail' \
 'source $HOME/.mutt/accounts/conf_off_fradeve11atgmaildotcom'
 folder-hook 'inventati' \
@@ -143,42 +43,18 @@ folder-hook 'riseup' \
 # set the startup directory:
 source $HOME/.mutt/accounts/conf_off_inventati
 
-#-----------------------------------------------------
-# Global macros to make life easier
-#-----------------------------------------------------
-# postponing and recalling postponed messages
-bind compose p postpone-message			# when composing, pressing `p` postpones current msg
-bind index p recall-message			# in index, `p` recalls postponed messages
+## Global macros
+################
 
-# GPG
-macro pager G "v<return><save-message>/tmp/test<return> !gpg -d /tmp/test && shred /tmp/test<return>q"  # decrypt and show encrypted message
-bind compose P pgp-menu
+source $HOME/.mutt/macro
 
-# macro to save all picture attachments
-set pipe_decode = no
-macro index Z "|munpack -C ~/Downloads\n"
-macro pager Z "|munpack -C ~/Downloads\n"
-
-# macro to quick change directory
 macro index	<esc>1	"<change-folder>?<return>2<return><return>17<return><return>"	# ESC+1 takes to first INBOX
 macro index	<esc>2	"<change-folder>?<return>3<return><return>17<return><return>"	# ESC+2 takes to second INBOX
 macro index	<esc>3	"<change-folder>?<return>4<return><return>4<return><return>"	# ESC+3 takes to third INBOX
-macro index	.r	"T.*\n;WN;WO^T.*\n"				# marks all messages as read
 
-macro index,pager A '<sidebar-scroll-up>'				# A scrolls sidebar up
-macro index,pager S '<sidebar-scroll-down>'				# S scrolls sidebar down
-macro index,pager B '<enter-command>toggle sidebar_visible<enter>' 	# B hide-unhide sidebar
+source $HOME/.mutt/notmuch
 
-macro index <F8> \
-      "<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt -r --prompt search<enter><change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>" \
-      "notmuch: search mail"
-macro index <F9> \
-	"<enter-command>unset wait_key<enter><enter-command>unignore message-id<enter><pipe-message>notmuch-mutt thread<enter><change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter><enter-command>set wait_key<enter>" \
-	"search and reconstruct owning thread with notmuch"
-macro index <F6> \
-	"<enter-command>unset wait_key<enter><enter-command>unignore message-id<enter><pipe-message>notmuch-mutt -- tag -inbox<enter>" \
-	"remove message from inbox with notmuch"
-#-----------------------------------------------------
 # Colors
-#-----------------------------------------------------
+########
+
 source $HOME/.mutt/colors/mutt-colors-solarized-dark-16

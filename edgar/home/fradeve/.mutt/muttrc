@@ -21,8 +21,8 @@ source $HOME/.mutt/gpg
 
 source $HOME/.mutt/style
 
-# Process password file
-#######################
+## Process password file
+########################
 
 set my_pass1=`awk '/fradeve_gmail:/ {print $2}' ~/.keys/mutt/muttpass`
 set my_pass2=`awk '/fradeve_inventati:/ {print $2}' ~/.keys/mutt/muttpass`
@@ -46,7 +46,7 @@ source $HOME/.mutt/accounts/conf_off_inventati
 ## Global macros
 ################
 
-source $HOME/.mutt/basic
+source $HOME/.mutt/macro
 
 # macro to quick change directory
 macro index	<esc>1	"<change-folder>?<return>2<return><return>17<return><return>"	# ESC+1 takes to first INBOX
