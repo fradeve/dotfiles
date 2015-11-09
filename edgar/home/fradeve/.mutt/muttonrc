@@ -67,6 +67,8 @@ source $HOME/.mutt/accounts/conf_on_inventati
 ## Global macros
 ################
 
+source $HOME/.mutt/macro
+
 # macro to quick change directory
 macro index	<esc>1	\
 '<sync-mailbox><enter-command>source ~/.mutt/accounts/conf_on_fradeve11atgmaildotcom<enter><change-folder>!<enter>'# ESC+1 takes to first INBOX

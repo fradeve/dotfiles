@@ -29,9 +29,8 @@ plugins=(
 ### alias ###
 #############
 
-. $HOME/.zsh_alias
+. $HOME/.zshrc_alias
 
-alias sutlmgr='sudo /usr/local/texlive/2013/bin/x86_64-linux/tlmgr'
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
 alias oblique='sh /opt/oblique'
@@ -53,15 +52,17 @@ eval "$(hub alias -s)"
 
 alias git="hub"
 alias gpf="git fetch -p"
-alias gdf="cdiff -s -w90"
+gdf() { 
+    if [[ ! $1 ]]; then
+        local branch="master"
+    fi
+    cdiff -s -w90 $branch; 
+}
 
 ### env and apps settings ###
 #############################
 
 . $HOME/.zshrc_env_apps
-
-## TexLive executables
-export PATH=/usr/local/texlive/2013/bin/x86_64-linux:${PATH}
 
 ## tmuxp autocompletion
 source tmuxp.zsh

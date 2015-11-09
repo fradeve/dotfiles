@@ -31,7 +31,6 @@ plugins=(
 
 . $HOME/.zshrc_alias
 
-alias sutlmgr='sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr'
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
 alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/duck"
@@ -41,7 +40,12 @@ eval "$(hub alias -s)"
 
 alias git="hub"
 alias gpf="git fetch -p"
-gdf() { cdiff -s -w90 "$*"; }
+gdf() { 
+    if [[ ! $1 ]]; then
+        local branch="master"
+    fi
+    cdiff -s -w90 $branch; 
+}
 
 ### env and apps settings ###
 #############################
