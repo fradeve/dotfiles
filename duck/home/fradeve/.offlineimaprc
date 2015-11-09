@@ -1,0 +1,29 @@
+[general]
+metadata = ~/.offlineimap
+accounts = gmail
+maxsyncaccount = 4
+socktimeout = 60
+ui = ttyui
+
+### francesco.devirgilio@polestarglobal.com
+###########################################
+
+[Account gmail]
+localrepository = local-gmail
+remoterepository = remote-gmail
+status_backend = sqlite
+
+[Repository local-gmail]
+type = Maildir
+localfolders = /home/fradeve/.mail/gmail
+
+[Repository remote-gmail]
+type = Gmail
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotehost = imap.gmail.com
+remoteuser = francesco.devirgilio@polestarglobal.com
+remotepassfile = ~/.gmailpass
+realdelete = no
+maxconnections = 4
+folderfilter = lambda folder: folder not in ['[Gmail]/Bin']
