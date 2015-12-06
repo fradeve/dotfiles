@@ -31,8 +31,8 @@ set my_pass2=`awk '/fradeve_inventati:/ {print $2}' ~/.keys/mutt/muttpass`
 ############################
 
 set mbox_type=Maildir
-set folder = $HOME/DATA/mail			# set mailfolder
-set spoolfile = $HOME/DATA/mail/inventati/INBOX	# set start mailfolder
+set folder = $HOME/.mail			# set mailfolder
+set spoolfile = $HOME/.mail/inventati/INBOX	# set start mailfolder
 
 folder-hook 'gmail' \
 'source $HOME/.mutt/accounts/conf_off_fradeve11atgmaildotcom'

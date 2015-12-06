@@ -32,11 +32,8 @@ plugins=(
 . $HOME/.zshrc_alias
 
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
-
 alias oblique='sh /opt/oblique'
-
 alias mux='tmuxp load .tmuxp/base.yaml'
-
 alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/edgar'
 
 ## music
@@ -48,10 +45,8 @@ alias music='ncmpcpp'
 alias music-on='ncmpcpp -h moon-fradeve.duckdns.org -p 6600'
 
 ## git
-eval "$(hub alias -s)"
-
-alias git="hub"
 alias gpf="git fetch -p"
+
 gdf() { 
     if [[ ! $1 ]]; then
         local branch="master"
@@ -72,14 +67,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-
-if [ -n "$PYENV_COMMAND" ] && [ ! -x "$PYENV_COMMAND_PATH" ]; then
-    versions=($(pyenv-whence "${PYENV_COMMAND}" 2>/dev/null || true))
-    if [ "${#versions[@]}" -eq 1 ]; then
-        PYENV_COMMAND_PATH="${PYENV_ROOT}/versions/${versions[0]}/bin/${PYENV_COMMAND}"
-    fi
-fi
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)

@@ -15,7 +15,7 @@ status_backend = sqlite
 
 [Repository local-gmail]
 type = Maildir
-localfolders = /home/fradeve/DATA/mail/gmail
+localfolders = /home/fradeve/.mail/gmail
 
 [Repository remote-gmail]
 type = Gmail
@@ -38,7 +38,7 @@ status_backend = sqlite
 
 [Repository local-inventati]
 type = Maildir
-localfolders = /home/fradeve/DATA/mail/inventati
+localfolders = /home/fradeve/.mail/inventati
 
 [Repository remote-inventati]
 type = IMAP
@@ -61,7 +61,7 @@ status_backend = sqlite
 
 [Repository local-riseup]
 type = Maildir
-localfolders = /home/fradeve/DATA/mail/riseup
+localfolders = /home/fradeve/.mail/riseup
 
 [Repository remote-riseup]
 type = IMAP

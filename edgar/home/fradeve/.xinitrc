@@ -12,9 +12,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 syndaemon -t -k -i 1 -d &
-exec /usr/bin/setxkbmap -model pc105 -layout it &
+exec /usr/bin/setxkbmap -model thinkpad -layout gb &
 feh --bg-scale /home/fradeve/.wallpaper.jpg
-exec nm-applet &
 exec volumeicon &
 eval $(gpg-agent --daemon)
 exec i3

@@ -1,13 +1,13 @@
 # base settings
 
-library:                /home/fradeve/DATA/music/music_dataunenc/beets.db
-directory:              /home/fradeve/DATA/music/music_dataunenc
+library:                /home/fradeve/data/music/beets.db
+directory:              /home/fradeve/data/music
 
 import:
     write:              yes              # write metadata in files
     move:               yes
     delete:             no
-    log:                /home/fradeve/DATA/music/music_dataunenc/beets.log
+    log:                /home/fradeve/data/music/beets.log
     detail:             yes
     flat:               no
     group_albums:       no
@@ -107,16 +107,6 @@ match:
     ignored: []
     track_length_grace: 10
     track_length_max: 30
-
-# bpd
-
-bpd:
-    host: 127.0.0.1
-    port: 6600
-
-mpd:
-    host: localhost
-    port: 6600
 
 # lastgenre
 
