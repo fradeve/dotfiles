@@ -38,7 +38,7 @@ alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.
 
 ## music
 MONTH_NOW=`date +'%m'`
-MONTH_START=`date --date='-6 month' +'%m'`
+MONTH_START=`date --date='-2 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
 alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
 alias music='ncmpcpp'

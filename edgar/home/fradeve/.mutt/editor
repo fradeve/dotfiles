@@ -1,0 +1,2 @@
+set editor="vim -S ~/.mutt/vim_mutt_commands"     # editor predefinito
+set signature=$HOME/.mutt/sign.txt
