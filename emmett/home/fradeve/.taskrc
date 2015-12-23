@@ -15,7 +15,7 @@ urgency.annotations.coefficient=0.0
 
 report.general.columns=id,due,due.countdown,start,priority,depends,description
 report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Desc
-report.general.filter=project.not:tech tag.not:polestar tag.not:longterm status:pending
+report.general.filter=project.not:tech project.not:music tag.not:polestar tag.not:longterm status:pending
 report.general.sort=due+
 report.general.dateformat=D-M-Y
 
@@ -38,6 +38,10 @@ report.work-completetoday.filter=status:completed tag:polestar end.after:today
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.filter=project:tech status:pending
 report.tech.sort=due+,priority-,depends-
+
+report.music.columns=id,due,priority,urgency,depends,tags,description
+report.music.filter=project:music status:pending
+report.music.sort=due+,priority-,depends-
 
 #### agile UDAs ####
 ####################
