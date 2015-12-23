@@ -17,6 +17,7 @@ plugins=(
          colorize
          cp
          completion
+         docker
         )
 
 . $HOME/.zshrc_plugins

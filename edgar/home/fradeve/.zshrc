@@ -17,6 +17,7 @@ plugins=(
          colorize
          cp
          completion
+         docker
         )
 
 . $HOME/.zshrc_plugins
@@ -81,3 +82,11 @@ export PATH=$NCARG_ROOT/bin:$PATH
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+## put ssh-agent variables in session
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l | grep "The agent has no identities" && ssh-add
