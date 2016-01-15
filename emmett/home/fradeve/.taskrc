@@ -13,8 +13,8 @@ urgency.annotations.coefficient=0.0
 #### reports ####
 #################
 
-report.general.columns=id,due,due.countdown,start,priority,depends,description
-report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Desc
+report.general.columns=id,due,due.countdown,start,priority,depends,tags,description
+report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
 report.general.filter=project.not:tech project.not:music tag.not:polestar tag.not:longterm status:pending
 report.general.sort=due+
 report.general.dateformat=D-M-Y
