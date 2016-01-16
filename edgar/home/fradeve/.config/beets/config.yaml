@@ -64,7 +64,17 @@ time_format:            '%Y-%m-%d %H:%M:%S'
 #######################
 
 pluginpath: []
-plugins: [lastgenre, mbsync, scrub, missing, chroma, bpd]
+plugins: [
+    lastgenre,
+    mbsync,
+    scrub,
+    missing,
+    chroma,
+    bpd,
+    duplicates,
+    embedart,
+    fetchart
+]
 
 # mbsync
 
