@@ -34,10 +34,20 @@ report.tech.sort=due+,priority-,depends-
 #### agile UDAs ####
 ####################
 
+# back = backlog
+# vet = tech vetted
+# todo = ready do dev
+# pro = in progress
+# done = dev completed
+# dep = deployed
+
 uda.agile.type=string
 uda.agile.label=agile
-uda.agile.values=devcomplete,hotfix
-urgency.uda.agile.coefficient=10
+uda.agile.values=back,vet,todo,pro,done,dep
+
+uda.size.type=string
+uda.size.label=size
+uda.size.values=xs,s,m,l,xl,xxl
 
 #### colors ####
 ################
@@ -49,9 +59,12 @@ include /usr/share/doc/task/rc/solarized-dark-256.theme
 ####################
 uda.jiraurl.type=string
 uda.jiraurl.label=Jira URL
+
 uda.jirasummary.type=string
 uda.jirasummary.label=Jira Summary
+
 uda.jiraid.type=string
 uda.jiraid.label=Jira Issue ID
+
 uda.jiradescription.type=string
 uda.jiradescription.label=Jira Description
