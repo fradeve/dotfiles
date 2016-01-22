@@ -1,0 +1,11 @@
+session_name: dev-cas
+start_directory: /home/fradeve/git/cas
+windows:
+    - window_name: side-kanban
+      focus: true
+      layout: even-horizontal
+      panes:
+          - task project:side agile:todo
+          - task project:side agile:pro
+          - task project:side agile:done
+          - task project:side agile:dep
