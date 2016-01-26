@@ -1,0 +1,19 @@
+session_name: base
+start_directory: /home/fradeve
+windows:
+    - window_name: main
+      layout: main-vertical
+      options:
+          automatic-rename: on
+          main-pane-width: 100
+      panes:
+          - weechat
+          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
+          - vit general
+    - window_name: side-kanban
+      layout: even-horizontal
+      panes:
+          - task project:side agile:todo
+          - task project:side agile:pro
+          - task project:side agile:done
+          - task project:side agile:dep

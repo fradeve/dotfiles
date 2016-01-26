@@ -1,9 +1,0 @@
-session_name: projects
-windows:
-    - window_name: list
-      focus: true
-      layout: main-vertical
-      panes:
-        - vit project:tech
-        - vit project:genealogy
-        - vit project:gibbit
