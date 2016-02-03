@@ -13,11 +13,19 @@ moon
 emmett
 ------
 
-* weechat
-* taskwarrior
-* tmuxp permament session
+systemd
+.......
+
 * mysql
+* phpmyadmin
+* glances
 * ttrss
 * owncloud
 * rusti.cc
 
+static
+......
+
+* tmuxp permament session
+* weechat
+* taskwarrior
