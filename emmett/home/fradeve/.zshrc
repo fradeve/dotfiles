@@ -65,5 +65,7 @@ alias twn='clear && task work'				# work task to be done next
 alias twc='task work-completetoday'       		# work tasks done today
 alias twb='task burndown.daily tag:polestar'            # work tasks burntdown by day
 
-# taskd
+# taskwarrior
 export TASKDDATA=/home/fradeve/.taskddata
+
+alias trr='python /home/fradeve/.bin/kanwarrior.py'

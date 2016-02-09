@@ -35,6 +35,9 @@ report.work-complete.sort=priority-
 report.work-completetoday.columns=project,due,priority,urgency,depends,description
 report.work-completetoday.filter=status:completed tag:polestar end.after:today
 
+report.work-completeyesterday.columns=project,due,priority,urgency,depends,description
+report.work-completeyesterday.filter=status:completed tag:polestar end.after:yesterday
+
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.filter=project:tech status:pending
 report.tech.sort=due+,priority-,depends-
