@@ -67,5 +67,4 @@ alias twb='task burndown.daily tag:polestar'            # work tasks burntdown b
 
 # taskwarrior
 export TASKDDATA=/home/fradeve/.taskddata
-
 alias trr='python /home/fradeve/.bin/kanwarrior.py'

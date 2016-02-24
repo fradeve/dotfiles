@@ -39,8 +39,10 @@ report.work-completeyesterday.columns=project,due,priority,urgency,depends,descr
 report.work-completeyesterday.filter=status:completed tag:polestar end.after:yesterday
 
 report.tech.columns=id,due,priority,urgency,depends,tags,description
+report.tech.labels=ID,Due,Pri,Urg,Dep,Tags,Desc
 report.tech.filter=project:tech status:pending
-report.tech.sort=due+,priority-,depends-
+report.tech.sort=due+
+report.tech.dateformat=D-M-Y
 
 report.music.columns=id,due,priority,urgency,depends,tags,description
 report.music.filter=project:music status:pending
@@ -59,6 +61,9 @@ urgency.uda.agile.coefficient=10
 
 color=on
 include /usr/share/task/solarized-dark-256.theme
+color.burndown.pending=on red
+color.burndown.started=on cyan
+color.burndown.done=on green
 
 #### bugwarrior ####
 ####################
