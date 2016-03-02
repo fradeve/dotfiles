@@ -6,6 +6,7 @@ import tmuxp
 server = tmuxp.Server()
 session = server.list_sessions()[0]
 window = session.list_windows()[1]
+panes = window.panes
 
 commands = [
     'task project:side agile:todo',
@@ -14,9 +15,12 @@ commands = [
     'task project:side agile:dep'
 ]
 
-complete_commands = dict(zip(panes_id, commands))
+# panes_id = [
+#     int(id=pane._pane_id.encode('utf-8').strip('%'))
+#     for pane in window.list_panes()
+# ]
 
-for k, v in complete_commands.iteritems():
-    pane = window.panes[k].select_pane()
-    pane.send_keys('clear && {0}'.format(v))
+for i, command in enumerate(commands):
+    pane = window.panes[i].select_pane()
+    pane.send_keys('clear && {0}'.format(command))
 
