@@ -8,12 +8,5 @@ windows:
           main-pane-width: 100
       panes:
           - weechat
-          - ssh -t moon 'mutt -n -F /home/fradeve/.mutt/muttonrc'
+          - ssh -t zerzan 'mutt'
           - vim -c "TW"
-    - window_name: side-kanban
-      layout: even-horizontal
-      panes:
-          - task project:side agile:todo
-          - task project:side agile:pro
-          - task project:side agile:done
-          - task project:side agile:dep
