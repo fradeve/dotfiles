@@ -1,13 +1,21 @@
 Services
 ========
 
-moon
-----
+zerzan
+------
 
 * mutt
 * notmuch
+* offlineimap
+* isbg
+* spamassassin
+
+* duckdns updater
+
 * mpd
 * mpdscribble
+
+* docker
 * btsync
 
 emmett
