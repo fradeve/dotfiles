@@ -33,7 +33,7 @@ path=/home/fradeve/.mail
 [user]
 name=Francesco de Virgilio
 primary_email=fradeve@inventati.org
-other_email=fradeve11@gmail.com;francesco.devirgilio@inventati.org;fradeve11@inventati.org;fradeve@ubuntu-it.org;
+other_email=francesco.devirgilio@inventati.org;fradeve11@inventati.org;fradeve@ubuntu-it.org;fradeve11@inventati.org;francesco.de.virgilio@inventati.org;fradeve11@virgilio.it;francesco.devirgilio@polestarglobal.com;
 
 # Configuration for "notmuch new"
 #

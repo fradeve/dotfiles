@@ -11,6 +11,7 @@ MAILTO=fradeve@inventati.org
 
 # utente sotto cui eseguire i comandi dello script
 USER=fradeve
+GROUP=wheel
 
 # path del database bayes da istruire
 BAYESDIR="\
@@ -19,13 +20,13 @@ BAYESDIR="\
 
 # path delle mailbox ham
 HAMDIRS="\
-/unenc/fradeve/mail/inventati/Sent \
-/unenc/fradeve/mail/amici \
+/home/fradeve/.mail/inventati/Sent \
+/home/fradeve/.mail/amici \
 "
 
 # path della mailbox spam
 SPAMDIRS="\
-/unenc/fradeve/mail/inventati/Spam \
+/home/fradeve/.mail/inventati/Spam \
 "
 
 # apprendimento per spam
@@ -37,7 +38,7 @@ nice sa-learn --spam --no-sync --showdots $spamdir/{cur,new} \
 rm $spamdir > /dev/null; \
 touch $spamdir; \
 chmod 700 $spamdir; \
-chown $USER:$USER $spamdir
+chown $USER:$GROUP $spamdir
 fi
 done
 
