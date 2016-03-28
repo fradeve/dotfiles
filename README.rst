@@ -46,7 +46,6 @@ CVS
 ArchLinux
 =========
 
-* Customizepkg (for VIM)
 * fabric.py
 
 GTD

@@ -61,7 +61,7 @@ gdf() {
 . $HOME/.zshrc_env_apps
 
 ## tmuxp autocompletion
-source tmuxp.zsh
+#source tmuxp.zsh
 
 ## python pyenv
 export PYENV_ROOT="$HOME/.pyenv"

@@ -53,7 +53,9 @@ macro index	<esc>1	"<change-folder>?<return>2<return><return>11<return><return>"
 macro index	<esc>2	"<change-folder>?<return>3<return><return>18<return><return>"	# ESC+2 takes to second INBOX
 macro index	<esc>3	"<change-folder>?<return>4<return><return>4<return><return>"	# ESC+3 takes to third INBOX
 
-# Colors
-########
+source $HOME/.mutt/notmuch
+
+## Colors
+#########
 
 source $HOME/.mutt/colors/mutt-colors-solarized-dark-16
