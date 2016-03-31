@@ -35,6 +35,8 @@ Music
 Mail, news, IM
 ==============
 
+* Mutt
+* Pycarddav
 * Newsbeuter
 * WeeChat
 

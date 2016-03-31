@@ -9,6 +9,7 @@ zerzan
 * offlineimap
 * isbg
 * spamassassin
+* pycarddav
 
 * duckdns updater
 
