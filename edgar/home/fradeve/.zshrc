@@ -34,8 +34,8 @@ plugins=(
 
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 alias oblique='sh /opt/oblique'
-alias mux='tmuxp load .tmuxp/base.yaml'
-alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/edgar'
+alias mux='tmuxp load .tmuxp/base-on.yaml'
+alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@zerzan::/unenc/fradeve/sync/dev/edgar'
 
 ## music
 MONTH_NOW=`date +'%m'`

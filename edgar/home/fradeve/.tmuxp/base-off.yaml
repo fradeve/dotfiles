@@ -5,11 +5,6 @@ windows:
           automatic-rename: on
       panes:
       - shell_command: mutt
-    - window_name: im
-      options:
-          automatic-rename: on
-      panes:
-      - shell_command: weechat-curses
     - window_name: rss
       options:
           automatic-rename: on

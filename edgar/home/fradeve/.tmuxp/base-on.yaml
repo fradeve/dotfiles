@@ -11,4 +11,4 @@ windows:
       options:
           automatic-rename: on
       panes:
-          - ncmpcpp -h moon-fradeve.duckdns.org -p 6600
+          - ncmpcpp -h zerzan.duckdns.org -p 6600
