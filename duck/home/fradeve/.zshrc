@@ -56,9 +56,6 @@ gdf() {
 ## TexLive executables
 export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
 
-## tmuxp autocompletion
-#source tmuxp.zsh
-
 ## ruby
 export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
@@ -66,7 +63,7 @@ export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 ## node
 PATH=$PATH:~/.node_modules/bin
 
-## python pyenv
+## pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -74,11 +71,12 @@ eval "$(pyenv virtualenv-init -)"
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
+export PASSWORD_STORE_DIR=/home/fradeve/git/pass
 
-## ncl
-export NCARG_ROOT=/usr/lib/ncarg
-export PATH=$NCARG_ROOT/bin:$PATH
+## jotmuch
+export JOTMUCH_DIR=~/git/bks
+export JOTMUCH_GIT=True
+export JOTMUCH_BUILD_YAML=True
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
