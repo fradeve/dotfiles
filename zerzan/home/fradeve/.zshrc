@@ -30,7 +30,7 @@ plugins=(
 
 . $HOME/.zshrc_alias
 
-alias last-moon='find /unenc/fradeve/sync/dev/zerzan -printf "%T+\n" | sort -nr | head -n 1'
+alias last-zerzan='find /unenc/fradeve/sync/dev/zerzan -printf "%T+\n" | sort -nr | head -n 1'
 alias last-emmett='find /unenc/fradeve/sync/dev/emmett -printf "%T+\n" | sort -nr | head -n 1'
 
 ### env and apps settings ###

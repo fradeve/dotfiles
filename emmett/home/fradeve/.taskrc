@@ -15,7 +15,7 @@ urgency.annotations.coefficient=0.0
 
 report.general.columns=id,due,due.countdown,start,priority,depends,tags,description
 report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
-report.general.filter=project.not:tech project.not:music tag.not:polestar tag.not:longterm status:pending
+report.general.filter=project.not:tech project.not:urwarrior project.not:music tag.not:polestar tag.not:longterm status:pending
 report.general.sort=due+
 report.general.dateformat=D-M-Y
 
@@ -53,7 +53,7 @@ report.music.sort=due+,priority-,depends-
 
 uda.agile.type=string
 uda.agile.label=agile
-uda.agile.values=devcomplete,hotfix
+uda.agile.values=todo,dev,done,deployed
 urgency.uda.agile.coefficient=10
 
 #### colors ####
