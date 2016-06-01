@@ -1,7 +1,0 @@
-session_name: simulator
-start_directory: /home/fradeve/git/simulator
-windows:
-    - window_name: sim [term]
-      panes:
-        - shell_command: vagrant ssh -c 'cd /opt/simulator; sudo service nginx start; clear; source venv/bin/activate; /bin/bash'
-        - shell_command: vagrant ssh -c 'cd /opt/simulator; clear; /bin/bash'

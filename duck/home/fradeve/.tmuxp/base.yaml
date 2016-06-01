@@ -8,7 +8,6 @@ windows:
           main-pane-width: 150
       panes:
           - mutt
-          - ssh -t emmett 'vit work'
     - window_name: personal
       layout: main-vertical
       options:
