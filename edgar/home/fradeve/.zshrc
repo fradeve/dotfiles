@@ -60,10 +60,7 @@ gdf() {
 
 . $HOME/.zshrc_env_apps
 
-## tmuxp autocompletion
-#source tmuxp.zsh
-
-## python pyenv
+## pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -72,14 +69,15 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
+export PASSWORD_STORE_DIR=/home/fradeve/git/pass
+
+## jotmuch
+export JOTMUCH_DIR=/home/fradeve/git/bks
+export JOTMUCH_GIT=True
+export JOTMUCH_BUILD_YAML=True
 
 ## chromium cache in tmp
 export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp --disk-cache-size=50000000"
-
-## ncl
-export NCARG_ROOT='/usr/lib/ncarg'
-export PATH=$NCARG_ROOT/bin:$PATH
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
