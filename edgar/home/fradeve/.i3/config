@@ -27,10 +27,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # apps
-bindsym $mod+Return         exec konsole                        # terminal
-bindsym $mod+Control+g      exec ~/.bin/encfs_mount             # mount ~/DATA
-bindsym $mod+Control+h      exec systemctl --user start dropbox # starts Dropbox
-bindsym $mod+Control+j      exec systemctl --user stop dropbox  # stops Dropbox
+bindsym $mod+Return         exec chromium                       # terminal
 bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+t              exec dolphin                        # starts Dolphin
@@ -163,10 +160,6 @@ mode "resize" {
 }
 
 bindsym $mod+r          mode "resize"
-
-# TaskWarrior on server
-for_window [title="taskwin"] floating enable
-bindsym $mod+Shift+D    exec urxvt -title taskwin -e sh ~/.bin/display_tasks.sh
 
 # exec at startup
 #exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/chromium; workspace 2; exec konsole; workspace 2'

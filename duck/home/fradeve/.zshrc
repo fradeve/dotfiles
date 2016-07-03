@@ -34,7 +34,7 @@ plugins=(
 
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 
-alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@moon::/unenc/fradeve/btsync/dev/duck"
+alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@zerzan::/unenc/fradeve/sync/dev/duck"
 
 ## git
 eval "$(hub alias -s)"
@@ -47,6 +47,8 @@ gdf() {
     fi
     cdiff -s -w90 $branch; 
 }
+
+alias base='tmuxp load base'
 
 ### env and apps settings ###
 #############################
@@ -68,6 +70,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)

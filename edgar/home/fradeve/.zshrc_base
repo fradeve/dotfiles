@@ -37,3 +37,5 @@ COMPLETION_WAITING_DOTS="true"
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
+
+EDITOR="vim"
