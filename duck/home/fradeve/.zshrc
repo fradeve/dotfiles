@@ -30,36 +30,24 @@ plugins=(
 ### alias ###
 #############
 
-. $HOME/.zshrc_alias
+. $HOME/.zshrc_generic_alias
+. $HOME/.zshrc_music
+. $HOME/.zshrc_tex
 
-alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
-
-alias backup-duck="rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_duck.include --exclude / / fradeve@zerzan::/unenc/fradeve/sync/dev/duck"
-
-## git
-eval "$(hub alias -s)"
-
-alias git="hub"
-alias gpf="git fetch -p"
-gdf() { 
-    if [[ ! $1 ]]; then
-        local branch="master"
-    fi
-    cdiff -s -w90 $branch; 
-}
-
-alias base='tmuxp load base'
+alias backup-duck="rdiff-backup -v5 --include-globbing-filelist ~/.back_duck.include --exclude / / fradeve@zerzan::/unenc/fradeve/sync/dev/duck"
 
 ### env and apps settings ###
 #############################
 
 . $HOME/.zshrc_env_apps
 
-## TexLive executables
-export PATH=/usr/local/texlive/2014/bin/x86_64-linux:${PATH}
+## encrypted external devices
+export DUCK_EXTERNAL=$(cat ~/duck/duck_external_pw)
+alias open_duck_external="echo -n $DUCK_EXTERNAL | sudo cryptsetup luksOpen --key-file=/home/fradeve/duck/duck_external_keyfile /dev/sdc duck-external"
+alias mount_duck_external="sudo mount -t ext4 /dev/mapper/duck-external ~/external"
 
 ## ruby
-export PATH=/home/fradeve/.gem/ruby/2.1.0/bin:${PATH}
+export PATH=~/.gem/ruby/2.1.0/bin:${PATH}
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 
 ## node
@@ -74,7 +62,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/git/pass
+export PASSWORD_STORE_DIR=~/git/pass
 
 ## jotmuch
 export JOTMUCH_DIR=~/git/bks
@@ -93,11 +81,16 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l | grep "The agent has no identities" && ssh-add
 
 ## perl
-PATH="/home/fradeve/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/fradeve/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/fradeve/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PATH="~/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="~/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/fradeve/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/fradeve/perl5"; export PERL_MM_OPT;
 
 ## postgres
 export PGDATA=/home/postgres/data
+
+## docker-cloud
+source /home/fradeve/.docker_login
+alias docker-cloud="docker run -it -v ~/.docker:/root/.docker:ro --rm dockercloud/cli"
+export DOCKERCLOUD_NAMESPACE=fixr

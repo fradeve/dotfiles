@@ -1,27 +1,21 @@
 session_name: base
 start_directory: /home/fradeve
 windows:
-    - window_name: work
-      layout: main-vertical
-      options:
-          automatic-rename: on
-          main-pane-width: 150
-      panes:
-          - mutton
     - window_name: personal
       layout: main-vertical
       options:
           automatic-rename: on
-          main-pane-width: 150
+          main-pane-width: 120
       panes:
           - shell_command:
-              - ssh emmett
-              - tmux attach -t base
+              - ssh zerzan
+              - mutton
+          - shell_command:
+              - task general
     - window_name: music
       focus: false
       layout: main-vertical
       options:
           automatic-rename: on
-          main-pane-width: 150
       panes:
-          - ncmpcpp -h moon-fradeve.duckdns.org -p 6600
+          - ncmpcpp

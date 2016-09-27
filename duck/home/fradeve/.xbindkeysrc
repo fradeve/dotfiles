@@ -9,6 +9,15 @@
 "amixer set Master toggle"
   XF86AudioMute
 
+"mpc toggle"
+  XF86AudioPlay
+
+"mpc prev"
+  XF86AudioPrev
+
+"mpc next"
+  XF86AudioNext
+
 "xbacklight -dec 10"
   XF86MonBrightnessDown
 
@@ -26,6 +35,3 @@
 
 "bash /home/fradeve/.screenlayout/double.sh"
   XF86LaunchB
-
-"tomb open ~/duck.tomb -k ~/.keys/duck.tomb.key"
-  F1

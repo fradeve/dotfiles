@@ -136,7 +136,6 @@
 call plug#begin()
 
 Plug 'thinca/vim-localrc'
-Plug 'weynhamz/vim-plugin-minibufexpl'
 Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
