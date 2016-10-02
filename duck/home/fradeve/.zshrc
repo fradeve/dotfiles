@@ -90,7 +90,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/fradeve/perl5"; export PERL_MM_OPT;
 ## postgres
 export PGDATA=/home/postgres/data
 
-## docker-cloud
-source /home/fradeve/.docker_login
-alias docker-cloud="docker run -it -v ~/.docker:/root/.docker:ro --rm dockercloud/cli"
-export DOCKERCLOUD_NAMESPACE=fixr
+## docker
+alias docker-cloud='docker run -it -v ~/.docker:/root/.docker:ro --rm dockercloud/cli'
+alias docker-cloud-fixr='docker run -it -v ~/.docker:/root/.docker:ro -e "DOCKERCLOUD_NAMESPACE=fixr" --rm dockercloud/cli'
+export DOCKERHOST=$(ifconfig | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)

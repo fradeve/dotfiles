@@ -11,7 +11,9 @@ windows:
               - ssh zerzan
               - mutton
           - shell_command:
-              - task general
+              - clear && task general
+          - shell_command:
+              - clear && tc
     - window_name: music
       focus: false
       layout: main-vertical

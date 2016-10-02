@@ -1,2 +1,3 @@
 ## [view 4] library
 media_library_primary_tag           =   "album_artist"
+startup_screen                      =   "media_library"

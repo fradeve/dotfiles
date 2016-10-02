@@ -1,0 +1,39 @@
+session_name: fixr
+start_directory: /home/fradeve/git/server-api-cms
+windows:
+    - window_name: docker
+      layout: tiled
+      shell_command_before:
+          - pyenv activate server-api-cms
+      options:
+          automatic-rename: on
+          main-pane-width: 120
+      panes:
+          - shell_command:  # start containers + runserve
+              - docker-compose -f docker-compose.francesco.yml up
+          - shell_command:  # python shell
+              - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
+              - pip install ipdb
+              - apt-get -y install vim
+          - shell_command:  # celery worker
+              - sleep 4 && docker exec -ti serverapicms_sut_1 /bin/bash
+              - celery -A analyzer worker -l INFO
+          - shell_command:  # ngrok
+              - sudo ngrok http 8000
+          - shell_command:  # ElasticSearch
+              - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
+              - sleep 5 && ./manage.py reindex
+          - shell_command:  # [labels] generic tags
+              - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
+              - sleep 5 && ./manage.py shell
+              - from fixrcms.cms.tasks import refresh_generic_tags, refresh_popularity; refresh_generic_tags(); refresh_popularity()
+          - shell_command:  # [analyzer] suggestions
+              - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
+              - sleep 5 && ./manage.py shell
+              - from analyzer.tasks import build_suggestions; build_suggestions()
+          - shell_command:  # django shell
+              - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
+              - ./manage.py shell
+              - from fixrcms.models import Event, User
+          - shell_command:  # monitor processes
+              - htop
