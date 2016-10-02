@@ -1,0 +1,22 @@
+### alias ###
+#############
+
+alias pong='ping www.google.it' 
+
+alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
+alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
+
+## git
+eval "$(hub alias -s)"
+
+alias git="hub"
+alias gpf="git fetch -p"
+gdf() { 
+    if [[ ! $1 ]]; then
+        local branch="master"
+    fi
+    cdiff -s -w90 $branch; 
+}
+
+alias base='tmuxp load base'
+alias ww='curl wttr.in/london'

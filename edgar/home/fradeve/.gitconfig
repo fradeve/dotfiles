@@ -5,14 +5,14 @@
 	editor = vim
 [alias]
 	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
-    	status = status --short
+    status = status --short
 [color]
-    	ui = auto
+    ui = auto
 [merge]
-	tool = p4merge
+	tool = vimdiff
 [mergetool]
-    	keepBackup = false
+    keepBackup = false
 [mergetool "p4merge"]
-    	trustExitCode = false
+    trustExitCode = false
 [push]
 	default = simple

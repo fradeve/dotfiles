@@ -1,0 +1,37 @@
+# xbacklight and kbdlight (AUR) needed
+
+"amixer set Master playback 5%+"
+  XF86AudioRaiseVolume
+
+"amixer set Master playback 5%-"
+  XF86AudioLowerVolume
+
+"amixer set Master toggle"
+  XF86AudioMute
+
+"mpc toggle"
+  XF86AudioPlay
+
+"mpc prev"
+  XF86AudioPrev
+
+"mpc next"
+  XF86AudioNext
+
+"xbacklight -dec 10"
+  XF86MonBrightnessDown
+
+"xbacklight -inc 10"
+  XF86MonBrightnessUp
+
+"kbdlight up"
+  XF86KbdBrightnessUp
+
+"kbdlight down"
+  XF86KbdBrightnessDown
+
+"bash /home/fradeve/.screenlayout/single.sh"
+  XF86LaunchA
+
+"bash /home/fradeve/.screenlayout/double.sh"
+  XF86LaunchB

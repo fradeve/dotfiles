@@ -1,7 +1,0 @@
-### alias ###
-#############
-
-alias pong='ping www.google.it' 
-
-alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
-alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'

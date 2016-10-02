@@ -1,0 +1,78 @@
+#### files ####
+###############
+
+data.location=~/.task
+include /home/fradeve/.task/secret
+
+#### behaviour ####
+###################
+
+confirmation=no
+urgency.annotations.coefficient=0.0
+
+#### reports ####
+#################
+
+report.general.columns=id,due,due.countdown,start,priority,depends,tags,description
+report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
+report.general.filter=project.not:tech project.not:urwarrior project.not:music tag.not:fixr tag.not:longterm status:pending
+report.general.sort=due+
+report.general.dateformat=D-M-Y
+
+report.general-completetoday.columns=project,due,priority,urgency,depends,description
+report.general-completetoday.filter=status:completed tag.not:fixr end.after:today
+
+report.work.columns=id,project,due,due.countdown,priority,urgency,depends,description
+report.work.labels=ID,Project,Due,Remaining,Pri,Urgency,Dep,Desc
+report.work.filter=status:pending tag:fixr agile.not:devcomplete
+report.work.sort=urgency-,priority-
+report.work.dateformat=D-M-Y
+
+report.work-complete.columns=id,project,due,priority,urgency,project,depends,tags,description
+report.work-complete.filter=status:pending tag:fixr agile:devcomplete
+report.work-complete.sort=priority-
+
+report.work-completetoday.columns=project,due,priority,urgency,depends,description
+report.work-completetoday.filter=status:completed tag:fixr end.after:today
+
+report.work-completeyesterday.columns=project,due,priority,urgency,depends,description
+report.work-completeyesterday.filter=status:completed tag:fixr end.after:yesterday
+
+report.tech.columns=id,due,priority,urgency,depends,tags,description
+report.tech.labels=ID,Due,Pri,Urg,Dep,Tags,Desc
+report.tech.filter=project:tech status:pending
+report.tech.sort=due+
+report.tech.dateformat=D-M-Y
+
+report.music.columns=id,due,priority,urgency,depends,tags,description
+report.music.filter=project:music status:pending
+report.music.sort=due+,priority-,depends-
+
+#### agile UDAs ####
+####################
+
+uda.agile.type=string
+uda.agile.label=agile
+uda.agile.values=todo,dev,done,deployed
+urgency.uda.agile.coefficient=10
+
+#### colors ####
+################
+
+color=on
+include /home/fradeve/.task/solarized-dark-256.theme
+color.burndown.pending=on red
+color.burndown.started=on cyan
+color.burndown.done=on green
+
+#### bugwarrior ####
+####################
+
+uda.jiraurl.type=string
+uda.jiraurl.label=Jira URL
+uda.jirasummary.type=string
+uda.jirasummary.label=Jira Summary
+uda.jiraid.type=string
+uda.jiraid.label=Jira Issue ID
+uda.jiradescription.type=string
+uda.jiradescription.label=Jira Description

@@ -31,19 +31,13 @@ plugins=(
 #############
 
 . $HOME/.zshrc_alias
+. $HOME/.zshrc_music
+. $HOME/.zshrc_tex
 
 alias makelatex="grep -l '\\documentclass' *tex | xargs latexmk -pdf -pvc -silent"
 alias oblique='sh /opt/oblique'
 alias mux='tmuxp load .tmuxp/base-on.yaml'
 alias backup-edgar='rdiff-backup -v5 --include-globbing-filelist /home/fradeve/.bin/back_edgar.include --exclude / / fradeve@zerzan::/unenc/fradeve/sync/dev/edgar'
-
-## music
-MONTH_NOW=`date +'%m'`
-MONTH_START=`date --date='-2 month' +'%m'`
-YEAR_NOW=`date +'%Y'`
-alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
-alias music='ncmpcpp'
-alias music-on='ncmpcpp -h moon-fradeve.duckdns.org -p 6600'
 
 ## git
 alias gpf="git fetch -p"
@@ -60,10 +54,7 @@ gdf() {
 
 . $HOME/.zshrc_env_apps
 
-## tmuxp autocompletion
-#source tmuxp.zsh
-
-## python pyenv
+## pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -72,14 +63,15 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
-export PASSWORD_STORE_DIR=/home/fradeve/git/pass-android
+export PASSWORD_STORE_DIR=/home/fradeve/git/pass
+
+## jotmuch
+export JOTMUCH_DIR=/home/fradeve/git/bks
+export JOTMUCH_GIT=True
+export JOTMUCH_BUILD_YAML=True
 
 ## chromium cache in tmp
 export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp --disk-cache-size=50000000"
-
-## ncl
-export NCARG_ROOT='/usr/lib/ncarg'
-export PATH=$NCARG_ROOT/bin:$PATH
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
