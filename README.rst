@@ -7,9 +7,12 @@ The following software is *dotfiled* in this repo:
 
 Xorg and WM
 ===========
+
 * Xinitrc
 * i3 wm
 * Dunst
+* xbindkeys
+* zathura
 
 Text editor
 ===========
@@ -61,7 +64,10 @@ Misc
 
 * Dockerfile(s)
 
-When program's settings depend from another software, or when installation is quite complicated, an `INSTALL` file is provided. When a program needs some passwords in the `rc` file, an `example` folder has been added with some samples of rc files.
+When program's settings depend from another software, or when installation is
+quite complicated, an `INSTALL` file is provided. When a program needs some
+passwords in the `rc` file, an `example` folder has been added with some samples
+of rc files.
 
 .. _dircolors-solarized: https://github.com/seebi/dircolors-solarized
 .. _Tmuxp: https://github.com/tony/tmuxp
