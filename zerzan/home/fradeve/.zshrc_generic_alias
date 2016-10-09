@@ -1,0 +1,9 @@
+### alias ###
+#############
+
+## networking
+alias pong='ping www.google.it' 
+
+## mail
+alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
+alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'

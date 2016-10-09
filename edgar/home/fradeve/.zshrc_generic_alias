@@ -2,11 +2,7 @@
 #############
 
 ## networking
-alias pong='ping www.google.it' 
-
-## mail
-alias mutt='mutt -n -F /home/fradeve/.mutt/muttrc'
-alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
+alias pong='ping www.google.com' 
 
 ## git
 eval "$(hub alias -s)"
@@ -24,9 +20,9 @@ gdf() {
 alias base='tmuxp load base'
 
 ## taskwarrior
-alias ta='task general'                 # show 'general' report
-alias tt='task general +OVERDUE'        # general tasks to be done today, plus overdue
-alias tc='task general-completetoday'   # general tasks done today
+alias ta='clear && task general'                 # show 'general' report
+alias tt='clear && task general +OVERDUE'        # general tasks to be done today, plus overdue
+alias tc='clear && task general-completetoday'   # general tasks done today
 alias ts='task sync'
 
 # misc tools

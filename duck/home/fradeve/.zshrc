@@ -65,9 +65,9 @@ fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
 export PASSWORD_STORE_DIR=~/git/pass
 
 ## jotmuch
-export JOTMUCH_DIR=~/git/bks
-export JOTMUCH_GIT=True
-export JOTMUCH_BUILD_YAML=True
+export JOTLOT_DIR=~/git/bks
+export JOTLOT_GIT=True
+export JOTLOT_BUILD_YAML=True
 
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'

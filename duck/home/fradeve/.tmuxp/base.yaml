@@ -2,7 +2,7 @@ session_name: base
 start_directory: /home/fradeve
 windows:
     - window_name: personal
-      layout: main-vertical
+      layout: tiled
       options:
           automatic-rename: on
           main-pane-width: 120
@@ -11,9 +11,11 @@ windows:
               - ssh zerzan
               - mutton
           - shell_command:
-              - clear && task general
+              - tc
           - shell_command:
-              - clear && tc
+              - clear && task tech
+          - shell_command:
+              - ta
     - window_name: music
       focus: false
       layout: main-vertical

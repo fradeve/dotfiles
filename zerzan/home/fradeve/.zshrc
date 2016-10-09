@@ -28,6 +28,8 @@ plugins=(
 ### alias ###
 #############
 
+. $HOME/.zshrc_generic_alias
+
 alias last-edgar='find /unenc/fradeve/sync/dev/edgar -printf "%T+\n" | sort -nr | head -n 1'
 alias last-duck='find /unenc/fradeve/sync/dev/duck -printf "%T+\n" | sort -nr | head -n 1'
 alias last-zerzan='find /unenc/fradeve/sync/dev/zerzan -printf "%T+\n" | sort -nr | head -n 1'
