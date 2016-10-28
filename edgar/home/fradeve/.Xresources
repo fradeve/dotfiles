@@ -1,6 +1,7 @@
 ! ------------------------------------------------------------------------------
 ! ROFI Theme
 ! ------------------------------------------------------------------------------
+
 rofi.color-enabled: true
 rofi.color-window: #002b37, #002b37, #003642
 rofi.color-normal: #002b37, #819396, #003643, #008ed4, #ffffff
@@ -40,6 +41,7 @@ rofi.auto-select:                    false
 ! Always show number of lines 
 rofi.fixed-num-lines:                true
 
+
 ! ------------------------------------------------------------------------------
 ! ROFI Behaviour
 ! ------------------------------------------------------------------------------
@@ -49,6 +51,6 @@ rofi.terminal:                       st
 rofi.show:                           run,pass
 
 rofi.run-command:                    /bin/zsh -i -c '{cmd}'
-rofi.run-list-command:               . ~/.zsh_list_aliases.sh
 
 rofi.modi:                           pass:rofi-pass
+rofi.levenshtein_sort:               false
