@@ -9,9 +9,10 @@ eval "$(hub alias -s)"
 
 alias git="hub"
 alias gpf="git fetch -p"
+alias gcd="git checkout dev"
 gdf() { 
     if [[ ! $1 ]]; then
-        local branch="master"
+        local branch="dev"
     fi
     cdiff -s -w90 $branch; 
 }
@@ -19,11 +20,34 @@ gdf() {
 ## tmux
 alias base='tmuxp load base'
 
+## pyenv
+alias sd='source deactivate'
+
 ## taskwarrior
 alias ta='clear && task general'                 # show 'general' report
 alias tt='clear && task general +OVERDUE'        # general tasks to be done today, plus overdue
 alias tc='clear && task general-completetoday'   # general tasks done today
 alias ts='task sync'
 
-# misc tools
+## timewarrior
+alias tw='timew'
+
+# summaries
+alias twd='timew day'
+alias tww='timew week'
+alias tws='timew summary :ids'
+alias twsy='timew summary :ids :yesterday'
+
+# actions
+alias twa='timew start'
+alias twt='timew stop'
+alias twc='timew continue'
+
+alias twb='timew track'
+
+# edit
+alias twes='timew shorten'
+alias twel='timew lengthen'
+
+## misc tools
 alias ww='curl wttr.in/london'

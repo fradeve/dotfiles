@@ -35,17 +35,16 @@ bindsym $mod+y              exec chromium                       # starts Chromiu
 bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 bindsym $mod+Control+1      exec xkill -a                       # restart X server
 
-bindsym $mod+p              exec tomb slam all
+bindsym $mod+p              exec tomb slam all && notify-send 'Closed all tombs.'
 bindsym $mod+g              exec chromium --user-data-dir=/run/media/fradeve/duck/chromium
 
 # music
-bindsym $mod+c              exec ~/.bin/mpc-remote-toggle    # [remote]     MPD toggle
 bindsym $mod+x              exec mpc toggle                  # [localhost]  MPD toggle
 bindsym $mod+i              exec mpc next                    # [localhost]  MPD next
 bindsym $mod+u              exec mpc prev                    # [localhost]  MPD prev
 
 bindsym $mod+Shift+q        kill
-bindsym $mod+d              exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d              exec zsh -c "rofi -show run -rnow"
 
 # change focus
 bindsym $mod+j              focus left

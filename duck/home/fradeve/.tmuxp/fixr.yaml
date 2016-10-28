@@ -30,7 +30,7 @@ windows:
           - shell_command:  # [analyzer] suggestions
               - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
               - sleep 5 && ./manage.py shell
-              - from analyzer.tasks import build_suggestions; build_suggestions()
+              #- from analyzer.tasks import build_suggestions; build_suggestions()
           - shell_command:  # django shell
               - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
               - ./manage.py shell

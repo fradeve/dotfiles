@@ -24,11 +24,11 @@
 
 " remapped keybindings
 
-    map <silent><A-Right> :tabnext<CR>      " move among tabs using ALT+left or ALT+right
+    map <silent><A-Right> :tabnext<CR>  " move among tabs: ALT+left, ALT+right
     map <silent><A-Left> :tabprevious<CR>
     map <C-n> :tabnew<CR>
 
-    nmap <silent> <Leader>C :on<CR>         " close all splits execept current one
+    nmap <silent> <Leader>C :on<CR>     " close all splits execept current one
 
 " higlight current line and show ruler
 
@@ -130,6 +130,28 @@
     set colorcolumn=+1,+2,+3    " highlight three columns after 'textwidth'
     highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
+" FocusMode
+
+    function! ToggleFocusMode()
+        if (&foldcolumn != 12)
+            set laststatus=0
+            set numberwidth=10
+            set foldcolumn=12
+            set noruler
+            hi FoldColumn ctermbg=none
+            hi LineNr ctermfg=0 ctermbg=none
+            hi NonText ctermfg=0
+        else
+            set laststatus=2
+            set numberwidth=4
+            set foldcolumn=0
+            set ruler
+            execute 'colorscheme ' . g:colors_name
+        endif
+    endfunc
+    nnoremap <F1> :call ToggleFocusMode()<cr>
+
+
 " installed plugins
 " =================
 
@@ -140,30 +162,26 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'Rykka/riv.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'Rykka/riv.vim'
 
 call plug#end()
 
+
 " plugins settings
 " ================
-
-" [localrc]
-
-    let g:localrc_filename='.vimrc'
-
-" [minibufexpl]
-
-    " set this option if the TaskList plugin is installed
-    let g:miniBufExplModSelTarget = 1
 
 " [Powerline Python]
 
     let $PYTHONPATH="/usr/lib/python3.5/site-packages"
     let g:powerline_pycmd="py3"
     set laststatus=2
+
+" [localrc]
+
+    let g:localrc_filename='.vimrc'
 
 " [Solarized - colorscheme]
 
@@ -202,24 +220,3 @@ call plug#end()
 " [Riv]
 
     let g:riv_web_browser = 'chromium'
-
-" FocusMode
-
-    function! ToggleFocusMode()
-        if (&foldcolumn != 12)
-            set laststatus=0
-            set numberwidth=10
-            set foldcolumn=12
-            set noruler
-            hi FoldColumn ctermbg=none
-            hi LineNr ctermfg=0 ctermbg=none
-            hi NonText ctermfg=0
-        else
-            set laststatus=2
-            set numberwidth=4
-            set foldcolumn=0
-            set ruler
-            execute 'colorscheme ' . g:colors_name
-        endif
-    endfunc
-    nnoremap <F1> :call ToggleFocusMode()<cr>

@@ -40,7 +40,14 @@ report.tech.filter=project:tech status:pending
 report.tech.sort=due+
 report.tech.dateformat=D-M-Y
 
-report.music.description=tech
+report.work.description=work
+report.work.columns=id,due,priority,urgency,depends,description
+report.work.labels=ID,Due,Pri,Urg,Dep,Desc
+report.work.filter=tag:fixr status:pending
+report.work.sort=due+
+report.work.dateformat=D-M-Y
+
+report.music.description=music
 report.music.columns=id,due,priority,urgency,depends,tags,description
 report.music.filter=project:music status:pending
 report.music.sort=due+,priority-,depends-

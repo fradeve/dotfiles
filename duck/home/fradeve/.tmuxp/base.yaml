@@ -8,14 +8,16 @@ windows:
           main-pane-width: 120
       panes:
           - shell_command:
+              - task work
+          - shell_command:
               - ssh zerzan
               - mutton
-          - shell_command:
-              - tc
           - shell_command:
               - clear && task tech
           - shell_command:
               - ta
+          - shell_command:
+              - tc
     - window_name: music
       focus: false
       layout: main-vertical
