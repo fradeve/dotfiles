@@ -1,0 +1,54 @@
+! ------------------------------------------------------------------------------
+! ROFI Theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #002b37, #002b37, #003642
+rofi.color-normal: #002b37, #819396, #003643, #008ed4, #ffffff
+rofi.color-active: #002b37, #008ed4, #003643, #008ed4, #66c6ff
+rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
+
+! Border width
+rofi.bw:                             1
+
+! Location on screen
+rofi.location:                       2
+
+! Padding
+rofi.padding:                        2
+
+! Y-offset relative to location
+rofi.yoffset:                        150
+
+! X-offset relative to location
+rofi.xoffset:                        0
+
+! Number of lines
+rofi.lines:                          5
+
+! Window width
+rofi.width:                          35
+
+! Hide scroll-bar
+rofi.hide-scrollbar:                 true
+
+! Margin between rows
+rofi.line-margin:                    2
+
+! Enable auto select mode       
+rofi.auto-select:                    false
+
+! Always show number of lines 
+rofi.fixed-num-lines:                true
+
+! ------------------------------------------------------------------------------
+! ROFI Behaviour
+! ------------------------------------------------------------------------------
+
+rofi.terminal:                       st
+
+rofi.show:                           run,pass
+
+rofi.run-command:                    /bin/zsh -i -c '{cmd}'
+rofi.run-list-command:               . ~/.zsh_list_aliases.sh
+
+rofi.modi:                           pass:rofi-pass
