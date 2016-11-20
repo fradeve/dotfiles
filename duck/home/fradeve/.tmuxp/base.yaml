@@ -20,7 +20,6 @@ windows:
               - tc
     - window_name: music
       focus: false
-      layout: main-vertical
       options:
           automatic-rename: on
       panes:

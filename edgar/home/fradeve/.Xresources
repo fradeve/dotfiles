@@ -52,5 +52,5 @@ rofi.show:                           run,pass
 
 rofi.run-command:                    /bin/zsh -i -c '{cmd}'
 
-rofi.modi:                           pass:rofi-pass
+rofi.modi:                           pass:/usr/bin/rofi-pass
 rofi.levenshtein_sort:               false

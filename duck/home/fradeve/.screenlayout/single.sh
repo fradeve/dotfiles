@@ -6,3 +6,7 @@ xrandr --output VIRTUAL1 --off \
     --output HDMI1 --off \
     --output DP2 --off
 feh --bg-fill /home/fradeve/.wallpaper.jpg
+killall lemonbar
+killall i3_lemonbar.sh
+sleep3
+sh /home/fradeve/.config/i3/lemonbar/i3_lemonbar.sh

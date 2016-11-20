@@ -64,11 +64,6 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
 export PASSWORD_STORE_DIR=~/git/pass
 
-## jotmuch
-export JOTLOT_DIR=~/git/bks
-export JOTLOT_GIT=True
-export JOTLOT_BUILD_YAML=True
-
 ## PyCharm font not showing error
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 

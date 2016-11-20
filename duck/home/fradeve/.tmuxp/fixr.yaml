@@ -16,8 +16,9 @@ windows:
               - pip install ipdb
               - apt-get -y install vim
           - shell_command:  # celery worker
-              - sleep 4 && docker exec -ti serverapicms_sut_1 /bin/bash
-              - celery -A analyzer worker -l INFO
+              - sleep 4 && docker exec -ti serverapicms_worker_1 /bin/bash
+                #- celery -A fixrcms worker --loglevel=INFO --concurrency=2 --queues=elasticsearch,labels,money,notifications,tickets,suggestions,stats
+                #- celery -A fixrcms worker --loglevel=INFO --concurrency=2 --queues=emails
           - shell_command:  # ngrok
               - sudo ngrok http 8000
           #- shell_command:  # ElasticSearch
