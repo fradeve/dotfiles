@@ -8,11 +8,13 @@ The following software is *dotfiled* in this repo:
 Xorg and WM
 ===========
 
-* Xinitrc
-* i3 wm
+* X11
+* i3
 * Dunst
 * xbindkeys
 * zathura
+* feh
+* Rofi, rofi-pass
 
 Text editor
 ===========
@@ -23,8 +25,8 @@ Text editor
 Terminal
 ========
 
-* (oh-my-)zsh
-* Konsole (with dircolors-solarized_)
+* Zsh
+* st
 * Tmux (with Tmuxp_)
 * Powerline_
 
@@ -41,7 +43,6 @@ Mail, news, IM
 * Mutt
 * Pycarddav
 * Newsbeuter
-* WeeChat
 
 CVS
 ===
@@ -57,17 +58,37 @@ GTD
 ===
 
 * TaskWarrior
-* BugWarrior
+* TimeWarrior
 
 Misc
 ====
 
-* Dockerfile(s)
+* Cups
+* Docker
+* GnuPG
 
 When program's settings depend from another software, or when installation is
 quite complicated, an `INSTALL` file is provided. When a program needs some
 passwords in the `rc` file, an `example` folder has been added with some samples
 of rc files.
+
+
+Notes to self
+=============
+
+* given the provided `.stowrc`, all settings in all folders are referred to
+  `$HOME`
+* the only exception is the `_devs`, containing device-specific settings; to use
+  them, just put yourself in the right device folder and specify the current 
+  folder as a Stow directory, e.g.:
+
+  .. code-block::
+
+     cd _devs/duck
+     stow -d . beet
+
+  To install Beets configuration.
+
 
 .. _dircolors-solarized: https://github.com/seebi/dircolors-solarized
 .. _Tmuxp: https://github.com/tony/tmuxp

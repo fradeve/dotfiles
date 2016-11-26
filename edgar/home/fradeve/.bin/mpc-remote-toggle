@@ -1,3 +1,0 @@
-#!/bin/bash
-export MPD_HOST=moon-fradeve.duckdns.org
-mpc toggle
