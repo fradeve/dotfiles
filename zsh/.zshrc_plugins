@@ -1,8 +1,0 @@
-### oh-my-zsh plugins options ###
-#################################
-
-source $ZSH/oh-my-zsh.sh
-
-## history-substring-search keybindings
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
