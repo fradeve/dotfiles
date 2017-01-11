@@ -7,8 +7,8 @@ windows:
           automatic-rename: on
           main-pane-width: 120
       panes:
-          - shell_command:
-              - task work
+          # - shell_command:
+          #    - task work
           - shell_command:
               - ssh zerzan
               - mutton

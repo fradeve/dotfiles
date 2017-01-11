@@ -42,6 +42,7 @@ Mail, news, IM
 
 * Mutt
 * Pycarddav
+* Offlineimap
 * Newsbeuter
 
 CVS

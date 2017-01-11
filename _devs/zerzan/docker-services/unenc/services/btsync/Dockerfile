@@ -19,5 +19,3 @@ EXPOSE 55555
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["btsync", "--config", "/home/fradeve/btsync.conf", "--nodaemon"]
