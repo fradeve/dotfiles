@@ -9,7 +9,7 @@ windows:
           automatic-rename: on
           main-pane-width: 120
       panes:
-          - shell_command:  # start containers + runserve
+          - shell_command:  # start containers + runserver
               - docker-compose -f docker-compose.local.yml up
           - shell_command:  # python shell
               - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
