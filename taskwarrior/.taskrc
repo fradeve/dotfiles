@@ -48,7 +48,7 @@ report.work.sort=due+
 report.work.dateformat=D-M-Y
 
 report.music.description=music
-report.music.columns=id,due,priority,urgency,depends,tags,description
+report.music.columns=id,due,priority,depends,tags,description
 report.music.filter=project:music status:pending
 report.music.sort=due+,priority-,depends-
 
