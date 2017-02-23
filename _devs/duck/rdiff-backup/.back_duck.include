@@ -1,13 +1,10 @@
 /home/fradeve/.back_duck.include
 
-/home/fradeve/.config/btsync/btsync.conf
 /home/fradeve/.keys
-/home/fradeve/.wakatime.cfg
 /home/fradeve/.timewarrior/data
 
 /home/fradeve/.keys/duck.tomb.key
 
-/home/fradeve/duck/.mpdscribble/mpdscribble.conf
 /home/fradeve/duck/ssh
 /home/fradeve/duck/duck_external_keyfile
 /home/fradeve/duck/duck_external_pw

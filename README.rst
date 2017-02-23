@@ -89,7 +89,13 @@ Notes to self
      cd _devs/duck
      stow -d . beet
 
-  to install Beets configuration.
+  to install Beets configuration. Optionally, a custom root for the target can
+  be specified, e.g.:
+
+  .. code-block::
+
+     cd _devs/zerzan
+     stow -d . -t /home/fradeve rslsync
 
 
 .. _dircolors-solarized: https://github.com/seebi/dircolors-solarized

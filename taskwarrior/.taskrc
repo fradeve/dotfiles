@@ -48,7 +48,7 @@ report.work.sort=due+
 report.work.dateformat=D-M-Y
 
 report.music.description=music
-report.music.columns=id,due,priority,urgency,depends,tags,description
+report.music.columns=id,due,priority,depends,tags,description
 report.music.filter=project:music status:pending
 report.music.sort=due+,priority-,depends-
 
@@ -65,15 +65,3 @@ uda.agile.type=string
 uda.agile.label=agile
 uda.agile.values=todo,dev,done,deployed
 urgency.uda.agile.coefficient=10
-
-#### bugwarrior ####
-####################
-
-uda.jiraurl.type=string
-uda.jiraurl.label=Jira URL
-uda.jirasummary.type=string
-uda.jirasummary.label=Jira Summary
-uda.jiraid.type=string
-uda.jiraid.label=Jira Issue ID
-uda.jiradescription.type=string
-uda.jiradescription.label=Jira Description

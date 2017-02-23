@@ -14,7 +14,6 @@ fi
 syndaemon -t -k -i 1 -d &
 exec /usr/bin/setxkbmap -model thinkpad -layout gb &
 feh --bg-scale /home/fradeve/.wallpaper.jpg
-exec volumeicon &
 eval $(gpg-agent --daemon)
 exec i3
 [ ! -s ~/.mpd/pid ] && mpd

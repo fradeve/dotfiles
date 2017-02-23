@@ -30,7 +30,7 @@ plugins=(
 ### alias ###
 #############
 
-. $HOME/.zshrc_alias
+. $HOME/.zshrc_generic_alias
 . $HOME/.zshrc_music
 . $HOME/.zshrc_tex
 
