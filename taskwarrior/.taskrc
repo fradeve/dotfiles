@@ -27,7 +27,7 @@ report.general.columns=id,due,due.countdown,start,priority,depends,tags,descript
 report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
 report.general.filter=project.not:tech project.not:urwarrior project.not:music project.not:museums tag.not:fixr tag.not:longterm status:pending
 report.general.sort=due+
-report.general.dateformat=D-M-Y
+report.general.dateformat=a D-M-Y
 
 report.general-completetoday.description=general-completetoday
 report.general-completetoday.columns=project,due,priority,urgency,depends,description
@@ -37,7 +37,7 @@ report.tech.description=tech
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.labels=ID,Due,Pri,Urg,Dep,Tags,Desc
 report.tech.filter=project:tech status:pending
-report.tech.sort=due+
+report.tech.sort=priority-
 report.tech.dateformat=D-M-Y
 
 report.work.description=work

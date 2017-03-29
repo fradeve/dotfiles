@@ -46,7 +46,7 @@ export DUCK_EXTERNAL=$(cat ~/duck/duck_external_pw)
 alias open_duck_external="echo -n $DUCK_EXTERNAL | sudo cryptsetup luksOpen --key-file=/home/fradeve/duck/duck_external_keyfile /dev/sdc duck-external"
 alias mount_duck_external="sudo mount -t ext4 /dev/mapper/duck-external ~/external"
 
-## node
+## nodejs
 PATH=$PATH:~/.node_modules/bin
 
 ## pyenv
