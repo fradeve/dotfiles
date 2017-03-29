@@ -41,8 +41,9 @@ Mail, news, IM
 ==============
 
 * Mutt
-* Pycarddav
 * Offlineimap
+* vdirsyncer
+* khard
 * Newsbeuter
 
 CVS

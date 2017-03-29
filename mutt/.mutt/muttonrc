@@ -6,9 +6,6 @@ source $HOME/.mutt/basic
 set imap_check_subscribed=yes			    # automatically poll subscribed mailboxes for new mail
 set imap_keepalive=30				        # keep imap connection alive by polling intermittently (time in seconds)
 
-set query_command="/usr/bin/pc_query -m '%s'"   # queries pycarddav to get addresses
-bind editor <Tab> complete-query			    # .
-
 alternates fradeve11@gmail.com
 alternates fradeve@inventati.org
 alternates francesco.devirgilio@inventati.org

@@ -3,9 +3,6 @@
 
 source $HOME/.mutt/basic
 
-set query_command="/usr/bin/pc_query -m '%s'"   # queries pycarddav to get addresses
-bind editor <Tab> complete-query                # come sopra
-
 alternates fradeve11@gmail.com
 alternates fradeve@inventati.org
 alternates francesco.devirgilio@inventati.org
