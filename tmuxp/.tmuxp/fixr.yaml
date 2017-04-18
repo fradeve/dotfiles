@@ -14,11 +14,11 @@ windows:
           - shell_command:  # python shell
               - sleep 5 && docker exec -ti serverapicms_sut_1 /bin/bash
               - pip install ipdb
-              - apt-get -y install vim
+              - apt-get update && apt-get -y install vim
           - shell_command:  # celery worker
               - sleep 4 && docker exec -ti serverapicms_worker_1 /bin/bash
-                #- celery -A fixrcms worker --loglevel=INFO --concurrency=2 --queues=elasticsearch,labels,money,notifications,tickets,suggestions,stats
-                #- celery -A fixrcms worker --loglevel=INFO --concurrency=2 --queues=emails
+                #- celery -A fixrcms worker --loglevel=INFO --concurrency=2 --queues=elasticsearch,labels,money,notifications,tickets,suggestions,stats -n worker1.%h
+                #- celery -A fixrcms worker --loglevel=INFO --concurrency=2 --queues=emails -n worker1.%h
           - shell_command:  # ngrok
               - sudo ngrok http 8000
           #- shell_command:  # ElasticSearch

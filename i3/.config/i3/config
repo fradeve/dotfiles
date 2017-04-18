@@ -54,11 +54,11 @@ bindsym $mod+u              exec mpc prev                    # MPD prev
 # TimeWarrior / TaskWarrior
 bindsym $mod+b              exec twstop                                         # stop tracking
 bindsym $mod+c              exec timew continue && notify-send 'TW continue'    # re-start last activity
-bindsym $mod+s              exec taskwarrior sync && notify-send 'tW synced'    # sync taskwarrior
+bindsym $mod+s              exec taskwarrior sync && notify-send 'TW synced'    # sync taskwarrior
 
 # rofi
 bindcode $mod+49            exec rofi-pass                   # rofi-pass with '`'
-bindcode $mod+21            exec buku_run                    # buku-pass with '='
+bindcode $mod+21            exec buku_run                    # rofi-buku with '='
 
 # change focus
 bindsym $mod+Left           focus left
