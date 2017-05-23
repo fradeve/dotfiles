@@ -24,3 +24,9 @@ windows:
           automatic-rename: on
       panes:
           - ncmpcpp
+    - window_name: news
+      focus: false
+      options:
+          automatic-rename: on
+      panes:
+          - newsbeuter

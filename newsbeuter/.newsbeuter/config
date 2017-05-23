@@ -1,13 +1,12 @@
-#chiedi conferma prima di uscire dal programma
 confirm-exit        yes
 
-#ogni m minuti
+# reload every n minutes
 reload-time         15
 
 ## interface
 text-width          72
-show-read-feeds     no
-show-read-articles  no
+show-read-feeds     yes
+show-read-articles  yes
 confirm-exit        no
 feedlist-format     "%11u %t"
 articlelist-format  "%4i %f %D   %?T?|%-17T|  ?%t"
@@ -19,23 +18,21 @@ max-items           1000
 browser             "/home/fradeve/.newsbeuter/open-pane"
 
 ## keybindings
+bind-key            BACKSPACE       next-unread
+bind-key            =               toggle-article-read
 macro o open-in-browser ; toggle-article-read "read"
 macro m set browser "chromium %u"; open-in-browser ; set browser "/home/fradeve/.newsbeuter/open-pane" ; toggle-article-read "read"
 
-## tt-rss
-ttrss-mode          "multi"
-ttrss-login         "admin"
-ttrss-passwordfile  "/home/fradeve/.keys/newsbeuter/ttrss-passwordfile"
-ttrss-url           "https://rss.rusti.cc"
-ttrss-flag-publish  "p"
-ttrss-flag-star     "s"
-
-urls-source         "ttrss"
-
 ## solarized dark theme
-color background        color244    default
-color listnormal        color244    default
-color listfocus         color159    color235
-color listfocus_unread  color159    color235
-color info              color153    color235
-color article           white       default
+
+color   background    default     default
+color   listnormal    default     default
+color   listfocus     black       yellow
+color   info          default     black
+color   article       default     default
+color   listnormal_unread     default default bold
+color   listfocus_unread      black   yellow  bold
+
+highlight   article "^(Title):.*$" blue default
+highlight   article "https?://[^ ]+" red default
+highlight   article "\\[image\\ [0-9]+\\]" green default

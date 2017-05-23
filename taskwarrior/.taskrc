@@ -37,7 +37,7 @@ report.tech.description=tech
 report.tech.columns=id,due,priority,urgency,depends,tags,description
 report.tech.labels=ID,Due,Pri,Urg,Dep,Tags,Desc
 report.tech.filter=project:tech status:pending
-report.tech.sort=priority-
+report.tech.sort=priority-,due+
 report.tech.dateformat=D-M-Y
 
 report.work.description=work

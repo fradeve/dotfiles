@@ -12,11 +12,11 @@ fi
 # open.
 w3m_process_count=`ps auxw | grep "$BROWSER" | grep -cv grep`
 if [ $w3m_process_count = '1' ];then
-    tmux send-keys -t base:4.2 "TU" "C-u" "$1"
+    tmux send-keys -t base:3.2 "TU" "C-u" "$1"
     tmux select-pane -t 2
-    tmux send -t base:4.2 Enter
+    tmux send -t base:3.2 Enter
 else
-    tmux send-keys -t base:4.2 "$BROWSER \"$1\""
+    tmux send-keys -t base:3.2 "$BROWSER \"$1\""
     tmux select-pane -t 2
-    tmux send -t base:4.2 Enter
+    tmux send -t base:3.2 Enter
 fi
