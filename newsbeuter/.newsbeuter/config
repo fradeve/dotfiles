@@ -1,5 +1,3 @@
-confirm-exit        yes
-
 # reload every n minutes
 reload-time         15
 
@@ -9,10 +7,10 @@ show-read-feeds     yes
 show-read-articles  yes
 confirm-exit        no
 feedlist-format     "%11u %t"
-articlelist-format  "%4i %f %D   %?T?|%-17T|  ?%t"
+articlelist-format  "%5i %f %D   %?T?|%-17T|  ?%t"
 
 ## items management
-max-items           1000
+max-items           0
 
 ## external programs
 browser             "/home/fradeve/.newsbeuter/open-pane"
