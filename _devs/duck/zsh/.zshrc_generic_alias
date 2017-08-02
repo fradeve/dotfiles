@@ -21,9 +21,6 @@ alias cdiff="cdiff -s -w90"
 ## tmux
 alias base='tmuxp load base'
 
-## pyenv
-alias sd='source deactivate'
-
 ## taskwarrior
 alias ta='clear && task general'                 # show 'general' report
 alias tt='clear && task general +OVERDUE'        # general tasks to be done today, plus overdue
@@ -53,4 +50,4 @@ alias twel='timew lengthen'
 
 ## misc tools
 alias ww='curl wttr.in/london'
-alias vp='sudo openvpn --config duck/git/dotfiles-private/cryptostorm/config-tcp.ovpn'
+alias vp='sudo openvpn --config $HOME/git/openvpn/linux/cstorm_linux-russiawest_tcp.ovpn'

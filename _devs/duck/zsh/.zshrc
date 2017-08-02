@@ -7,18 +7,18 @@
 ########################
 
 plugins=(
-         git
-         archlinux
-         extract
-         common-aliases
-         vi-mode
-         history-substring-search
-         colored-man
-         colorize
-         cp
-         completion
-         docker
-        )
+    git
+    archlinux
+    extract
+    common-aliases
+    vi-mode
+    history-substring-search
+    colored-man
+    colorize
+    cp
+    completion
+    docker
+)
 
 . $HOME/.zshrc_plugins
 
@@ -42,8 +42,8 @@ alias backup-duck="rdiff-backup -v5 --include-globbing-filelist ~/.back_duck.inc
 . $HOME/.zshrc_env_apps
 
 ## encrypted external devices
-export DUCK_EXTERNAL=$(cat ~/duck/duck_external_pw)
-alias open_duck_external="echo -n $DUCK_EXTERNAL | sudo cryptsetup luksOpen --key-file=/home/fradeve/duck/duck_external_keyfile /dev/sdc duck-external"
+export DUCK_EXTERNAL=$(cat ~/.keys/duck_external_pw)
+alias open_duck_external="echo -n $DUCK_EXTERNAL | sudo cryptsetup luksOpen --key-file=/home/fradeve/.keys/duck_external_keyfile /dev/sda duck-external"
 alias mount_duck_external="sudo mount -t ext4 /dev/mapper/duck-external ~/external"
 
 ## nodejs
@@ -83,5 +83,5 @@ export PGDATA=/home/postgres/data
 
 ## docker
 alias docker-cloud='docker run -it -v ~/.docker:/root/.docker:ro --rm dockercloud/cli'
-alias docker-cloud-fixr='docker run -it -v ~/.docker:/root/.docker:ro -e "DOCKERCLOUD_NAMESPACE=fixr" --rm dockercloud/cli'
+alias docker-cloud-ubi='docker run -it -v ~/.docker:/root/.docker:ro -e "DOCKERCLOUD_NAMESPACE=ubiquitypress" --rm dockercloud/cli'
 export DOCKERHOST=$(ifconfig | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)

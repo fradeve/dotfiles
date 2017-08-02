@@ -1,6 +1,3 @@
-# Conky for external bar 
-# out simple text to console
-
 background no
 update_interval 2
 total_run_times 0
@@ -19,7 +16,7 @@ ${cpu} \
 ${mem} \
 ${fs_used_perc /} \
 ${fs_used_perc /home} \
-${if_up wlp3s0}${downspeedf wlp3s0} ${upspeedf wlp3s0} \
+${if_up wlp58s0}${downspeedf wlp58s0} ${upspeedf wlp58s0} \
 ${else}down down${endif} \
 # ${if_up eth0}${downspeedf eth0} ${upspeedf eth0} \
 # ${else}down down${endif}\

@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -40,11 +40,10 @@ bindsym $mod+Return         exec st                             # terminal
 bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+t              exec dolphin                        # starts Dolphin
-bindsym $mod+y              exec chromium                       # starts Chromium
+bindsym $mod+y              exec apulse firefox                 # starts Firefox
 bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 
-bindsym $mod+p              exec tomb slam all && notify-send 'Closed all tombs.'
-bindsym $mod+g              exec chromium --user-data-dir=/run/media/fradeve/duck/chromium
+bindsym $mod+g              exec chromium
 
 # pomodoro
 bindsym $mod+i              exec spt &                                          # start pomodoro loop
@@ -161,7 +160,7 @@ bindsym $mod+r          mode "resize"
 
 # exec at startup
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec --no-startup-id i3-msg 'workspace 2; exec st; workspace 1; exec /usr/bin/chromium;'
+exec --no-startup-id i3-msg 'workspace 2; exec st; workspace 1; exec /usr/bin/apulse /usr/bin/firefox;'
 
 bar {
         i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh

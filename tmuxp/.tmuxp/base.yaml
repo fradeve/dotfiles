@@ -13,7 +13,7 @@ windows:
               - ssh zerzan
               - mutton
           - shell_command:
-              - clear && task tech
+              - clear && task work
           - shell_command:
               - ta
           - shell_command:
