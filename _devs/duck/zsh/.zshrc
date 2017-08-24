@@ -83,5 +83,5 @@ export PGDATA=/home/postgres/data
 
 ## docker
 alias docker-cloud='docker run -it -v ~/.docker:/root/.docker:ro --rm dockercloud/cli'
-alias docker-cloud-ubi='docker run -it -v ~/.docker:/root/.docker:ro -e "DOCKERCLOUD_NAMESPACE=ubiquitypress" --rm dockercloud/cli'
+alias docker-cloud-ubi='docker run -it -v ~/.docker:/root/.docker:ro -e "DOCKERCLOUD_NAMESPACE=upress" --rm dockercloud/cli'
 export DOCKERHOST=$(ifconfig | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
