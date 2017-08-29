@@ -30,8 +30,8 @@
 "kbdlight down"
   XF86KbdBrightnessDown
 
-"bash /home/fradeve/.screenlayout/single.sh"
-  XF86LaunchA
+"sh /home/fradeve/.bin/single.screenlayout.sh"
+  F7
 
-"bash /home/fradeve/.screenlayout/double.sh"
-  XF86LaunchB
+"sh /home/fradeve/.bin/ufficio.screenlayout.sh"
+  Mod4 + p
