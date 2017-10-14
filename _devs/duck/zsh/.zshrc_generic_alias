@@ -1,6 +1,9 @@
 ### alias ###
 #############
 
+## command line
+alias ll='ls -lh'
+
 ## networking
 alias pong='ping www.google.com' 
 
@@ -35,7 +38,7 @@ alias twd='timew day'
 alias tww='timew month'
 alias tws='timew summary :ids'
 alias twsy='timew summary :ids :yesterday'
-alias twst="twstats --time_span '1month ago' --step day twtools zerzan music tip osm genealogy citizenship"
+alias twst="twstats --time_span '1month ago' --step day twtools zerzan music tip osm genealogy citizenship house"
 
 # actions
 alias twa='timew start'
@@ -50,4 +53,4 @@ alias twel='timew lengthen'
 
 ## misc tools
 alias ww='curl wttr.in/london'
-alias vp='sudo openvpn --config $HOME/git/openvpn/linux/cstorm_linux-russiawest_tcp.ovpn'
+alias vp='sudo openvpn --config $HOME/.openvpn/config-tcp.ovpn'
