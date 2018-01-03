@@ -46,8 +46,8 @@ bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 bindsym $mod+g              exec chromium
 
 # pomodoro
-bindsym $mod+i              exec spt &                                          # start pomodoro loop
-bindsym $mod+o              exec killall spt && notify-send 'Stopped pomodoro'  # kill pomodoro
+bindsym $mod+o              exec spt &                                          # start pomodoro loop
+bindsym $mod+p              exec killall spt && notify-send 'Stopped pomodoro'  # kill pomodoro
 
 # TimeWarrior / TaskWarrior
 bindsym $mod+b              exec twstop                                         # stop tracking

@@ -1,2 +1,5 @@
 state.pickle
 vim/.vim/plugged/*
+timewarrior/.timewarrior/data
+taskwarrior/.task/*.data*
+taskwarrior/.task/*.pem

@@ -19,7 +19,7 @@ browser             "/home/fradeve/.newsbeuter/open-pane"
 bind-key            BACKSPACE       next-unread
 bind-key            =               toggle-article-read
 macro o open-in-browser ; toggle-article-read "read"
-macro m set browser "chromium %u"; open-in-browser ; set browser "/home/fradeve/.newsbeuter/open-pane" ; toggle-article-read "read"
+macro m set browser "chromium --incognito %u"; open-in-browser ; set browser "/home/fradeve/.newsbeuter/open-pane" ; toggle-article-read "read"
 
 ## solarized dark theme
 

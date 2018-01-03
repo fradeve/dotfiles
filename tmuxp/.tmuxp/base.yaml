@@ -30,3 +30,9 @@ windows:
           automatic-rename: on
       panes:
           - newsbeuter
+    - window_name: timew
+      focus: true
+      options:
+          automatic-rename: on
+      panes:
+          - tww
