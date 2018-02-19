@@ -38,7 +38,7 @@ alias twd='timew day'
 alias tww='timew month'
 alias tws='timew summary :ids'
 alias twsy='timew summary :ids :yesterday'
-alias twst="twstats --time_span '1month ago' --step day twtools zerzan music tip osm genealogy citizenship house side"
+alias twst="twstats --time_span '1month ago' --step day twtools zerzan music tip osm genealogy citizenship house side blog"
 
 # actions
 alias twa='timew start'
