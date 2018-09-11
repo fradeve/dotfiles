@@ -73,7 +73,8 @@ plugins: [
     bpd,
     duplicates,
     embedart,
-    fetchart
+    fetchart,
+    acousticbrainz,
 ]
 
 # mbsync

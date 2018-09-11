@@ -44,7 +44,7 @@ Mail, news, IM
 * Offlineimap
 * vdirsyncer
 * khard
-* Newsbeuter
+* Newsbeuter / newsboat
 
 CVS
 ===

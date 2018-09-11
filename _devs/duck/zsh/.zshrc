@@ -18,6 +18,8 @@ plugins=(
     cp
     completion
     docker
+    kubectl
+    helm
 )
 
 . $HOME/.zshrc_plugins
@@ -56,6 +58,10 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
+## gcloud
+source '/opt/google-cloud-sdk/path.zsh.inc'
+source '/opt/google-cloud-sdk/completion.zsh.inc'
+
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)
 export PASSWORD_STORE_DIR=~/git/pass
@@ -81,7 +87,8 @@ PERL_MM_OPT="INSTALL_BASE=/home/fradeve/perl5"; export PERL_MM_OPT;
 ## postgres
 export PGDATA=/home/postgres/data
 
-## docker
-alias docker-cloud='docker run -it -v ~/.docker:/root/.docker:ro --rm dockercloud/cli'
-alias docker-cloud-ubi='docker run -it -v ~/.docker:/root/.docker:ro -e "DOCKERCLOUD_NAMESPACE=upress" --rm dockercloud/cli'
-export DOCKERHOST=$(ifconfig | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
+## kubernetes
+alias kube-weave="kubectl port-forward -n weave \"$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')\" 4040"
+
+autoload -U compinit compdef
+compinit

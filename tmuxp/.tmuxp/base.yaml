@@ -13,7 +13,7 @@ windows:
               - ssh zerzan
               - mutton
           - shell_command:
-              - clear && task work
+              - ctw
           - shell_command:
               - ta
           - shell_command:
@@ -29,7 +29,7 @@ windows:
       options:
           automatic-rename: on
       panes:
-          - newsbeuter
+          - newsboat
     - window_name: timew
       focus: true
       options:

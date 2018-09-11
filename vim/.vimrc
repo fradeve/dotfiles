@@ -166,6 +166,7 @@ Plug 'Rykka/riv.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'ledger/vim-ledger'
 
 call plug#end()
 
@@ -175,7 +176,7 @@ call plug#end()
 
 " [Powerline Python]
 
-    let $PYTHONPATH="/usr/lib/python3.5/site-packages"
+    let $PYTHONPATH="/usr/lib/python3.7/site-packages"
     let g:powerline_pycmd="py3"
     set laststatus=2
 
@@ -220,3 +221,7 @@ call plug#end()
 " [Riv]
 
     let g:riv_web_browser = 'chromium'
+
+" [vim-ledger]
+
+    au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger

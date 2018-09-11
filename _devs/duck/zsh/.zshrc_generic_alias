@@ -8,9 +8,6 @@ alias ll='ls -lh'
 alias pong='ping www.google.com' 
 
 ## git
-eval "$(hub alias -s)"
-
-alias git="hub"
 alias gpf="git fetch -p"
 alias gcd="git checkout dev"
 gdf() { 
@@ -28,6 +25,7 @@ alias base='tmuxp load base'
 alias ta='clear && task general'                 # show 'general' report
 alias tt='clear && task general +OVERDUE'        # general tasks to be done today, plus overdue
 alias tc='clear && task general-completetoday'   # general tasks done today
+alias ctw='clear && task work'                   # work-related tasks
 alias ts='task sync'
 
 ## timewarrior
@@ -44,13 +42,12 @@ alias twst="twstats --time_span '1month ago' --step day twtools zerzan music tip
 alias twa='timew start'
 alias twt='timew stop'
 alias twc='timew continue'
-
 alias twb='timew track'
 
 # edit
-alias twes='timew shorten'
+alias twes='timew shorten @1'
 alias twel='timew lengthen'
 
 ## misc tools
 alias ww='curl wttr.in/london'
-alias vp='sudo openvpn --config $HOME/.openvpn/config-tcp.ovpn'
+alias vp='sudo openvpn --config $HOME/git/openvpn/cryptofree/cryptofree_linux-tcp.ovpn'
