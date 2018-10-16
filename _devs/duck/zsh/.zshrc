@@ -59,8 +59,14 @@ eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 ## gcloud
-source '/opt/google-cloud-sdk/path.zsh.inc'
-source '/opt/google-cloud-sdk/completion.zsh.inc'
+#source '/opt/google-cloud-sdk/path.zsh.inc'
+#source '/opt/google-cloud-sdk/completion.zsh.inc'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
 ## pass
 fpath=(. /usr/share/zsh/site-functions/_pass $fpath)

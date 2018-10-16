@@ -39,8 +39,7 @@ bindsym $mod+d              exec zsh -c "rofi -show run -rnow"
 bindsym $mod+Return         exec st                             # terminal
 bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
 bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
-bindsym $mod+t              exec dolphin                        # starts Dolphin
-bindsym $mod+y              exec apulse firefox                 # starts Firefox
+bindsym $mod+y              exec firefox                        # starts Firefox
 bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 
 bindsym $mod+g              exec chromium
@@ -160,7 +159,7 @@ bindsym $mod+r          mode "resize"
 
 # exec at startup
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec --no-startup-id i3-msg 'workspace 2; exec st; workspace 1; exec /usr/bin/apulse /usr/bin/firefox;'
+exec --no-startup-id i3-msg 'workspace 2; exec st; workspace 1; exec /usr/bin/firefox;'
 
 bar {
         i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
