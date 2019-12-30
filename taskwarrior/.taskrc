@@ -2,7 +2,6 @@
 ###############
 
 data.location=~/.task
-include /home/fradeve/.task/secret
 
 #### behaviour ####
 ###################
@@ -25,13 +24,20 @@ color.burndown.done=on green
 report.general.description=general
 report.general.columns=id,due,due.countdown,start,priority,depends,tags,description
 report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
-report.general.filter=project.not:tech project.not:urwarrior project.not:music project.not:museums tag.not:longterm status:pending
+report.general.filter=project.not:work project.not:tech project.not:urwarrior project.not:music project.not:museums tag.not:longterm status:pending
 report.general.sort=due+
 report.general.dateformat=a D-M-Y
 
 report.general-completetoday.description=general-completetoday
 report.general-completetoday.columns=project,due,priority,urgency,depends,description
 report.general-completetoday.filter=status:completed end.after:today
+
+report.work.description=work
+report.work.columns=id,due,due.countdown,start,priority,depends,tags,description
+report.work.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
+report.work.filter=project:work status:pending
+report.work.sort=due+
+report.work.dateformat=a D-M-Y
 
 report.tech.description=tech
 report.tech.columns=id,due,priority,urgency,depends,tags,description
@@ -50,11 +56,3 @@ report.museums.columns=id,due,tags,description
 report.museums.filter=project:museums status:pending
 report.museums.sort=due+
 report.museums.dateformat=D-M-Y
-
-#### agile UDAs ####
-####################
-
-uda.agile.type=string
-uda.agile.label=agile
-uda.agile.values=todo,dev,done,deployed
-urgency.uda.agile.coefficient=10

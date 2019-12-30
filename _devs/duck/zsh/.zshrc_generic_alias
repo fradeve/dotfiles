@@ -22,21 +22,17 @@ alias cdiff="cdiff -s -w90"
 alias base='tmuxp load base'
 
 ## taskwarrior
+alias tw='clear && task work'
 alias ta='clear && task general'                 # show 'general' report
 alias tt='clear && task general +OVERDUE'        # general tasks to be done today, plus overdue
 alias tc='clear && task general-completetoday'   # general tasks done today
-alias ctw='clear && task work'                   # work-related tasks
-alias ts='task sync'
-
-## timewarrior
-alias tw='timew'
 
 # summaries
 alias twd='timew day'
 alias tww='timew month'
 alias tws='timew summary :ids'
 alias twsy='timew summary :ids :yesterday'
-alias twst="twstats --time_span '1month ago' --step day twtools zerzan music tip osm genealogy citizenship house side blog"
+alias twst="twstats --time_span '1month ago' --step day twtools music tip osm genealogy citizenship house side blog"
 
 # actions
 alias twa='timew start'
@@ -47,7 +43,3 @@ alias twb='timew track'
 # edit
 alias twes='timew shorten @1'
 alias twel='timew lengthen'
-
-## misc tools
-alias ww='curl wttr.in/london'
-alias vp='sudo openvpn --config $HOME/git/openvpn/cryptofree/cryptofree_linux-tcp.ovpn'

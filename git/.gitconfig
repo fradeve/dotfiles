@@ -15,11 +15,11 @@
 	tool = vimdiff
 [mergetool]
     keepBackup = false
-[mergetool "p4merge"]
-    trustExitCode = false
 [push]
 	default = simple
 [color "grep"]
     linenumber = yellow bold
     match = red
     filename = magenta     
+[merge "ours"]
+	driver = true

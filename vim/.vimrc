@@ -167,6 +167,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'ledger/vim-ledger'
+Plug 'kylef/apiblueprint.vim'
 
 call plug#end()
 

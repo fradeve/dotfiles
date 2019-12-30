@@ -18,7 +18,7 @@ source /usr/bin/virtualenvwrapper.sh
 zstyle ':completion:*:hosts' hosts $_ssh_config
 
 ## powerline
-. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 
 ## python
 export PYTHONDONTWRITEBYTECODE=True  # in python2 avoid creation of .pyc
