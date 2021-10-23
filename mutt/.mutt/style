@@ -2,7 +2,6 @@
 ################
 
 set date_format = "%d.%m.%y, %H:%M"
-set locale = "it_IT.ISO-8859-1"
 
 set sig_dashes = yes 					# if YES Mutt inserts a line containing '-- ' before $signature
 set pager_context = 2					# n of rows of the previous page to show in the following page during messa reading [default: 0]

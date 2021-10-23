@@ -24,8 +24,8 @@ color.burndown.done=on green
 report.general.description=general
 report.general.columns=id,due,due.countdown,start,priority,depends,tags,description
 report.general.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
-report.general.filter=project.not:work project.not:tech project.not:urwarrior project.not:music project.not:museums tag.not:longterm status:pending
-report.general.sort=due+
+report.general.filter=project.not:work project.not:tech project.not:music project.not:museums tag.not:longterm status:pending +READY
+report.general.sort=due+/,priority+
 report.general.dateformat=a D-M-Y
 
 report.general-completetoday.description=general-completetoday
@@ -36,7 +36,7 @@ report.work.description=work
 report.work.columns=id,due,due.countdown,start,priority,depends,tags,description
 report.work.labels=ID,Due,Remaining,Start,Pri,Dep,Tag,Desc
 report.work.filter=project:work status:pending
-report.work.sort=due+
+report.work.sort=due+/
 report.work.dateformat=a D-M-Y
 
 report.tech.description=tech

@@ -16,7 +16,6 @@ gdf() {
     fi
     cdiff -s -w90 $branch; 
 }
-alias cdiff="cdiff -s -w90"
 
 ## tmux
 alias base='tmuxp load base'

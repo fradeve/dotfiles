@@ -75,6 +75,7 @@ plugins: [
     embedart,
     fetchart,
     acousticbrainz,
+    convert,
 ]
 
 # mbsync

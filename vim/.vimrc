@@ -151,19 +151,20 @@
     endfunc
     nnoremap <F1> :call ToggleFocusMode()<cr>
 
+" fix maxmempattern error GH:#2049
+
+    set mmp=5000
 
 " installed plugins
 " =================
 
 call plug#begin()
 
-Plug 'thinca/vim-localrc'
-Plug 'altercation/vim-colors-solarized'
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'Rykka/riv.vim'
-Plug 'tpope/vim-surround'
+Plug 'thinca/vim-localrc' " https://github.com/thinca/vim-localrc
+Plug 'altercation/vim-colors-solarized' " https://github.com/altercation/vim-colors-solarized
+Plug 'scrooloose/nerdtree' " https://github.com/preservim/nerdtree
+Plug 'scrooloose/syntastic' " https://github.com/vim-syntastic/syntastic
+Plug 'Rykka/riv.vim' " https://github.com/gu-fan/riv.vim
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'ledger/vim-ledger'
@@ -225,4 +226,8 @@ call plug#end()
 
 " [vim-ledger]
 
-    au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
+    au BufNewFile,BufRead *.ldg,*.ledger,*.journal setf ledger | comp ledger
+    let g:ledger_maxwidth = 80
+    set tw=80
+
+    au BufReadPost,BufNewFile *.yaml,*.yml setlocal tw=0

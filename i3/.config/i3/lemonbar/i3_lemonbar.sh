@@ -23,12 +23,8 @@ xprop -spy -root _NET_ACTIVE_WINDOW | sed -un 's/.*\(0x.*\)/WIN\1/p' > "${panel_
 # TODO : Restarting I3 breaks the IPC socket con. :(
 $(dirname $0)/i3_workspaces.pl > "${panel_fifo}" &
 
-# IRC, "IRC"
-# only for init
-#~/bin/irc_warn &
-
 # Conky, "SYS"
-conky -c $(dirname $0)/i3_lemonbar_conky > "${panel_fifo}" &
+#conky -c $(dirname $0)/i3_lemonbar_conky > "${panel_fifo}" &
 
 ### UPDATE INTERVAL METERS
 cnt_vol=${upd_vol}
@@ -57,7 +53,7 @@ while :; do
   fi
 
   # TimeWarrior
-  printf "%s%s\n" "TW" "$(twcurrent)" > "${panel_fifo}"
+  #printf "%s%s\n" "TW" "$(twcurrent)" > "${panel_fifo}"
 
   # Finally, wait 1 second
   sleep 1s;
@@ -65,6 +61,7 @@ while :; do
 done &
 
 #### LOOP FIFO
+## provided by i3_lemonbar_parser.sh
 
 cat "${panel_fifo}" | $(dirname $0)/i3_lemonbar_parser.sh \
   | lemonbar -p -f "${font}" -f "${iconfont}" -g "${geometry}" -B "${color_back}" -F "${color_fore}" &

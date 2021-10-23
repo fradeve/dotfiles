@@ -2,6 +2,9 @@
 	"ext": {
 		"tmux": {
 			"theme": "fradeve"
+		},
+		"wm": {
+			"theme": "fradeve"
 		}
 	}
 }

@@ -49,9 +49,8 @@ bindsym $mod+o              exec spt &                                          
 bindsym $mod+p              exec "killall spt; notify-send 'Stopped pomodoro'"  # kill pomodoro
 
 # TimeWarrior / TaskWarrior
-bindsym $mod+b              exec twstop                                         # stop tracking
+bindsym $mod+b              exec twstop && notify-send 'TW stop'                # stop tracking
 bindsym $mod+c              exec timew continue && notify-send 'TW continue'    # re-start last activity
-bindsym $mod+s              exec taskwarrior sync && notify-send 'TW synced'    # sync taskwarrior
 
 # rofi
 bindcode $mod+49            exec rofi-pass                   # rofi-pass with '`'
