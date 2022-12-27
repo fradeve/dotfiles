@@ -25,6 +25,7 @@ font pango:DejaVu Sans Mono 9
 
 hide_edge_borders both
 for_window [class="^.*"] border pixel 1
+for_window [title="Calculator"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -37,8 +38,6 @@ bindsym $mod+d              exec zsh -c "rofi -show run -rnow"
 
 # apps
 bindsym $mod+Return         exec st                             # terminal
-bindsym $mod+Control+k      exec systemctl --user start btsync  # start btsync
-bindsym $mod+Control+l      exec systemctl --user stop btsync   # stops btsync
 bindsym $mod+y              exec firefox                        # starts Firefox
 bindsym $mod+Control+0      exec i3lock -c 000000               # lock screen
 
@@ -158,8 +157,7 @@ bindsym $mod+r          mode "resize"
 
 # exec at startup
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec --no-startup-id i3-msg 'workspace 2; exec st; workspace 1; exec /usr/bin/firefox;'
-
-bar {
-        i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
-}
+exec --no-startup-id i3-msg 'workspace 2; exec st; workspace 1; exec /usr/bin/chromium;'
+exec_always --no-startup-id autorandr --load default
+exec_always --no-startup-id $HOME/.config/i3/polybar.sh
+exec_always --no-startup-id feh -g 2048x1152 --bg-scale /home/fradeve/.wallpaper.jpg

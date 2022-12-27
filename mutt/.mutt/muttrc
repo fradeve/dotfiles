@@ -3,10 +3,10 @@
 
 source $HOME/.mutt/basic
 
-alternates fradeve11@gmail.com
 alternates fradeve@inventati.org
 alternates francesco.devirgilio@inventati.org
 alternates fradeve11@inventati.org
+alternates fradeve11@gmail.com
 
 ## GPG settings 
 ###############
@@ -18,27 +18,20 @@ source $HOME/.mutt/gpg
 
 source $HOME/.mutt/style
 
-## Process password file
-########################
-
-set my_pass1=`awk '/fradeve_gmail:/ {print $2}' ~/.keys/mutt/muttpass`
-set my_pass2=`awk '/fradeve_inventati:/ {print $2}' ~/.keys/mutt/muttpass`
-
 ## Folders, mailboxes, hooks
 ############################
 
 set mbox_type=Maildir
-set folder = $HOME/.mail			# set mailfolder
-set spoolfile = $HOME/.mail/inventati/INBOX	# set start mailfolder
+set folder = $HOME/.mail			                                                # set mailfolder
+set spoolfile = $HOME/.mail/inventati/INBOX	                                        # set start mailfolder
 
 folder-hook 'gmail' \
-'source $HOME/.mutt/accounts/conf_off_fradeve11atgmaildotcom'
-folder-hook 'inventati' \
-'source $HOME/.mutt/accounts/conf_off_inventati'
+'source $HOME/.mutt/accounts/conf_on_fradeve11atgmaildotcom'
 folder-hook 'riseup' \
-'source $HOME/.mutt/accounts/conf_off_riseup'
+'source $HOME/.mutt/accounts/conf_on_riseup'
+
 # set the startup directory:
-source $HOME/.mutt/accounts/conf_off_inventati
+source $HOME/.mutt/accounts/conf_on_inventati
 
 ## Global macros
 ################

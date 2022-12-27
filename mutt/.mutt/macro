@@ -18,4 +18,4 @@ macro index	        .r	    "T.*\n;WN;WO^T.*\n"			        # marks all messages as
 bind 	index,pager \t      next-unread
 bind 	index,pager ,\t	    previous-unread
 macro   index,pager ,f      "<search>~F\r" 				        # jump to next flagged message
-macro   index,pager l      "<pipe-message>urlscan -c<Enter>"   # open URLs using urlscan
+macro   index,pager l      "<pipe-message>urlscan -c<Enter>"    # open URLs using urlscan

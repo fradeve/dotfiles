@@ -29,17 +29,17 @@ notmuch	& libmail-box-perl		|
 ### 3 # Explaining files
 ################################################
 
-* ~/.notmuch-config					helper script to notmuch
-* ~/.keys/mutt/muttpass				contains pws to access IMAP accounts
-* ~/.offlineimaprc					contains pws and rules to sync IMAP accounts to $HOME/mail
-* ~/.mailcap						to open html and attachments
-* ~/.mutt/muttonrc					IMAP accounts mutt config file
-* ~/.mutt/muttrc					offlineIMAP accounts mutt config file
-* ~/.mutt/vim_mutt_commands				VIM commands before editing a mail in mutt
-* ~/.mutt/accounts/conf_off_fradeve11atgmaildotcom	offline configuration 1st account
-* ~/.mutt/accounts/conf_off_inventati			offline configuration 2nd account
-* ~/.mutt/accounts/conf_on_fradeve11atgmaildotcom	online configuration 1st account
-* ~/.mutt/accounts/conf_on_inventati			online configuration 2nd account
+* ~/.notmuch-config                                 helper script to notmuch
+* ~/.keys/mutt/muttpass                             contains pws to access IMAP accounts
+* ~/.offlineimaprc                                  contains pws and rules to sync IMAP accounts to $HOME/mail
+* ~/.mailcap                                        to open html and attachments
+* ~/.mutt/muttonrc                                  IMAP accounts mutt config file
+* ~/.mutt/muttrc                                    offlineIMAP accounts mutt config file
+* ~/.mutt/vim_mutt_commands                         Vim commands before editing a mail in mutt
+* ~/.mutt/accounts/conf_on_fradeve11atgmaildotcom   online configuration 1st account
+* ~/.mutt/accounts/conf_on_inventati                online configuration 2nd account
+* ~/.mutt/accounts/conf_off_fradeve11atgmaildotcom  offline configuration 1st account
+* ~/.mutt/accounts/conf_off_inventati               offline configuration 2nd account
 
 ### 4 # Edit crontab
 ################################################

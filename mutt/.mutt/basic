@@ -12,7 +12,7 @@ set query_command="khard email --parsable --search-in-source-files %s"   # queri
 bind editor <Tab> complete-query			    # .
 
 set copy=no 					                # prevent Mutt from saving messages in local folder
-set move = no					                # confirm when appending messages to an existing mailbox?
+set move=no                                     # confirm when appending messages to an existing mailbox?
 set delete=yes				        	        # delete without ask
 set include=yes					                # quote messages in the answer
 set beep=no					                    # no beep
@@ -37,5 +37,6 @@ set honor_followup_to=yes			            # .
 unset metoo					                    # avoid having my address in CC or TO
 
 set edit_headers=yes
+set sidebar_visible=yes
 
 set print_command="a2ps -o - -1gEmail --borders=no --strip=3 | ps2pdf - $HOME/mail.pdf && okular $HOME/mail.pdf"

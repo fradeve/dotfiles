@@ -1,12 +1,12 @@
 # xbacklight and kbdlight (AUR) needed
 
-"amixer set Master playback 5%+"
+"mpc volume +5"
   XF86AudioRaiseVolume
 
-"amixer set Master playback 5%-"
+"mpc volume -5"
   XF86AudioLowerVolume
 
-"amixer set Master toggle"
+"mpc volume 0"
   XF86AudioMute
 
 "mpc toggle"
@@ -33,5 +33,5 @@
 "sh /home/fradeve/.bin/single.screenlayout.sh"
   F7
 
-"sh /home/fradeve/.bin/ufficio.screenlayout.sh"
-  Mod4 + p
+"sh /home/fradeve/.bin/multiple.screenlayout.sh"
+  F8

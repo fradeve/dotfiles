@@ -1,18 +1,18 @@
 session_name: base
 start_directory: /home/fradeve
 windows:
-    - window_name: music
-      focus: false
-      options:
-          automatic-rename: on
-      panes:
-          - ncmpcpp
     - window_name: news
       focus: false
       options:
           automatic-rename: on
       panes:
           - newsboat
+    - window_name: music
+      focus: false
+      options:
+          automatic-rename: on
+      panes:
+          - ncmpcpp
     - window_name: timew
       focus: true
       options:

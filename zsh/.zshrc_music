@@ -1,6 +1,6 @@
 ## music
+START=`date --date='-12 month' +'%Y-%m'`
 MONTH_NOW=`date +'%m'`
-MONTH_START=`date --date='-2 month' +'%m'`
 YEAR_NOW=`date +'%Y'`
-alias beet_latest='beet ls -a "added:$YEAR_NOW-$MONTH_START..$YEAR_NOW-$MONTH_NOW"'
+alias beet_latest='beet ls -a "added:$START..$YEAR_NOW-$MONTH_NOW"'
 alias music='ncmpcpp'

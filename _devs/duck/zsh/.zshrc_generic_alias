@@ -7,6 +7,13 @@ alias ll='ls -lh'
 ## networking
 alias pong='ping www.google.com' 
 
+## networking
+alias mutton='mutt -n -F /home/fradeve/.mutt/muttonrc'
+
+## mail
+alias mutt='mutt -n -F /home/fradeve/.mutt/muttonrc'
+alias muttt='mutt -n -F /home/fradeve/.mutt/muttrc'
+
 ## git
 alias gpf="git fetch -p"
 alias gcd="git checkout dev"

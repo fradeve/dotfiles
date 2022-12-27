@@ -1,6 +1,0 @@
-Remember to add the following to `/etc/x11/xorg.conf`:
-
-Section "Files"
-	FontPath	"/home/fradeve/.fonts/misc"
-	FontPath	"/home/fradeve/.fonts/terminesspowerline"
-EndSection

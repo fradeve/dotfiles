@@ -56,3 +56,4 @@ report.museums.columns=id,due,tags,description
 report.museums.filter=project:museums status:pending
 report.museums.sort=due+
 report.museums.dateformat=D-M-Y
+news.version=2.6.0

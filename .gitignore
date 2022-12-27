@@ -1,5 +1,11 @@
 state.pickle
 vim/.vim/plugged/*
+vim/.vim/autoload
 timewarrior/.timewarrior/data
 taskwarrior/.task/*.data*
 taskwarrior/.task/*.pem
+*_beet_cached*
+mutt/.mutt/cache
+mutt/.mutt/accounts
+mpd/.config/mpd/database
+tmuxp/.tmuxp
